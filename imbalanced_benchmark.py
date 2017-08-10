@@ -58,6 +58,13 @@ with warnings.catch_warnings():
     experiment.run(logging_results=False)
 
 # <markdowncell>
+# #### 3.3 Get ROC results
+# <codecell>
+with warnings.catch_warnings():
+    warnings.filterwarnings(action='ignore', message='Adapting smote_args\.k_neighbors')
+    experiment.roc(logging_results=False)
+
+# <markdowncell>
 # #### 3.3 Datasets summary
 
 # <codecell>
@@ -120,11 +127,16 @@ os.makedirs('{}/{}'.format(path, session_id))
 
 
 # <codecell>
-experiment.datasets_summary_.to_csv('{}/{}/datasets_summary.csv'.format(path, session_id))
-experiment.friedman_test_results_.to_csv('{}/{}/friedman_test_results.csv'.format(path, session_id))
-experiment.mean_cv_results_.to_csv('{}/{}/mean_cv_results.csv'.format(path, session_id))
-experiment.mean_ranking_results_.to_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id))
-experiment.std_cv_results_.to_csv('{}/{}/std_cv_results.csv'.format(path, session_id))
+try:
+    experiment.datasets_summary_.to_csv('{}/{}/datasets_summary.csv'.format(path, session_id))
+    experiment.friedman_test_results_.to_csv('{}/{}/friedman_test_results.csv'.format(path, session_id))
+    experiment.mean_cv_results_.to_csv('{}/{}/mean_cv_results.csv'.format(path, session_id))
+    experiment.mean_ranking_results_.to_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id))
+    experiment.std_cv_results_.to_csv('{}/{}/std_cv_results.csv'.format(path, session_id))
+except: pass
+try:
+    experiment.roc_.to_csv('{}/{}/roc.csv'.format(path, session_id))
+except: pass
 
 # <codecell>
 re.sub('\\n *',' ', str(oversampling_methods))
