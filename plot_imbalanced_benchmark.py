@@ -21,12 +21,12 @@ def createPdf(session_id):
     path = cfg['results_dir']
     experiment = loadExperiment(session_id)
 
-    with PdfPages('{}/{}/results.pdf'.format(path, session_id)) as pdf:
+    with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
         if 'friedman_test_results' in experiment:
             fig, title = plot_mean_ranking(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if 'mean_cv_results' in experiment:
-            fig, title = plot_mean_ranking(experiment)
+            fig, title = plot_cross_validation_mean_results(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if 'roc' in experiment:
             fig, title = plot_roc(experiment)
