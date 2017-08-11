@@ -12,7 +12,6 @@ from collections import Counter
 import seaborn as sns
 from matplotlib.backends.backend_pdf import PdfPages
 import yaml
-import pickle
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
