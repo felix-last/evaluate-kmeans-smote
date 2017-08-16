@@ -5,6 +5,7 @@ This project is used to evaluate the performance of the oversampling method KMea
 
 1. Install imbalanced-learn from https://github.com/felix-last/imbalanced-learn.
 2. Install imbalanced-tools from https://github.com/felix-last/imbalanced-tools.
+3. `pip3 install -r requirements.txt`
 3. (Optional) Use [vscode's python extension](https://github.com/DonJayamanne/pythonVSCode) for executing python script in Jupyter notebook.
 4. (Optional) Use https://github.com/gatsoulis/py2ipynb to convert the python scripts to iPython Notebook format.
 
