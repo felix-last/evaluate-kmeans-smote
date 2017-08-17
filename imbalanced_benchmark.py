@@ -15,8 +15,8 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Creditcard scaled with recall etc.',
-        'experiment_repetitions': 15,
+        'comment': '100 repetitions of classic datasets',
+        'experiment_repetitions': 100,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
@@ -28,7 +28,7 @@ def main():
         RandomOverSampler(),
         SMOTE(),
         SMOTE(kind='borderline1'),
-        KMeansSMOTE(kmeans_args={'n_clusters': 1000, 'batch_size':1000, 'reassignment_ratio': 10**-4})
+        KMeansSMOTE() #kmeans_args={'n_clusters': 1000, 'batch_size':1000, 'reassignment_ratio': 10**-4}
     ]
 
     experiment = BinaryExperiment(
