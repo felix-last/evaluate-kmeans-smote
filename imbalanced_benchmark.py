@@ -15,8 +15,8 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'creditcard_scaled with precision, recall and specificity',
-        'experiment_repetitions': 10,
+        'comment': 'Classic datasets with recall etc.',
+        'experiment_repetitions': 15,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
@@ -28,7 +28,7 @@ def main():
         RandomOverSampler(),
         SMOTE(),
         SMOTE(kind='borderline1'),
-        KMeansSMOTE()
+        KMeansSMOTE(use_minibatch_kmeans=False)
     ]
 
     experiment = BinaryExperiment(
@@ -66,8 +66,6 @@ def main():
     experiment_config['oversampling_methods'] = re.sub('\\n *',' ', str(oversampling_methods))
     # save experiment config
     pd.Series(experiment_config).to_csv('{}/{}/experiment_config.csv'.format(path, session_id))
-
-    remote.remote_experiment_finished.main(cfg)
 
 if __name__ == "__main__":
     main()
