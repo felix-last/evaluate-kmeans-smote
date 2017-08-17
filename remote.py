@@ -108,8 +108,9 @@ def _run_experiment():
 
 def _load_dataset():
     dataset = cfg['dataset']
+    user = cfg['remote']['user']
     dataset_url = cfg['dataset_urls'][dataset]
-    urllib.request.urlretrieve(dataset_url, '~/datasets/dataset.tar.gz')
+    urllib.request.urlretrieve(dataset_url, '/home/{}/datasets/dataset.tar.gz'.format(user))
 
 
 # Command Line Interface
