@@ -1,25 +1,26 @@
 # Start a configured configured EC2 Instance
 # Set up experiment environment
 # Run Experiment
-
+# Notify about completion
+# Shutdown instance
 # TODO: perhaps schedule (?) the following:
 # Retrieve results
-# Shutdown EC2 instance
 
 import os
 import sys
 import boto3
 import requests
+import yaml
+import urllib.request
 import imbalanced_benchmark
 
 # load config
-import yaml
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 connection = None
 
-
+# Functions called from workstation.
 def get_connection():
     ec2 = boto3.client(
         'ec2',
@@ -50,8 +51,21 @@ def setup_instance(instance_id):
     _configure(instance_id)
 
 
+def load_dataset(instance_id):
+    _exec_shell_script_via_ssl(instance_id, 'remote/load_dataset.sh')
+
+
 def run_experiment(instance_id):
     _exec_shell_script_via_ssl(instance_id, 'remote/run_experiment.sh')
+
+
+def retrieve_results(instance_id):
+    host = instance_id + cfg['remote']['base_host']
+    user = cfg['remote']['user']
+    target = cfg['results_dir']
+    command = 'scp -r {}@{}:results/* {}'.format(user, host, target)
+    os.system(command)
+
 
 def _exec_shell_script_via_ssl(instance_id, script):
     host = instance_id + cfg['remote']['base_host']
@@ -61,7 +75,7 @@ def _exec_shell_script_via_ssl(instance_id, script):
     os.system(command)
 
 
-def _configure(instance_id):
+def _configure(instance_id, dataset=None):
     host = instance_id + cfg['remote']['base_host']
     user = cfg['remote']['user']
     remote_config = cfg.copy()
@@ -70,6 +84,8 @@ def _configure(instance_id):
     remote_config['results_dir'] = '/home/{}/results'.format(
         cfg['remote']['user'])
     remote_config['instance_id'] = instance_id
+    if dataset is not None:
+        remote_config['dataset'] = dataset
     with open("config.remote.yml", 'w') as ymlfile:
         yaml.dump(remote_config, ymlfile, default_flow_style=False)
     command = 'scp config.remote.yml {}@{}:evaluate-kmeans-smote/config.yml'
@@ -78,26 +94,7 @@ def _configure(instance_id):
     os.remove('config.remote.yml')
 
 
-def main():
-    id = sys.argv[1]
-    actions = sys.argv[2:]
-    if 'start' in actions:
-        start_instance(id)
-    if 'setup' in actions:
-        setup_instance(id)
-    if 'experiment' in actions:
-        run_experiment(id)
-    if 'stop' in actions:
-        stop_instance(id)
-    if '_experiment' in actions:
-        _run_experiment()
-
-
-if __name__ == "__main__":
-    main()
-
-
-# Functions called locally by the remote instance.
+# Functions called from the remote instance.
 def _run_experiment():
     """
     Executed locally from the instance to run the experiment and shutdown / notify once finished.
@@ -109,15 +106,40 @@ def _run_experiment():
     stop_instance(instance_id)
 
 
-def _config():
-    """
-    Executed locally from the instance to adapt the previously uploaded configuration file.
-    """
-    with open("config.yml", 'r') as ymlfile:
-        cfg = yaml.load(ymlfile)
+def _load_dataset():
+    dataset = cfg['dataset']
+    dataset_url = cfg['dataset_urls'][dataset]
+    urllib.request.urlretrieve(dataset_url, '~/datasets/dataset.tar.gz')
 
-    cfg['dataset_dir'] = '~/datasets'
-    cfg['results_dir'] = '~/results'
 
-    with open("config.yml", 'w') as ymlfile:
-        yaml.dump(cfg, ymlfile, default_flow_style=False)
+# Command Line Interface
+def main():
+    instance_id = sys.argv[1]
+    actions = sys.argv[2:]
+
+    # actions called from workstation
+    if 'start' in actions:
+        start_instance(instance_id)
+    if 'setup' in actions:
+        setup_instance(instance_id)
+    if 'experiment' in actions:
+        run_experiment(instance_id)
+    if 'stop' in actions:
+        stop_instance(instance_id)
+    if 'results' in actions:
+        retrieve_results(instance_id)
+    if 'dataset' in actions:
+        dataset = actions[actions.index('dataset') + 1]
+        _configure(instance_id, dataset)
+
+    # actions called from remote
+    if len(actions) < 1:
+        action = instance_id
+        if action == '_experiment':
+            _run_experiment()
+        if action == '_dataset':
+            _load_dataset()
+
+
+if __name__ == "__main__":
+    main()
