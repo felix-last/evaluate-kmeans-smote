@@ -6,7 +6,7 @@
 
 sudo apt-get --yes install python3-tk
 
-git clone https://github.com/felix-last/evaluate-kmeans-smote
+git clone -b current_experiment https://github.com/felix-last/evaluate-kmeans-smote
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python3 get-pip.py

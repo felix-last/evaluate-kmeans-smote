@@ -1,2 +1,10 @@
 results_dir: '/home/me/results'
 dataset_dir: '/home/me/datasets'
+aws:
+  endpoint: https://abc.def.ghi
+  aws_access_key_id: ABCDEFGHI
+  aws_secret_access_key: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+remote:
+  user: me
+  base_host: .abc.def
+notification_url: https://maker.ifttt.com/trigger/experiment_finished/with/key/abcdefghijklmno
