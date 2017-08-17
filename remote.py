@@ -122,15 +122,17 @@ def main():
         start_instance(instance_id)
     if 'setup' in actions:
         setup_instance(instance_id)
-    if 'experiment' in actions:
-        run_experiment(instance_id)
-    if 'stop' in actions:
-        stop_instance(instance_id)
-    if 'results' in actions:
-        retrieve_results(instance_id)
     if 'dataset' in actions:
         dataset = actions[actions.index('dataset') + 1]
         _configure(instance_id, dataset)
+        load_dataset(instance_id)
+    if 'experiment' in actions:
+        run_experiment(instance_id)
+    if 'results' in actions:
+        retrieve_results(instance_id)
+    if 'stop' in actions:
+        stop_instance(instance_id)
+
 
     # actions called from remote
     if len(actions) < 1:
