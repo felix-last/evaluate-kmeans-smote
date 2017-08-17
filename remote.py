@@ -45,6 +45,11 @@ def stop_instance(instance_id):
     response = ec2.stop_instances(InstanceIds=[instance_id])
     print('Stop instance response:', response)
 
+def terminate_instance(instance_id):
+    ec2 = connection or get_connection()
+    response = ec2.stop_instances(InstanceIds=[instance_id])
+    print('Terminate instance response:', response)
+
 
 def setup_instance(instance_id):
     _exec_shell_script_via_ssl(instance_id, 'remote/setup_instance.sh')
@@ -62,7 +67,7 @@ def run_experiment(instance_id):
 def retrieve_results(instance_id):
     host = instance_id + cfg['remote']['base_host']
     user = cfg['remote']['user']
-    target = cfg['results_dir']
+    target = './results' # TODO: actually cfg['results_dir']
     command = 'scp -r {}@{}:results/* {}'.format(user, host, target)
     os.system(command)
 
@@ -133,6 +138,8 @@ def main():
         retrieve_results(instance_id)
     if 'stop' in actions:
         stop_instance(instance_id)
+    if 'terminate' in actions:
+        terminate_instance(instance_id)
 
 
     # actions called from remote
