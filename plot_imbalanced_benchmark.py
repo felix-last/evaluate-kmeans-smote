@@ -2,6 +2,7 @@
 
 # <codecell>
 import os
+import sys
 from datetime import datetime, timedelta
 import pandas as pd
 import numpy as np
@@ -191,3 +192,10 @@ def plot_roc(experiment):
         titles.append(title)
 
     return figs, titles
+
+
+def main():
+    create_pdf(sys.argv[1])
+
+if __name__ == "__main__":
+    main()
