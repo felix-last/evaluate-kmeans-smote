@@ -1,0 +1,391 @@
+,Dataset,Classifier,Oversampling method,Metric,Mean CV score
+0,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7688891994367009
+1,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8418981481481481
+2,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.6986770575566178
+3,breast_tissue,GradientBoostingClassifier,None,f1 score,0.758981859420065
+4,breast_tissue,GradientBoostingClassifier,None,geometric mean score,0.8484375
+5,breast_tissue,GradientBoostingClassifier,None,roc auc score,0.6874834678565113
+6,breast_tissue,GradientBoostingClassifier,RandomOverSampler,f1 score,0.7398430551078785
+7,breast_tissue,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8492527173913043
+8,breast_tissue,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.6651167096688085
+9,breast_tissue,GradientBoostingClassifier,SMOTE,f1 score,0.7688891994367009
+10,breast_tissue,GradientBoostingClassifier,SMOTE,geometric mean score,0.8418981481481481
+11,breast_tissue,GradientBoostingClassifier,SMOTE,roc auc score,0.6986770575566178
+12,breast_tissue,GradientBoostingClassifier,SMOTE2,f1 score,0.758981859420065
+13,breast_tissue,GradientBoostingClassifier,SMOTE2,geometric mean score,0.8484375
+14,breast_tissue,GradientBoostingClassifier,SMOTE2,roc auc score,0.6874834678565113
+15,breast_tissue,LogisticRegression,KMeansSMOTE,f1 score,0.7860208498971922
+16,breast_tissue,LogisticRegression,KMeansSMOTE,geometric mean score,0.8963415861513686
+17,breast_tissue,LogisticRegression,KMeansSMOTE,roc auc score,0.7206724506544596
+18,breast_tissue,LogisticRegression,None,f1 score,0.7982602026892367
+19,breast_tissue,LogisticRegression,None,geometric mean score,0.9000150966183575
+20,breast_tissue,LogisticRegression,None,roc auc score,0.7348015674259369
+21,breast_tissue,LogisticRegression,RandomOverSampler,f1 score,0.7883957322725532
+22,breast_tissue,LogisticRegression,RandomOverSampler,geometric mean score,0.9005183172302738
+23,breast_tissue,LogisticRegression,RandomOverSampler,roc auc score,0.7236538563151224
+24,breast_tissue,LogisticRegression,SMOTE,f1 score,0.7860208498971922
+25,breast_tissue,LogisticRegression,SMOTE,geometric mean score,0.8963415861513686
+26,breast_tissue,LogisticRegression,SMOTE,roc auc score,0.7206724506544596
+27,breast_tissue,LogisticRegression,SMOTE2,f1 score,0.7982602026892367
+28,breast_tissue,LogisticRegression,SMOTE2,geometric mean score,0.9000150966183575
+29,breast_tissue,LogisticRegression,SMOTE2,roc auc score,0.7348015674259369
+30,ecoli,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.8807433454423836
+31,ecoli,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9637736132153496
+32,ecoli,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.7967059725031862
+33,ecoli,GradientBoostingClassifier,None,f1 score,0.8722337475703072
+34,ecoli,GradientBoostingClassifier,None,geometric mean score,0.9565269086357947
+35,ecoli,GradientBoostingClassifier,None,roc auc score,0.7921941573311516
+36,ecoli,GradientBoostingClassifier,RandomOverSampler,f1 score,0.872020171585104
+37,ecoli,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9573186878334761
+38,ecoli,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.7945445990704653
+39,ecoli,GradientBoostingClassifier,SMOTE,f1 score,0.8807433454423836
+40,ecoli,GradientBoostingClassifier,SMOTE,geometric mean score,0.9637736132153496
+41,ecoli,GradientBoostingClassifier,SMOTE,roc auc score,0.7967059725031862
+42,ecoli,GradientBoostingClassifier,SMOTE2,f1 score,0.8722337475703072
+43,ecoli,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9565269086357947
+44,ecoli,GradientBoostingClassifier,SMOTE2,roc auc score,0.7921941573311516
+45,ecoli,LogisticRegression,KMeansSMOTE,f1 score,0.8934673157404521
+46,ecoli,LogisticRegression,KMeansSMOTE,geometric mean score,0.9369161012669345
+47,ecoli,LogisticRegression,KMeansSMOTE,roc auc score,0.7167329495157537
+48,ecoli,LogisticRegression,None,f1 score,0.8802801348502298
+49,ecoli,LogisticRegression,None,geometric mean score,0.9319614186348921
+50,ecoli,LogisticRegression,None,roc auc score,0.669144660486489
+51,ecoli,LogisticRegression,RandomOverSampler,f1 score,0.8942578032380213
+52,ecoli,LogisticRegression,RandomOverSampler,geometric mean score,0.9358474896739833
+53,ecoli,LogisticRegression,RandomOverSampler,roc auc score,0.7114825610941496
+54,ecoli,LogisticRegression,SMOTE,f1 score,0.8934673157404521
+55,ecoli,LogisticRegression,SMOTE,geometric mean score,0.9369161012669345
+56,ecoli,LogisticRegression,SMOTE,roc auc score,0.7167329495157537
+57,ecoli,LogisticRegression,SMOTE2,f1 score,0.8802801348502298
+58,ecoli,LogisticRegression,SMOTE2,geometric mean score,0.9319614186348921
+59,ecoli,LogisticRegression,SMOTE2,roc auc score,0.669144660486489
+60,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7264579851459965
+61,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.881837244630753
+62,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.5574854707689353
+63,eucalyptus,GradientBoostingClassifier,None,f1 score,0.7265978822779765
+64,eucalyptus,GradientBoostingClassifier,None,geometric mean score,0.883458282241086
+65,eucalyptus,GradientBoostingClassifier,None,roc auc score,0.55681547231847
+66,eucalyptus,GradientBoostingClassifier,RandomOverSampler,f1 score,0.7452130817950202
+67,eucalyptus,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8867061949330596
+68,eucalyptus,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.5582576125651291
+69,eucalyptus,GradientBoostingClassifier,SMOTE,f1 score,0.7264579851459965
+70,eucalyptus,GradientBoostingClassifier,SMOTE,geometric mean score,0.881837244630753
+71,eucalyptus,GradientBoostingClassifier,SMOTE,roc auc score,0.5574854707689353
+72,eucalyptus,GradientBoostingClassifier,SMOTE2,f1 score,0.7265978822779765
+73,eucalyptus,GradientBoostingClassifier,SMOTE2,geometric mean score,0.883458282241086
+74,eucalyptus,GradientBoostingClassifier,SMOTE2,roc auc score,0.55681547231847
+75,eucalyptus,LogisticRegression,KMeansSMOTE,f1 score,0.7919550320518484
+76,eucalyptus,LogisticRegression,KMeansSMOTE,geometric mean score,0.8862563848061086
+77,eucalyptus,LogisticRegression,KMeansSMOTE,roc auc score,0.5343765055945131
+78,eucalyptus,LogisticRegression,None,f1 score,0.7924583050540582
+79,eucalyptus,LogisticRegression,None,geometric mean score,0.8883002299266112
+80,eucalyptus,LogisticRegression,None,roc auc score,0.5350881483722022
+81,eucalyptus,LogisticRegression,RandomOverSampler,f1 score,0.792137929757483
+82,eucalyptus,LogisticRegression,RandomOverSampler,geometric mean score,0.888522782082865
+83,eucalyptus,LogisticRegression,RandomOverSampler,roc auc score,0.5314743998639008
+84,eucalyptus,LogisticRegression,SMOTE,f1 score,0.7919550320518484
+85,eucalyptus,LogisticRegression,SMOTE,geometric mean score,0.8862563848061086
+86,eucalyptus,LogisticRegression,SMOTE,roc auc score,0.5343765055945131
+87,eucalyptus,LogisticRegression,SMOTE2,f1 score,0.7924583050540582
+88,eucalyptus,LogisticRegression,SMOTE2,geometric mean score,0.8883002299266112
+89,eucalyptus,LogisticRegression,SMOTE2,roc auc score,0.5350881483722022
+90,glass,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.8313689706355902
+91,glass,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9165653935185185
+92,glass,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.7691454449621922
+93,glass,GradientBoostingClassifier,None,f1 score,0.8355783700941078
+94,glass,GradientBoostingClassifier,None,geometric mean score,0.912240841384863
+95,glass,GradientBoostingClassifier,None,roc auc score,0.7723711059925659
+96,glass,GradientBoostingClassifier,RandomOverSampler,f1 score,0.8412479499947126
+97,glass,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9197199577294685
+98,glass,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.7850629838307681
+99,glass,GradientBoostingClassifier,SMOTE,f1 score,0.8313689706355902
+100,glass,GradientBoostingClassifier,SMOTE,geometric mean score,0.9165653935185185
+101,glass,GradientBoostingClassifier,SMOTE,roc auc score,0.7691454449621922
+102,glass,GradientBoostingClassifier,SMOTE2,f1 score,0.8355783700941078
+103,glass,GradientBoostingClassifier,SMOTE2,geometric mean score,0.912240841384863
+104,glass,GradientBoostingClassifier,SMOTE2,roc auc score,0.7723711059925659
+105,glass,LogisticRegression,KMeansSMOTE,f1 score,0.731315732286412
+106,glass,LogisticRegression,KMeansSMOTE,geometric mean score,0.8223706723027375
+107,glass,LogisticRegression,KMeansSMOTE,roc auc score,0.6522037160325448
+108,glass,LogisticRegression,None,f1 score,0.7206490301699993
+109,glass,LogisticRegression,None,geometric mean score,0.8169094706119162
+110,glass,LogisticRegression,None,roc auc score,0.6536480693719067
+111,glass,LogisticRegression,RandomOverSampler,f1 score,0.7329920904212234
+112,glass,LogisticRegression,RandomOverSampler,geometric mean score,0.8220146437198068
+113,glass,LogisticRegression,RandomOverSampler,roc auc score,0.6541849755181838
+114,glass,LogisticRegression,SMOTE,f1 score,0.731315732286412
+115,glass,LogisticRegression,SMOTE,geometric mean score,0.8223706723027375
+116,glass,LogisticRegression,SMOTE,roc auc score,0.6522037160325448
+117,glass,LogisticRegression,SMOTE2,f1 score,0.7206490301699993
+118,glass,LogisticRegression,SMOTE2,geometric mean score,0.8169094706119162
+119,glass,LogisticRegression,SMOTE2,roc auc score,0.6536480693719067
+120,haberman,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.5514455217623946
+121,haberman,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.6473909465020576
+122,haberman,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.3900995546838988
+123,haberman,GradientBoostingClassifier,None,f1 score,0.5491285675055128
+124,haberman,GradientBoostingClassifier,None,geometric mean score,0.6496707818930041
+125,haberman,GradientBoostingClassifier,None,roc auc score,0.3873469976646053
+126,haberman,GradientBoostingClassifier,RandomOverSampler,f1 score,0.5416061801871506
+127,haberman,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.6201234567901235
+128,haberman,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.3774750636870035
+129,haberman,GradientBoostingClassifier,SMOTE,f1 score,0.5514455217623946
+130,haberman,GradientBoostingClassifier,SMOTE,geometric mean score,0.6473909465020576
+131,haberman,GradientBoostingClassifier,SMOTE,roc auc score,0.3900995546838988
+132,haberman,GradientBoostingClassifier,SMOTE2,f1 score,0.5491285675055128
+133,haberman,GradientBoostingClassifier,SMOTE2,geometric mean score,0.6496707818930041
+134,haberman,GradientBoostingClassifier,SMOTE2,roc auc score,0.3873469976646053
+135,haberman,LogisticRegression,KMeansSMOTE,f1 score,0.634816833149128
+136,haberman,LogisticRegression,KMeansSMOTE,geometric mean score,0.6930781893004114
+137,haberman,LogisticRegression,KMeansSMOTE,roc auc score,0.4919243497846348
+138,haberman,LogisticRegression,None,f1 score,0.6448769671728103
+139,haberman,LogisticRegression,None,geometric mean score,0.6862798353909465
+140,haberman,LogisticRegression,None,roc auc score,0.4977473825666198
+141,haberman,LogisticRegression,RandomOverSampler,f1 score,0.6363353221285108
+142,haberman,LogisticRegression,RandomOverSampler,geometric mean score,0.692716049382716
+143,haberman,LogisticRegression,RandomOverSampler,roc auc score,0.49376615382196754
+144,haberman,LogisticRegression,SMOTE,f1 score,0.634816833149128
+145,haberman,LogisticRegression,SMOTE,geometric mean score,0.6930781893004114
+146,haberman,LogisticRegression,SMOTE,roc auc score,0.4919243497846348
+147,haberman,LogisticRegression,SMOTE2,f1 score,0.6448769671728103
+148,haberman,LogisticRegression,SMOTE2,geometric mean score,0.6862798353909465
+149,haberman,LogisticRegression,SMOTE2,roc auc score,0.4977473825666198
+150,heart,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7932295105019808
+151,heart,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8735416666666665
+152,heart,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.7706339755172726
+153,heart,GradientBoostingClassifier,None,f1 score,0.7889439771732075
+154,heart,GradientBoostingClassifier,None,geometric mean score,0.8715166666666667
+155,heart,GradientBoostingClassifier,None,roc auc score,0.765416818628246
+156,heart,GradientBoostingClassifier,RandomOverSampler,f1 score,0.788521377142495
+157,heart,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8688833333333333
+158,heart,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.7655631445064547
+159,heart,GradientBoostingClassifier,SMOTE,f1 score,0.7932295105019808
+160,heart,GradientBoostingClassifier,SMOTE,geometric mean score,0.8735416666666665
+161,heart,GradientBoostingClassifier,SMOTE,roc auc score,0.7706339755172726
+162,heart,GradientBoostingClassifier,SMOTE2,f1 score,0.7889439771732075
+163,heart,GradientBoostingClassifier,SMOTE2,geometric mean score,0.8715166666666667
+164,heart,GradientBoostingClassifier,SMOTE2,roc auc score,0.765416818628246
+165,heart,LogisticRegression,KMeansSMOTE,f1 score,0.8294870607207402
+166,heart,LogisticRegression,KMeansSMOTE,geometric mean score,0.8937666666666667
+167,heart,LogisticRegression,KMeansSMOTE,roc auc score,0.8111441582603206
+168,heart,LogisticRegression,None,f1 score,0.8300296110731169
+169,heart,LogisticRegression,None,geometric mean score,0.8915833333333334
+170,heart,LogisticRegression,None,roc auc score,0.8121381646709593
+171,heart,LogisticRegression,RandomOverSampler,f1 score,0.8286711039164685
+172,heart,LogisticRegression,RandomOverSampler,geometric mean score,0.8938166666666667
+173,heart,LogisticRegression,RandomOverSampler,roc auc score,0.8103293267482161
+174,heart,LogisticRegression,SMOTE,f1 score,0.8294870607207402
+175,heart,LogisticRegression,SMOTE,geometric mean score,0.8937666666666667
+176,heart,LogisticRegression,SMOTE,roc auc score,0.8111441582603206
+177,heart,LogisticRegression,SMOTE2,f1 score,0.8300296110731169
+178,heart,LogisticRegression,SMOTE2,geometric mean score,0.8915833333333334
+179,heart,LogisticRegression,SMOTE2,roc auc score,0.8121381646709593
+180,iris,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.9444355152111076
+181,iris,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9775940634720911
+182,iris,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.9267490730488832
+183,iris,GradientBoostingClassifier,None,f1 score,0.9461256145240263
+184,iris,GradientBoostingClassifier,None,geometric mean score,0.9794006238859179
+185,iris,GradientBoostingClassifier,None,roc auc score,0.9273017398634096
+186,iris,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9428860222894603
+187,iris,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9754360211107616
+188,iris,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.9251515641387558
+189,iris,GradientBoostingClassifier,SMOTE,f1 score,0.9444355152111076
+190,iris,GradientBoostingClassifier,SMOTE,geometric mean score,0.9775940634720911
+191,iris,GradientBoostingClassifier,SMOTE,roc auc score,0.9267490730488832
+192,iris,GradientBoostingClassifier,SMOTE2,f1 score,0.9461256145240263
+193,iris,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9794006238859179
+194,iris,GradientBoostingClassifier,SMOTE2,roc auc score,0.9273017398634096
+195,iris,LogisticRegression,KMeansSMOTE,f1 score,0.7287092279107433
+196,iris,LogisticRegression,KMeansSMOTE,geometric mean score,0.7903406906434588
+197,iris,LogisticRegression,KMeansSMOTE,roc auc score,0.6466715165727519
+198,iris,LogisticRegression,None,f1 score,0.710652673522655
+199,iris,LogisticRegression,None,geometric mean score,0.7459676785152564
+200,iris,LogisticRegression,None,roc auc score,0.6303939029835737
+201,iris,LogisticRegression,RandomOverSampler,f1 score,0.7293821540950389
+202,iris,LogisticRegression,RandomOverSampler,geometric mean score,0.7854396036489463
+203,iris,LogisticRegression,RandomOverSampler,roc auc score,0.6472940348426396
+204,iris,LogisticRegression,SMOTE,f1 score,0.7287092279107433
+205,iris,LogisticRegression,SMOTE,geometric mean score,0.7903406906434588
+206,iris,LogisticRegression,SMOTE,roc auc score,0.6466715165727519
+207,iris,LogisticRegression,SMOTE2,f1 score,0.710652673522655
+208,iris,LogisticRegression,SMOTE2,geometric mean score,0.7459676785152564
+209,iris,LogisticRegression,SMOTE2,roc auc score,0.6303939029835737
+210,libra,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.9005376324219055
+211,libra,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9718171296296296
+212,libra,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.8814041311581897
+213,libra,GradientBoostingClassifier,None,f1 score,0.8999695901505333
+214,libra,GradientBoostingClassifier,None,geometric mean score,0.9677951388888889
+215,libra,GradientBoostingClassifier,None,roc auc score,0.8790663904416848
+216,libra,GradientBoostingClassifier,RandomOverSampler,f1 score,0.883762806230288
+217,libra,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9720775462962962
+218,libra,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.8632041483192836
+219,libra,GradientBoostingClassifier,SMOTE,f1 score,0.9005376324219055
+220,libra,GradientBoostingClassifier,SMOTE,geometric mean score,0.9718171296296296
+221,libra,GradientBoostingClassifier,SMOTE,roc auc score,0.8814041311581897
+222,libra,GradientBoostingClassifier,SMOTE2,f1 score,0.8999695901505333
+223,libra,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9677951388888889
+224,libra,GradientBoostingClassifier,SMOTE2,roc auc score,0.8790663904416848
+225,libra,LogisticRegression,KMeansSMOTE,f1 score,0.7593807207308274
+226,libra,LogisticRegression,KMeansSMOTE,geometric mean score,0.793214699074074
+227,libra,LogisticRegression,KMeansSMOTE,roc auc score,0.5939666869512003
+228,libra,LogisticRegression,None,f1 score,0.6790042521654692
+229,libra,LogisticRegression,None,geometric mean score,0.7144386574074074
+230,libra,LogisticRegression,None,roc auc score,0.499642810515286
+231,libra,LogisticRegression,RandomOverSampler,f1 score,0.7411761076881462
+232,libra,LogisticRegression,RandomOverSampler,geometric mean score,0.7888744212962964
+233,libra,LogisticRegression,RandomOverSampler,roc auc score,0.5694102881502875
+234,libra,LogisticRegression,SMOTE,f1 score,0.7593807207308274
+235,libra,LogisticRegression,SMOTE,geometric mean score,0.793214699074074
+236,libra,LogisticRegression,SMOTE,roc auc score,0.5939666869512003
+237,libra,LogisticRegression,SMOTE2,f1 score,0.6790042521654692
+238,libra,LogisticRegression,SMOTE2,geometric mean score,0.7144386574074074
+239,libra,LogisticRegression,SMOTE2,roc auc score,0.499642810515286
+240,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.6913004604664709
+241,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.7539413931937919
+242,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.6449840125849197
+243,liver_disorders,GradientBoostingClassifier,None,f1 score,0.6902606145008188
+244,liver_disorders,GradientBoostingClassifier,None,geometric mean score,0.7502315487856532
+245,liver_disorders,GradientBoostingClassifier,None,roc auc score,0.6462130474078457
+246,liver_disorders,GradientBoostingClassifier,RandomOverSampler,f1 score,0.6893183158995683
+247,liver_disorders,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.7518870487287332
+248,liver_disorders,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.642657912871574
+249,liver_disorders,GradientBoostingClassifier,SMOTE,f1 score,0.6913004604664709
+250,liver_disorders,GradientBoostingClassifier,SMOTE,geometric mean score,0.7539413931937919
+251,liver_disorders,GradientBoostingClassifier,SMOTE,roc auc score,0.6449840125849197
+252,liver_disorders,GradientBoostingClassifier,SMOTE2,f1 score,0.6902606145008188
+253,liver_disorders,GradientBoostingClassifier,SMOTE2,geometric mean score,0.7502315487856532
+254,liver_disorders,GradientBoostingClassifier,SMOTE2,roc auc score,0.6462130474078457
+255,liver_disorders,LogisticRegression,KMeansSMOTE,f1 score,0.6597087539034227
+256,liver_disorders,LogisticRegression,KMeansSMOTE,geometric mean score,0.7097176423335805
+257,liver_disorders,LogisticRegression,KMeansSMOTE,roc auc score,0.6229360882013972
+258,liver_disorders,LogisticRegression,None,f1 score,0.6493136070949642
+259,liver_disorders,LogisticRegression,None,geometric mean score,0.7059677583531528
+260,liver_disorders,LogisticRegression,None,roc auc score,0.6135960134552929
+261,liver_disorders,LogisticRegression,RandomOverSampler,f1 score,0.6602400369550636
+262,liver_disorders,LogisticRegression,RandomOverSampler,geometric mean score,0.7093337777972641
+263,liver_disorders,LogisticRegression,RandomOverSampler,roc auc score,0.6248723237959967
+264,liver_disorders,LogisticRegression,SMOTE,f1 score,0.6597087539034227
+265,liver_disorders,LogisticRegression,SMOTE,geometric mean score,0.7097176423335805
+266,liver_disorders,LogisticRegression,SMOTE,roc auc score,0.6229360882013972
+267,liver_disorders,LogisticRegression,SMOTE2,f1 score,0.6493136070949642
+268,liver_disorders,LogisticRegression,SMOTE2,geometric mean score,0.7059677583531528
+269,liver_disorders,LogisticRegression,SMOTE2,roc auc score,0.6135960134552929
+270,pima,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7332210700960022
+271,pima,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.818284901400364
+272,pima,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.6573233986338218
+273,pima,GradientBoostingClassifier,None,f1 score,0.7344308894695437
+274,pima,GradientBoostingClassifier,None,geometric mean score,0.8139050531819955
+275,pima,GradientBoostingClassifier,None,roc auc score,0.6586650665817035
+276,pima,GradientBoostingClassifier,RandomOverSampler,f1 score,0.7307082134100169
+277,pima,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8197284873118855
+278,pima,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.6539251811533152
+279,pima,GradientBoostingClassifier,SMOTE,f1 score,0.7332210700960022
+280,pima,GradientBoostingClassifier,SMOTE,geometric mean score,0.818284901400364
+281,pima,GradientBoostingClassifier,SMOTE,roc auc score,0.6573233986338218
+282,pima,GradientBoostingClassifier,SMOTE2,f1 score,0.7344308894695437
+283,pima,GradientBoostingClassifier,SMOTE2,geometric mean score,0.8139050531819955
+284,pima,GradientBoostingClassifier,SMOTE2,roc auc score,0.6586650665817035
+285,pima,LogisticRegression,KMeansSMOTE,f1 score,0.7431100969214902
+286,pima,LogisticRegression,KMeansSMOTE,geometric mean score,0.8209681970235184
+287,pima,LogisticRegression,KMeansSMOTE,roc auc score,0.6691795963348234
+288,pima,LogisticRegression,None,f1 score,0.7441135924989452
+289,pima,LogisticRegression,None,geometric mean score,0.820690966486923
+290,pima,LogisticRegression,None,roc auc score,0.6719164262631967
+291,pima,LogisticRegression,RandomOverSampler,f1 score,0.7435547179138312
+292,pima,LogisticRegression,RandomOverSampler,geometric mean score,0.8221302974124851
+293,pima,LogisticRegression,RandomOverSampler,roc auc score,0.6698016628838681
+294,pima,LogisticRegression,SMOTE,f1 score,0.7431100969214902
+295,pima,LogisticRegression,SMOTE,geometric mean score,0.8209681970235184
+296,pima,LogisticRegression,SMOTE,roc auc score,0.6691795963348234
+297,pima,LogisticRegression,SMOTE2,f1 score,0.7441135924989452
+298,pima,LogisticRegression,SMOTE2,geometric mean score,0.820690966486923
+299,pima,LogisticRegression,SMOTE2,roc auc score,0.6719164262631967
+300,segment,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.965083207790373
+301,segment,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9939933425160697
+302,segment,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.8990251290662945
+303,segment,GradientBoostingClassifier,None,f1 score,0.9616783961099756
+304,segment,GradientBoostingClassifier,None,geometric mean score,0.9929940312213039
+305,segment,GradientBoostingClassifier,None,roc auc score,0.8941184602984459
+306,segment,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9608431480448296
+307,segment,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9935805785123968
+308,segment,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.8949128443932984
+309,segment,GradientBoostingClassifier,SMOTE,f1 score,0.965083207790373
+310,segment,GradientBoostingClassifier,SMOTE,geometric mean score,0.9939933425160697
+311,segment,GradientBoostingClassifier,SMOTE,roc auc score,0.8990251290662945
+312,segment,GradientBoostingClassifier,SMOTE2,f1 score,0.9616783961099756
+313,segment,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9929940312213039
+314,segment,GradientBoostingClassifier,SMOTE2,roc auc score,0.8941184602984459
+315,segment,LogisticRegression,KMeansSMOTE,f1 score,0.8789566818220823
+316,segment,LogisticRegression,KMeansSMOTE,geometric mean score,0.9418934802571165
+317,segment,LogisticRegression,KMeansSMOTE,roc auc score,0.6456262755215049
+318,segment,LogisticRegression,None,f1 score,0.882280927322417
+319,segment,LogisticRegression,None,geometric mean score,0.931168044077135
+320,segment,LogisticRegression,None,roc auc score,0.6329016991834281
+321,segment,LogisticRegression,RandomOverSampler,f1 score,0.8794879754620529
+322,segment,LogisticRegression,RandomOverSampler,geometric mean score,0.9413888888888889
+323,segment,LogisticRegression,RandomOverSampler,roc auc score,0.6383827740162574
+324,segment,LogisticRegression,SMOTE,f1 score,0.8789566818220823
+325,segment,LogisticRegression,SMOTE,geometric mean score,0.9418934802571165
+326,segment,LogisticRegression,SMOTE,roc auc score,0.6456262755215049
+327,segment,LogisticRegression,SMOTE2,f1 score,0.882280927322417
+328,segment,LogisticRegression,SMOTE2,geometric mean score,0.931168044077135
+329,segment,LogisticRegression,SMOTE2,roc auc score,0.6329016991834281
+330,vehicle,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.9523551614726934
+331,vehicle,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9926176851530462
+332,vehicle,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.9155894265297295
+333,vehicle,GradientBoostingClassifier,None,f1 score,0.9548181300140817
+334,vehicle,GradientBoostingClassifier,None,geometric mean score,0.993615358497103
+335,vehicle,GradientBoostingClassifier,None,roc auc score,0.9200618904066007
+336,vehicle,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9549325854327477
+337,vehicle,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.992978987523947
+338,vehicle,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.9183941449238432
+339,vehicle,GradientBoostingClassifier,SMOTE,f1 score,0.9523551614726934
+340,vehicle,GradientBoostingClassifier,SMOTE,geometric mean score,0.9926176851530462
+341,vehicle,GradientBoostingClassifier,SMOTE,roc auc score,0.9155894265297295
+342,vehicle,GradientBoostingClassifier,SMOTE2,f1 score,0.9548181300140817
+343,vehicle,GradientBoostingClassifier,SMOTE2,geometric mean score,0.993615358497103
+344,vehicle,GradientBoostingClassifier,SMOTE2,roc auc score,0.9200618904066007
+345,vehicle,LogisticRegression,KMeansSMOTE,f1 score,0.9617536061281766
+346,vehicle,LogisticRegression,KMeansSMOTE,geometric mean score,0.9935156375289527
+347,vehicle,LogisticRegression,KMeansSMOTE,roc auc score,0.9320319574001271
+348,vehicle,LogisticRegression,None,f1 score,0.9631263296826557
+349,vehicle,LogisticRegression,None,geometric mean score,0.9934163283626238
+350,vehicle,LogisticRegression,None,roc auc score,0.9347305548788227
+351,vehicle,LogisticRegression,RandomOverSampler,f1 score,0.9616412949585463
+352,vehicle,LogisticRegression,RandomOverSampler,geometric mean score,0.9934913899170136
+353,vehicle,LogisticRegression,RandomOverSampler,roc auc score,0.928296561322826
+354,vehicle,LogisticRegression,SMOTE,f1 score,0.9617536061281766
+355,vehicle,LogisticRegression,SMOTE,geometric mean score,0.9935156375289527
+356,vehicle,LogisticRegression,SMOTE,roc auc score,0.9320319574001271
+357,vehicle,LogisticRegression,SMOTE2,f1 score,0.9631263296826557
+358,vehicle,LogisticRegression,SMOTE2,geometric mean score,0.9934163283626238
+359,vehicle,LogisticRegression,SMOTE2,roc auc score,0.9347305548788227
+360,wine,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.9196795749677091
+361,wine,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9789589563683766
+362,wine,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.9052516111014622
+363,wine,GradientBoostingClassifier,None,f1 score,0.9183942295007851
+364,wine,GradientBoostingClassifier,None,geometric mean score,0.9716912525879918
+365,wine,GradientBoostingClassifier,None,roc auc score,0.9053455318248513
+366,wine,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9218724932460297
+367,wine,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9751970947396671
+368,wine,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.9093830226093264
+369,wine,GradientBoostingClassifier,SMOTE,f1 score,0.9196795749677091
+370,wine,GradientBoostingClassifier,SMOTE,geometric mean score,0.9789589563683766
+371,wine,GradientBoostingClassifier,SMOTE,roc auc score,0.9052516111014622
+372,wine,GradientBoostingClassifier,SMOTE2,f1 score,0.9183942295007851
+373,wine,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9716912525879918
+374,wine,GradientBoostingClassifier,SMOTE2,roc auc score,0.9053455318248513
+375,wine,LogisticRegression,KMeansSMOTE,f1 score,0.9356960155089407
+376,wine,LogisticRegression,KMeansSMOTE,geometric mean score,0.9890474752703013
+377,wine,LogisticRegression,KMeansSMOTE,roc auc score,0.9227283293295013
+378,wine,LogisticRegression,None,f1 score,0.9406297273583398
+379,wine,LogisticRegression,None,geometric mean score,0.9884245360785215
+380,wine,LogisticRegression,None,roc auc score,0.9278300576190057
+381,wine,LogisticRegression,RandomOverSampler,f1 score,0.9359029804968015
+382,wine,LogisticRegression,RandomOverSampler,geometric mean score,0.9886428858983205
+383,wine,LogisticRegression,RandomOverSampler,roc auc score,0.9227101796671136
+384,wine,LogisticRegression,SMOTE,f1 score,0.9356960155089407
+385,wine,LogisticRegression,SMOTE,geometric mean score,0.9890474752703013
+386,wine,LogisticRegression,SMOTE,roc auc score,0.9227283293295013
+387,wine,LogisticRegression,SMOTE2,f1 score,0.9406297273583398
+388,wine,LogisticRegression,SMOTE2,geometric mean score,0.9884245360785215
+389,wine,LogisticRegression,SMOTE2,roc auc score,0.9278300576190057

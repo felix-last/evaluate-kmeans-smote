@@ -1,0 +1,4 @@
+Classifier,Metric,KMeansSMOTE,None,RandomOverSampler,SMOTE,SMOTE2
+LogisticRegression,f1 score,3,2,1,4,5
+LogisticRegression,geometric mean score,2,3,5,4,1
+LogisticRegression,roc auc score,4,3,2,1,5

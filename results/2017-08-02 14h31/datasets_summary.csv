@@ -1,0 +1,14 @@
+,Dataset name,# of features,# of instances,# of minority instances,# of majority instances,Imbalance Ratio
+0,glass,9,214,70,144,2.06
+1,segment,16,2310,330,1980,6.0
+2,haberman,3,306,81,225,2.78
+3,vehicle,18,846,199,647,3.25
+4,breast_tissue,9,106,36,70,1.94
+5,iris,4,150,50,100,2.0
+6,heart,13,270,120,150,1.25
+7,libra,90,360,72,288,4.0
+8,wine,13,178,71,107,1.51
+9,ecoli,7,336,52,284,5.46
+10,liver_disorders,6,345,145,200,1.38
+11,pima,8,768,268,500,1.87
+12,eucalyptus,8,642,98,544,5.55

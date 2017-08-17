@@ -1,0 +1,31 @@
+,Dataset,Classifier,Oversampling method,Metric,Std CV score
+0,creditcard_scaled,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.00482791806091366
+1,creditcard_scaled,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.010567538524063485
+2,creditcard_scaled,GradientBoostingClassifier,KMeansSMOTE,roc auc score,0.005165086029741708
+3,creditcard_scaled,GradientBoostingClassifier,None,f1 score,0.0031295238296565053
+4,creditcard_scaled,GradientBoostingClassifier,None,geometric mean score,0.007832503018978997
+5,creditcard_scaled,GradientBoostingClassifier,None,roc auc score,0.003271351037144934
+6,creditcard_scaled,GradientBoostingClassifier,RandomOverSampler,f1 score,0.002067242157674428
+7,creditcard_scaled,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.008958907974442737
+8,creditcard_scaled,GradientBoostingClassifier,RandomOverSampler,roc auc score,0.002087988490998424
+9,creditcard_scaled,GradientBoostingClassifier,SMOTE,f1 score,0.0031295238296565053
+10,creditcard_scaled,GradientBoostingClassifier,SMOTE,geometric mean score,0.007832503018978997
+11,creditcard_scaled,GradientBoostingClassifier,SMOTE,roc auc score,0.003271351037144934
+12,creditcard_scaled,GradientBoostingClassifier,SMOTE2,f1 score,0.006550555769359761
+13,creditcard_scaled,GradientBoostingClassifier,SMOTE2,geometric mean score,0.020081537186697546
+14,creditcard_scaled,GradientBoostingClassifier,SMOTE2,roc auc score,0.005058812208058417
+15,creditcard_scaled,LogisticRegression,KMeansSMOTE,f1 score,0.005213873542020167
+16,creditcard_scaled,LogisticRegression,KMeansSMOTE,geometric mean score,0.030485967068591444
+17,creditcard_scaled,LogisticRegression,KMeansSMOTE,roc auc score,0.02857978309282507
+18,creditcard_scaled,LogisticRegression,None,f1 score,0.0020184501843996047
+19,creditcard_scaled,LogisticRegression,None,geometric mean score,0.0026854932199037907
+20,creditcard_scaled,LogisticRegression,None,roc auc score,0.001449649907297654
+21,creditcard_scaled,LogisticRegression,RandomOverSampler,f1 score,0.0016783091321850732
+22,creditcard_scaled,LogisticRegression,RandomOverSampler,geometric mean score,0.0020292613838400067
+23,creditcard_scaled,LogisticRegression,RandomOverSampler,roc auc score,0.001722189466729696
+24,creditcard_scaled,LogisticRegression,SMOTE,f1 score,0.0020184501843996047
+25,creditcard_scaled,LogisticRegression,SMOTE,geometric mean score,0.0026854932199037907
+26,creditcard_scaled,LogisticRegression,SMOTE,roc auc score,0.001449649907297654
+27,creditcard_scaled,LogisticRegression,SMOTE2,f1 score,0.0026433804060592464
+28,creditcard_scaled,LogisticRegression,SMOTE2,geometric mean score,0.02529509780016793
+29,creditcard_scaled,LogisticRegression,SMOTE2,roc auc score,0.0015354222718213498

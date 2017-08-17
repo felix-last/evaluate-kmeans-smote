@@ -1,0 +1,16 @@
+,Dataset,Classifier,Oversampling method,Metric,Std CV score
+0,creditcard_scaled,LogisticRegression,KMeansSMOTE,f1 score,0.004779263583599833
+1,creditcard_scaled,LogisticRegression,KMeansSMOTE,geometric mean score,0.03439861427394666
+2,creditcard_scaled,LogisticRegression,KMeansSMOTE,roc auc score,0.07043454435931794
+3,creditcard_scaled,LogisticRegression,None,f1 score,0.0007962959965520315
+4,creditcard_scaled,LogisticRegression,None,geometric mean score,0.0017693521747750485
+5,creditcard_scaled,LogisticRegression,None,roc auc score,0.002226000556917161
+6,creditcard_scaled,LogisticRegression,RandomOverSampler,f1 score,0.0012251386520498197
+7,creditcard_scaled,LogisticRegression,RandomOverSampler,geometric mean score,0.002640445446281988
+8,creditcard_scaled,LogisticRegression,RandomOverSampler,roc auc score,0.001256448875588958
+9,creditcard_scaled,LogisticRegression,SMOTE,f1 score,0.0014005278158004315
+10,creditcard_scaled,LogisticRegression,SMOTE,geometric mean score,0.002068638616119362
+11,creditcard_scaled,LogisticRegression,SMOTE,roc auc score,0.0014182596746950245
+12,creditcard_scaled,LogisticRegression,SMOTE2,f1 score,0.002637689792612233
+13,creditcard_scaled,LogisticRegression,SMOTE2,geometric mean score,0.002642356387261255
+14,creditcard_scaled,LogisticRegression,SMOTE2,roc auc score,0.027649957713377915

@@ -1,0 +1,4 @@
+Classifier,Metric,p-value
+LogisticRegression,f1 score,0.0007667829970737756
+LogisticRegression,geometric mean score,0.2245273535357476
+LogisticRegression,roc auc score,9.681126986740258e-06

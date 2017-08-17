@@ -1,0 +1,4 @@
+Classifier,Metric,KMeansSMOTE,KMeansSMOTE2,KMeansSMOTE3,KMeansSMOTE4,None,RandomOverSampler,SMOTE,SMOTE2
+LogisticRegression,f1 score,4.54,4.0,5.38,5.23,6.77,3.54,2.62,3.92
+LogisticRegression,geometric mean score,4.38,5.54,4.92,4.54,3.38,3.62,4.15,5.46
+LogisticRegression,roc auc score,5.62,4.62,4.85,4.54,7.31,3.46,2.46,3.15

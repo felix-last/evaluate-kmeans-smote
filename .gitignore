@@ -6,3 +6,5 @@ imblearn
 imbtools
 dist/
 config.yml
+results/**/*.pdf
+results/**/*.png

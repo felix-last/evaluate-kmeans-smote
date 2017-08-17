@@ -1,0 +1,1 @@
+oversampling_methods = [None, RandomOverSampler(), SMOTE(), SMOTE(kind='borderline1'), KMeansSMOTE(imbalance_ratio_threshold=float('Inf'), kmeans_args={'n_clusters':1})]

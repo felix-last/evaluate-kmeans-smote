@@ -1,0 +1,2 @@
+classifiers = [LogisticRegression()]#, GradientBoostingClassifier()]
+oversampling_methods = [None, RandomOverSampler(), SMOTE(), SMOTE(kind='borderline1'), KMeansSMOTE(), KMeansSMOTE(minority_weight=0.5), KMeansSMOTE(minority_weight=0.9), KMeansSMOTE(smote_args={'k_neighbors'1000})]

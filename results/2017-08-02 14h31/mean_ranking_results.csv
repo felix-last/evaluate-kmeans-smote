@@ -1,0 +1,7 @@
+Classifier,Metric,KMeansSMOTE,None,RandomOverSampler,SMOTE,SMOTE2
+GradientBoostingClassifier,f1 score,2.46,3.31,2.69,2.77,3.77
+GradientBoostingClassifier,geometric mean score,2.69,3.31,2.77,2.92,3.31
+GradientBoostingClassifier,roc auc score,2.85,3.31,3.62,2.69,2.54
+LogisticRegression,f1 score,2.69,3.54,2.69,2.08,4.0
+LogisticRegression,geometric mean score,2.69,3.08,3.31,2.46,3.46
+LogisticRegression,roc auc score,3.08,3.23,3.0,2.62,3.08
