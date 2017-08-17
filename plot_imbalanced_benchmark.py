@@ -16,22 +16,23 @@ with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 
-def createPdf(session_id):
+def create_pdf(session_id, friedman_test=True, mean_cv=True, roc=True):
     path = cfg['results_dir']
-    experiment = loadExperiment(session_id)
+    experiment = load_experiment(session_id)
 
     with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
-        if 'friedman_test_results' in experiment:
+        if friedman_test and 'friedman_test_results' in experiment:
             fig, title = plot_mean_ranking(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
-        if 'mean_cv_results' in experiment:
+        if mean_cv and 'mean_cv_results' in experiment:
             fig, title = plot_cross_validation_mean_results(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
-        if 'roc' in experiment:
-            fig, title = plot_roc(experiment)
-            pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
+        if roc and 'roc' in experiment:
+            figs, titles = plot_roc(experiment)
+            for fig, title in zip(figs, titles):
+                pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
 
-def loadExperiment(session_id):
+def load_experiment(session_id):
     path = cfg['results_dir']
     experiment = {}
     try:
@@ -163,20 +164,30 @@ def plot_cross_validation_mean_results(experiment):
     return fig, title
 
 def plot_roc(experiment):
-    col_count = 3
-    row_count = math.ceil(experiment['roc'].shape[0] / 3)
-    fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        5 * col_count, 5 * row_count), sharey='row', sharex='col')
-    fig.tight_layout()
-    if row_count == 1:
-        axes = [axes]
-    for i, row in experiment['roc'].iterrows():
-        ax = axes[i // col_count][i % col_count]
-        fpr = np.asarray(row[4:-100])
-        tpr = np.asarray(row[-100:])
-        ax.set_title('{} {} {} AUC={}'.format(*row[:3], round(row[3], 4)))
-        ax.plot(fpr, tpr, lw=1)
-    unused_ax = (row_count * col_count) % experiment['roc'].shape[0]
-    [fig.delaxes(ax) for ax in axes[-1][-unused_ax:]]
-    title = plt.suptitle('ROC Curves', fontsize=14,  y=1.02)
-    return fig, title
+    figs, titles = [], []
+    dataframes_per_dataset = [experiment['roc'][experiment['roc']['Dataset'] == dataset_name].reset_index(drop=True) for dataset_name in np.unique(experiment['roc']['Dataset']) ]
+    for df in dataframes_per_dataset:
+        col_count = 3
+        row_count = math.ceil(df.shape[0] / col_count)
+        fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
+            5 * col_count, 5 * row_count), sharey='row', sharex='col')
+        if row_count == 1:
+            axes = [axes]
+        for i, row in df.iterrows():
+            ax = axes[i // col_count][i % col_count]
+            fpr = np.asarray(row[4:-100])
+            tpr = np.asarray(row[-100:])
+            ax.set_title('{} {} {}'.format(*row[:3]))
+            ax.plot(fpr, tpr, lw=1)
+            ax.text(.98, .98,
+                'AUC: {}'.format(round(row[3], 4)),
+                transform=ax.transAxes, horizontalalignment='right', verticalalignment='top')
+        unused_ax = (row_count * col_count) % df.shape[0]
+        [fig.delaxes(ax) for ax in axes[-1][-unused_ax:]]
+        # fig.tight_layout() # makes pdfpages empty
+        title = plt.suptitle('ROC Curves: {}'.format(df.iloc[0,0]),
+            fontsize=14,  y=1)
+        figs.append(fig)
+        titles.append(title)
+
+    return figs, titles
