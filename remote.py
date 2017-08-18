@@ -51,9 +51,9 @@ def terminate_instance(instance_id):
     print('Terminate instance response:', response)
 
 
-def setup_instance(instance_id):
+def setup_instance(instance_id, dataset=None):
     _exec_shell_script_via_ssl(instance_id, 'remote/setup_instance.sh')
-    _configure(instance_id)
+    _configure(instance_id, dataset)
 
 
 def load_dataset(instance_id):
@@ -134,7 +134,10 @@ def main():
     if 'start' in actions:
         start_instance(instance_id)
     if 'setup' in actions:
-        setup_instance(instance_id)
+        # test if next argument is a datset
+        d = actions[actions.index('dataset') + 1]
+        dataset = d if d in cfg['dataset_urls'] else None
+        setup_instance(instance_id, dataset)
     if 'dataset' in actions:
         dataset = actions[actions.index('dataset') + 1]
         _configure(instance_id, dataset)
