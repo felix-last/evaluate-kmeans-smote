@@ -135,7 +135,7 @@ def main():
         start_instance(instance_id)
     if 'setup' in actions:
         # test if next argument is a datset
-        d = actions[actions.index('dataset') + 1]
+        d = actions[actions.index('setup') + 1]
         dataset = d if d in cfg['dataset_urls'] else None
         setup_instance(instance_id, dataset)
     if 'dataset' in actions:
