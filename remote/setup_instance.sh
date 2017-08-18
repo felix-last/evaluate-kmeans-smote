@@ -5,6 +5,7 @@
 # cat run_remote_experiment.sh | ssh -t user@host.com
 
 sudo apt-get --yes install python3-tk
+sudo apt-get --yes install htop
 
 git clone -b current_experiment https://github.com/felix-last/evaluate-kmeans-smote
 

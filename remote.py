@@ -138,6 +138,8 @@ def main():
         d = actions[actions.index('setup') + 1]
         dataset = d if d in cfg['dataset_urls'] else None
         setup_instance(instance_id, dataset)
+        if dataset is not None:
+            load_dataset(instance_id)
     if 'dataset' in actions:
         dataset = actions[actions.index('dataset') + 1]
         _configure(instance_id, dataset)
