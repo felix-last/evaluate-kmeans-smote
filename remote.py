@@ -104,11 +104,18 @@ def _run_experiment():
     """
     Executed locally from the instance to run the experiment and shutdown / notify once finished.
     """
-    imbalanced_benchmark.main()
-    # when done, shutdown instance and notify
-    instance_id = cfg['instance_id']
-    requests.post(cfg['notification_url'], data={'value1': instance_id})
-    stop_instance(instance_id)
+    try:
+        imbalanced_benchmark.main()
+        status = 'completed'
+    except Exception as err:
+        status = 'error'
+        with open("~/exception.log", "w") as exceptionlog:
+            exceptionlog.write(str(err))
+    finally:
+        # when done, shutdown instance and notify
+        instance_id = cfg['instance_id']
+        requests.post(cfg['notification_url'], data={'value1': instance_id, 'value2':status})
+        stop_instance(instance_id)
 
 
 def _load_dataset():
