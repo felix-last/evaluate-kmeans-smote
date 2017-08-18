@@ -8,6 +8,7 @@
 
 import os
 import sys
+import traceback
 import boto3
 import requests
 import yaml
@@ -104,13 +105,14 @@ def _run_experiment():
     """
     Executed locally from the instance to run the experiment and shutdown / notify once finished.
     """
+    user = cfg['remote']['user']
     try:
         imbalanced_benchmark.main()
         status = 'completed'
     except Exception as err:
         status = 'error'
-        with open("~/exception.log", "w") as exceptionlog:
-            exceptionlog.write(str(err))
+        with open("/home/{}/exception.log".format(user), "w") as exceptionlog:
+            exceptionlog.write(traceback.format_exc())
     finally:
         # when done, shutdown instance and notify
         instance_id = cfg['instance_id']
