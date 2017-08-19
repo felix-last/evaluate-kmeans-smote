@@ -15,7 +15,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'First successful run with biddings',
+        'comment': 'CC ROC',
         'experiment_repetitions': 1,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -43,7 +43,7 @@ def main():
 
     with warnings.catch_warnings():
         warnings.filterwarnings(action='ignore', message='Adapting smote_args\.k_neighbors')
-        experiment.run(logging_results=False)
+        experiment.roc()
 
     path = cfg['results_dir']
     if 'session_id' not in globals():
