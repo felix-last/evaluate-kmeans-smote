@@ -1,0 +1,13 @@
+Classifier,Metric,KMeansSMOTE,None,RandomOverSampler,RandomUnderSampler,SMOTE,SMOTE2
+GradientBoostingClassifier,f1 score,1.92,1.46,3.38,6.0,3.92,4.31
+GradientBoostingClassifier,geometric mean score,3.31,3.31,3.31,5.46,2.54,3.08
+GradientBoostingClassifier,precision score,3.62,4.38,3.15,4.46,2.62,2.77
+GradientBoostingClassifier,recall score,4.15,5.08,3.0,3.77,2.23,2.77
+GradientBoostingClassifier,roc auc score,1.92,1.54,3.46,6.0,3.77,4.31
+GradientBoostingClassifier,specificity score,4.92,6.0,3.62,1.0,2.92,2.54
+LogisticRegression,f1 score,2.38,1.0,4.08,5.54,3.0,5.0
+LogisticRegression,geometric mean score,4.0,2.46,2.69,5.23,2.23,4.38
+LogisticRegression,precision score,3.69,5.08,3.0,4.08,2.0,3.15
+LogisticRegression,recall score,4.38,5.54,2.77,3.69,2.0,2.62
+LogisticRegression,roc auc score,2.31,1.38,4.0,5.46,3.0,4.85
+LogisticRegression,specificity score,5.0,6.0,3.08,1.62,3.38,1.92
