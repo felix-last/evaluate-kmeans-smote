@@ -15,20 +15,19 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'CC ROC',
-        'experiment_repetitions': 1,
+        'comment': 'CC Grid Search',
+        'experiment_repetitions': 5,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
     classifiers = [LogisticRegression(), GradientBoostingClassifier()]
     oversampling_methods = [
-        None,
-        RandomUnderSampler(),
-        RandomOverSampler(),
         SMOTE(),
-        SMOTE(kind='borderline1'),
-        KMeansSMOTE(kmeans_args={'n_clusters': 2000, 'batch_size':10000, 'reassignment_ratio': 10**-5})
+        KMeansSMOTE(kmeans_args={'n_clusters': 500, 'batch_size':10000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters': 2000, 'batch_size':10000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(smote_args={'k_neighbors':1000},kmeans_args={'n_clusters': 2000, 'batch_size':10000, 'reassignment_ratio': 10**-5})
+
     ]
 
     experiment = BinaryExperiment(
@@ -43,7 +42,7 @@ def main():
 
     with warnings.catch_warnings():
         warnings.filterwarnings(action='ignore', message='Adapting smote_args\.k_neighbors')
-        experiment.roc()
+        experiment.run()
 
     path = cfg['results_dir']
     if 'session_id' not in globals():
