@@ -1,0 +1,5 @@
+comment,100 repetitions of classic datasets
+experiment_repetitions,100
+n_splits,3
+oversampling_methods,"[None, RandomUnderSampler(random_state=303174063, ratio='auto', replacement=False, return_indices=False), RandomOverSampler(random_state=303174063, ratio='auto'), SMOTE(k=None, k_neighbors=5, kind='regular', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=303174063, ratio='auto', svm_estimator=None), SMOTE(k=None, k_neighbors=5, kind='borderline1', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=303174063, ratio='auto', svm_estimator=None), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=0.66, n_jobs=-1, random_state=303174063, ratio='auto', smote_args={}, use_minibatch_kmeans=True)]"
+random_seed,303174162
