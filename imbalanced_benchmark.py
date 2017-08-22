@@ -35,7 +35,9 @@ def main():
         KMeansSMOTE(kmeans_args={'n_clusters':300}),
         KMeansSMOTE(kmeans_args={'n_clusters':500}),
         KMeansSMOTE(kmeans_args={'n_clusters':750}),
-        KMeansSMOTE(kmeans_args={'n_clusters':1000})
+        KMeansSMOTE(kmeans_args={'n_clusters':1000}),
+        KMeansSMOTE(kmeans_args={'n_clusters':1500}),
+        KMeansSMOTE(kmeans_args={'n_clusters':2000})
     ]
 
     experiment = BinaryExperiment(
