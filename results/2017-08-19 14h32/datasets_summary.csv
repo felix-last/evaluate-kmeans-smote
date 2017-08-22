@@ -1,0 +1,2 @@
+,Dataset name,# of features,# of instances,# of minority instances,# of majority instances,Imbalance Ratio
+0,biddings_scaled,89,1000000,1908,998092,523.11

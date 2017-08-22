@@ -1,0 +1,2 @@
+,Dataset name,# of features,# of instances,# of minority instances,# of majority instances,Imbalance Ratio
+0,creditcard_scaled,30,284807,492,284315,577.88

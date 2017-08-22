@@ -129,14 +129,18 @@ def plot_cross_validation_mean_results(experiment):
                 mean_filtered = mean_filtered.drop(
                     ['Classifier', 'Metric', 'Dataset', 'Unnamed: 0'], axis=1)
 
-                std_filtered = experiment['std_cv_results']
-                std_filtered = std_filtered[
-                    (std_filtered['Classifier'] == classifier)
-                    & (std_filtered['Metric'] == metric)
-                    & (std_filtered['Dataset'] == dataset)
-                ]
-                std_filtered = std_filtered.drop(
-                    ['Classifier', 'Metric', 'Dataset', 'Unnamed: 0'], axis=1)
+                if 'std_cv_results' in experiment:
+                    std_filtered = experiment['std_cv_results']
+                    std_filtered = std_filtered[
+                        (std_filtered['Classifier'] == classifier)
+                        & (std_filtered['Metric'] == metric)
+                        & (std_filtered['Dataset'] == dataset)
+                    ]
+                    std_filtered = std_filtered.drop(
+                        ['Classifier', 'Metric', 'Dataset', 'Unnamed: 0'], axis=1)
+                    yerr = std_filtered['Std CV score']
+                else:
+                    yerr = None
 
                 ax = axes[len(datasets) * i + k][j]
                 methods_encoded = np.asarray(
@@ -147,7 +151,7 @@ def plot_cross_validation_mean_results(experiment):
                     mean_filtered['Mean CV score'],
                     0.5,
                     #                 color= method_colors,
-                    yerr=std_filtered['Std CV score'],
+                    yerr=yerr,
                     ecolor='black'
                 )
                 ax.set_ylim((0, 1))
