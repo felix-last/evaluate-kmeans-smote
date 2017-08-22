@@ -1,0 +1,13 @@
+Classifier,Metric,KMeansSMOTE,KMeansSMOTE2,KMeansSMOTE3,SMOTE
+GradientBoostingClassifier,f1 score,3,2,1,4
+GradientBoostingClassifier,geometric mean score,4,3,2,1
+GradientBoostingClassifier,precision score,3,4,2,1
+GradientBoostingClassifier,recall score,3,1,2,4
+GradientBoostingClassifier,roc auc score,3,4,2,1
+GradientBoostingClassifier,specificity score,3,1,2,4
+LogisticRegression,f1 score,1,2,3,4
+LogisticRegression,geometric mean score,4,3,2,1
+LogisticRegression,precision score,2,4,3,1
+LogisticRegression,recall score,3,1,2,4
+LogisticRegression,roc auc score,2,4,3,1
+LogisticRegression,specificity score,3,1,2,4

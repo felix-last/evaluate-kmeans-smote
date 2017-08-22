@@ -1,0 +1,13 @@
+Classifier,Metric,p-value
+GradientBoostingClassifier,f1 score,0.3916251762710877
+GradientBoostingClassifier,geometric mean score,0.3916251762710877
+GradientBoostingClassifier,precision score,0.3916251762710877
+GradientBoostingClassifier,recall score,0.3916251762710877
+GradientBoostingClassifier,roc auc score,0.3916251762710877
+GradientBoostingClassifier,specificity score,0.3916251762710877
+LogisticRegression,f1 score,0.3916251762710877
+LogisticRegression,geometric mean score,0.3916251762710877
+LogisticRegression,precision score,0.3916251762710877
+LogisticRegression,recall score,0.3916251762710877
+LogisticRegression,roc auc score,0.3916251762710877
+LogisticRegression,specificity score,0.3916251762710877
