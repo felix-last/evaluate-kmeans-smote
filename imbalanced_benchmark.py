@@ -5,7 +5,7 @@ import pandas as pd
 import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imbtools.evaluation import BinaryExperiment
@@ -15,19 +15,22 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'CC Grid Search',
-        'experiment_repetitions': 5,
+        'comment': 'Classic Grid Search',
+        'experiment_repetitions': 10,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
-    classifiers = [LogisticRegression(), GradientBoostingClassifier()]
+    classifiers = [LogisticRegression(), GradientBoostingClassifier(), RandomForestClassifier()]
     oversampling_methods = [
         SMOTE(),
-        KMeansSMOTE(kmeans_args={'n_clusters': 500, 'batch_size':10000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters': 2000, 'batch_size':10000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(smote_args={'k_neighbors':1000},kmeans_args={'n_clusters': 2000, 'batch_size':10000, 'reassignment_ratio': 10**-5})
-
+        KMeansSMOTE(),
+        KMeansSMOTE(minority_weight=1),
+        KMeansSMOTE(density_power=2),
+        KMeansSMOTE(minority_weight=1, density_power=2),
+        KMeansSMOTE(smote_args={'k_neighbors': 1000}),
+        KMeansSMOTE(density_power=2, smote_args={'k_neighbors': 1000}),
+        KMeansSMOTE(minority_weight=1, density_power=2, smote_args={'k_neighbors': 1000})
     ]
 
     experiment = BinaryExperiment(
