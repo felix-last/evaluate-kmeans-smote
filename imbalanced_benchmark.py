@@ -15,7 +15,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Classic Grid Search to determine ideal number of clusters',
+        'comment': 'Compare automatic cluster number to fixed 50 (previous best) with new PR metrics',
         'experiment_repetitions': 10,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -23,21 +23,11 @@ def main():
 
     classifiers = [LogisticRegression(), GradientBoostingClassifier(), RandomForestClassifier()]
     oversampling_methods = [
+        RandomOverSampler(),
         SMOTE(),
-        KMeansSMOTE(kmeans_args={'n_clusters':2}),
-        KMeansSMOTE(kmeans_args={'n_clusters':10}),
-        KMeansSMOTE(kmeans_args={'n_clusters':25}),
-        KMeansSMOTE(kmeans_args={'n_clusters':50}),
-        KMeansSMOTE(kmeans_args={'n_clusters':75}),
-        KMeansSMOTE(kmeans_args={'n_clusters':100}),
-        KMeansSMOTE(kmeans_args={'n_clusters':150}),
-        KMeansSMOTE(kmeans_args={'n_clusters':200}),
-        KMeansSMOTE(kmeans_args={'n_clusters':300}),
-        KMeansSMOTE(kmeans_args={'n_clusters':500}),
-        KMeansSMOTE(kmeans_args={'n_clusters':750}),
-        KMeansSMOTE(kmeans_args={'n_clusters':1000}),
-        KMeansSMOTE(kmeans_args={'n_clusters':1500}),
-        KMeansSMOTE(kmeans_args={'n_clusters':2000})
+        SMOTE(kind='borderline1'),
+        KMeansSMOTE(),
+        KMeansSMOTE(kmeans_args={'n_clusters':50})
     ]
 
     experiment = BinaryExperiment(
