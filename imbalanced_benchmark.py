@@ -15,7 +15,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Compare automatic cluster number to fixed 50 (previous best) with new PR metrics',
+        'comment': 'Run for mnist_imb',
         'experiment_repetitions': 10,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -26,8 +26,11 @@ def main():
         RandomOverSampler(),
         SMOTE(),
         SMOTE(kind='borderline1'),
-        KMeansSMOTE(),
-        KMeansSMOTE(kmeans_args={'n_clusters':50})
+        KMeansSMOTE(kmeans_args={'n_clusters':40}),
+        KMeansSMOTE(kmeans_args={'n_clusters':78}),
+        KMeansSMOTE(kmeans_args={'n_clusters':300}),
+        KMeansSMOTE(kmeans_args={'n_clusters':600}),
+        KMeansSMOTE(kmeans_args={'n_clusters':1000}),
     ]
 
     experiment = BinaryExperiment(
