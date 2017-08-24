@@ -8,12 +8,14 @@
 
 import os
 import sys
+import time
 import traceback
 import boto3
 import requests
 import yaml
 import urllib.request
 import imbalanced_benchmark
+
 
 # load config
 with open("config.yml", 'r') as ymlfile:
@@ -106,6 +108,7 @@ def _run_experiment():
     Executed locally from the instance to run the experiment and shutdown / notify once finished.
     """
     user = cfg['remote']['user']
+    start_time = time.time()
     try:
         imbalanced_benchmark.main()
         status = 'completed'
@@ -114,10 +117,11 @@ def _run_experiment():
         with open("/home/{}/exception.log".format(user), "w") as exceptionlog:
             exceptionlog.write(traceback.format_exc())
     finally:
-        # when done, shutdown instance and notify
+        # when done, notify and shutdown instance (if running for at least 5 mins)
         instance_id = cfg['instance_id']
         requests.post(cfg['notification_url'], data={'value1': instance_id, 'value2':status})
-        stop_instance(instance_id)
+        if( (time.time() - start_time) > 60 * 5 ):
+            stop_instance(instance_id)
 
 
 def _load_dataset():
