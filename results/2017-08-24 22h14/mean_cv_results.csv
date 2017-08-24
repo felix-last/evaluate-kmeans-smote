@@ -1,0 +1,1171 @@
+,Dataset,Classifier,Oversampling method,Metric,Mean CV score
+0,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.6801437451437452
+1,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.6583333333333334
+2,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8347222222222221
+3,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,precision score,0.6625019448444316
+4,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,recall score,0.7443485168004714
+5,breast_tissue,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.7374651863096834
+6,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.6823576260340968
+7,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.6805555555555556
+8,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.8290458937198067
+9,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.6742094417112697
+10,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.7432202830207628
+11,breast_tissue,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.7469507303331393
+12,breast_tissue,GradientBoostingClassifier,RandomOverSampler,average precision score,0.670226146402617
+13,breast_tissue,GradientBoostingClassifier,RandomOverSampler,f1 score,0.6861111111111111
+14,breast_tissue,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.817451690821256
+15,breast_tissue,GradientBoostingClassifier,RandomOverSampler,precision score,0.6687142432351407
+16,breast_tissue,GradientBoostingClassifier,RandomOverSampler,recall score,0.7521886562055536
+17,breast_tissue,GradientBoostingClassifier,RandomOverSampler,specificity score,0.7434517686787532
+18,breast_tissue,GradientBoostingClassifier,SMOTE,average precision score,0.661962294241706
+19,breast_tissue,GradientBoostingClassifier,SMOTE,f1 score,0.7666666666666667
+20,breast_tissue,GradientBoostingClassifier,SMOTE,geometric mean score,0.7875000000000001
+21,breast_tissue,GradientBoostingClassifier,SMOTE,precision score,0.7040891690398187
+22,breast_tissue,GradientBoostingClassifier,SMOTE,recall score,0.7557678949399796
+23,breast_tissue,GradientBoostingClassifier,SMOTE,specificity score,0.7736148542580575
+24,breast_tissue,GradientBoostingClassifier,SMOTE2,average precision score,0.6442745567126373
+25,breast_tissue,GradientBoostingClassifier,SMOTE2,f1 score,0.725
+26,breast_tissue,GradientBoostingClassifier,SMOTE2,geometric mean score,0.7833333333333334
+27,breast_tissue,GradientBoostingClassifier,SMOTE2,precision score,0.6754081821236791
+28,breast_tissue,GradientBoostingClassifier,SMOTE2,recall score,0.7344020171206903
+29,breast_tissue,GradientBoostingClassifier,SMOTE2,specificity score,0.7494899208208131
+30,breast_tissue,LogisticRegression,KMeansSMOTE,average precision score,0.6954431679431681
+31,breast_tissue,LogisticRegression,KMeansSMOTE,f1 score,0.7527777777777779
+32,breast_tissue,LogisticRegression,KMeansSMOTE,geometric mean score,0.8253623188405796
+33,breast_tissue,LogisticRegression,KMeansSMOTE,precision score,0.7177356443878183
+34,breast_tissue,LogisticRegression,KMeansSMOTE,recall score,0.787854713892993
+35,breast_tissue,LogisticRegression,KMeansSMOTE,specificity score,0.7849740069977005
+36,breast_tissue,LogisticRegression,KMeansSMOTE2,average precision score,0.6816127693256177
+37,breast_tissue,LogisticRegression,KMeansSMOTE2,f1 score,0.8083333333333333
+38,breast_tissue,LogisticRegression,KMeansSMOTE2,geometric mean score,0.7971618357487923
+39,breast_tissue,LogisticRegression,KMeansSMOTE2,precision score,0.7347401132023741
+40,breast_tissue,LogisticRegression,KMeansSMOTE2,recall score,0.7913621800584829
+41,breast_tissue,LogisticRegression,KMeansSMOTE2,specificity score,0.7998135943891962
+42,breast_tissue,LogisticRegression,RandomOverSampler,average precision score,0.7017838615632734
+43,breast_tissue,LogisticRegression,RandomOverSampler,f1 score,0.8111111111111111
+44,breast_tissue,LogisticRegression,RandomOverSampler,geometric mean score,0.8182971014492754
+45,breast_tissue,LogisticRegression,RandomOverSampler,precision score,0.749604798740231
+46,breast_tissue,LogisticRegression,RandomOverSampler,recall score,0.8088297380297398
+47,breast_tissue,LogisticRegression,RandomOverSampler,specificity score,0.8127743450592387
+48,breast_tissue,LogisticRegression,SMOTE,average precision score,0.7078489402754109
+49,breast_tissue,LogisticRegression,SMOTE,f1 score,0.7916666666666666
+50,breast_tissue,LogisticRegression,SMOTE,geometric mean score,0.8282608695652174
+51,breast_tissue,LogisticRegression,SMOTE,precision score,0.7445317915652747
+52,breast_tissue,LogisticRegression,SMOTE,recall score,0.8052482939272689
+53,breast_tissue,LogisticRegression,SMOTE,specificity score,0.8079442058119313
+54,breast_tissue,LogisticRegression,SMOTE2,average precision score,0.7021069535040123
+55,breast_tissue,LogisticRegression,SMOTE2,f1 score,0.8138888888888889
+56,breast_tissue,LogisticRegression,SMOTE2,geometric mean score,0.8152777777777777
+57,breast_tissue,LogisticRegression,SMOTE2,precision score,0.7498328086391555
+58,breast_tissue,LogisticRegression,SMOTE2,recall score,0.8026053499259657
+59,breast_tissue,LogisticRegression,SMOTE2,specificity score,0.8122035901353273
+60,breast_tissue,RandomForestClassifier,KMeansSMOTE,average precision score,0.716863136863137
+61,breast_tissue,RandomForestClassifier,KMeansSMOTE,f1 score,0.6694444444444444
+62,breast_tissue,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.8601449275362318
+63,breast_tissue,RandomForestClassifier,KMeansSMOTE,precision score,0.6854457135372467
+64,breast_tissue,RandomForestClassifier,KMeansSMOTE,recall score,0.7343700643240315
+65,breast_tissue,RandomForestClassifier,KMeansSMOTE,specificity score,0.7541053447375058
+66,breast_tissue,RandomForestClassifier,KMeansSMOTE2,average precision score,0.7310175771940478
+67,breast_tissue,RandomForestClassifier,KMeansSMOTE2,f1 score,0.6416666666666667
+68,breast_tissue,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.867512077294686
+69,breast_tissue,RandomForestClassifier,KMeansSMOTE2,precision score,0.6731297374225647
+70,breast_tissue,RandomForestClassifier,KMeansSMOTE2,recall score,0.7201405573578028
+71,breast_tissue,RandomForestClassifier,KMeansSMOTE2,specificity score,0.7402787437828744
+72,breast_tissue,RandomForestClassifier,RandomOverSampler,average precision score,0.695831809802398
+73,breast_tissue,RandomForestClassifier,RandomOverSampler,f1 score,0.6444444444444445
+74,breast_tissue,RandomForestClassifier,RandomOverSampler,geometric mean score,0.8474033816425119
+75,breast_tissue,RandomForestClassifier,RandomOverSampler,precision score,0.6594657500718418
+76,breast_tissue,RandomForestClassifier,RandomOverSampler,recall score,0.7476242625435624
+77,breast_tissue,RandomForestClassifier,RandomOverSampler,specificity score,0.7329498627525257
+78,breast_tissue,RandomForestClassifier,SMOTE,average precision score,0.7106385281385281
+79,breast_tissue,RandomForestClassifier,SMOTE,f1 score,0.7083333333333334
+80,breast_tissue,RandomForestClassifier,SMOTE,geometric mean score,0.8460144927536233
+81,breast_tissue,RandomForestClassifier,SMOTE,precision score,0.7040324832102101
+82,breast_tissue,RandomForestClassifier,SMOTE,recall score,0.7471041537128353
+83,breast_tissue,RandomForestClassifier,SMOTE,specificity score,0.7711447912461746
+84,breast_tissue,RandomForestClassifier,SMOTE2,average precision score,0.6927292468739837
+85,breast_tissue,RandomForestClassifier,SMOTE2,f1 score,0.7138888888888888
+86,breast_tissue,RandomForestClassifier,SMOTE2,geometric mean score,0.8288043478260871
+87,breast_tissue,RandomForestClassifier,SMOTE2,precision score,0.6959205235263156
+88,breast_tissue,RandomForestClassifier,SMOTE2,recall score,0.7502843821796883
+89,breast_tissue,RandomForestClassifier,SMOTE2,specificity score,0.7649101285785576
+90,ecoli,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.8423418463201744
+91,ecoli,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7961873638344226
+92,ecoli,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9711459499813362
+93,ecoli,GradientBoostingClassifier,KMeansSMOTE,precision score,0.8127721925719097
+94,ecoli,GradientBoostingClassifier,KMeansSMOTE,recall score,0.8900785579485637
+95,ecoli,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.8769560490255037
+96,ecoli,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.85267952306265
+97,ecoli,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.8095860566448803
+98,ecoli,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9732549458753266
+99,ecoli,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.8267708597985918
+100,ecoli,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.8923943286388383
+101,ecoli,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.885847622822007
+102,ecoli,GradientBoostingClassifier,RandomOverSampler,average precision score,0.8334203914682108
+103,ecoli,GradientBoostingClassifier,RandomOverSampler,f1 score,0.8172113289760349
+104,ecoli,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9683165360209033
+105,ecoli,GradientBoostingClassifier,RandomOverSampler,precision score,0.8200272134760777
+106,ecoli,GradientBoostingClassifier,RandomOverSampler,recall score,0.8930224633027564
+107,ecoli,GradientBoostingClassifier,RandomOverSampler,specificity score,0.8876107033540273
+108,ecoli,GradientBoostingClassifier,SMOTE,average precision score,0.7975235520127161
+109,ecoli,GradientBoostingClassifier,SMOTE,f1 score,0.823202614379085
+110,ecoli,GradientBoostingClassifier,SMOTE,geometric mean score,0.9598693542366554
+111,ecoli,GradientBoostingClassifier,SMOTE,precision score,0.8055634094155266
+112,ecoli,GradientBoostingClassifier,SMOTE,recall score,0.895788182814918
+113,ecoli,GradientBoostingClassifier,SMOTE,specificity score,0.8873068245335205
+114,ecoli,GradientBoostingClassifier,SMOTE2,average precision score,0.8212210528001684
+115,ecoli,GradientBoostingClassifier,SMOTE2,f1 score,0.8169934640522877
+116,ecoli,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9648114968271744
+117,ecoli,GradientBoostingClassifier,SMOTE2,precision score,0.8136578542054942
+118,ecoli,GradientBoostingClassifier,SMOTE2,recall score,0.8935469098865205
+119,ecoli,GradientBoostingClassifier,SMOTE2,specificity score,0.8863121256375317
+120,ecoli,LogisticRegression,KMeansSMOTE,average precision score,0.6065421043635245
+121,ecoli,LogisticRegression,KMeansSMOTE,f1 score,0.8627450980392158
+122,ecoli,LogisticRegression,KMeansSMOTE,geometric mean score,0.8916237402015679
+123,ecoli,LogisticRegression,KMeansSMOTE,precision score,0.7037154946973653
+124,ecoli,LogisticRegression,KMeansSMOTE,recall score,0.7968860060118346
+125,ecoli,LogisticRegression,KMeansSMOTE,specificity score,0.873645258620839
+126,ecoli,LogisticRegression,KMeansSMOTE2,average precision score,0.5984239249350936
+127,ecoli,LogisticRegression,KMeansSMOTE2,f1 score,0.8825708061002178
+128,ecoli,LogisticRegression,KMeansSMOTE2,geometric mean score,0.885599104143337
+129,ecoli,LogisticRegression,KMeansSMOTE2,precision score,0.7075352931827875
+130,ecoli,LogisticRegression,KMeansSMOTE2,recall score,0.7806801867147716
+131,ecoli,LogisticRegression,KMeansSMOTE2,specificity score,0.8825478984585663
+132,ecoli,LogisticRegression,RandomOverSampler,average precision score,0.5836983276938682
+133,ecoli,LogisticRegression,RandomOverSampler,f1 score,0.9057734204793029
+134,ecoli,LogisticRegression,RandomOverSampler,geometric mean score,0.8799365434863755
+135,ecoli,LogisticRegression,RandomOverSampler,precision score,0.7083149931478078
+136,ecoli,LogisticRegression,RandomOverSampler,recall score,0.7961869876974998
+137,ecoli,LogisticRegression,RandomOverSampler,specificity score,0.8920946707896018
+138,ecoli,LogisticRegression,SMOTE,average precision score,0.5949016308591681
+139,ecoli,LogisticRegression,SMOTE,f1 score,0.9056644880174293
+140,ecoli,LogisticRegression,SMOTE,geometric mean score,0.8852146323254946
+141,ecoli,LogisticRegression,SMOTE,precision score,0.7163783432359165
+142,ecoli,LogisticRegression,SMOTE,recall score,0.7965407260205352
+143,ecoli,LogisticRegression,SMOTE,specificity score,0.894670031513353
+144,ecoli,LogisticRegression,SMOTE2,average precision score,0.5438228765582306
+145,ecoli,LogisticRegression,SMOTE2,f1 score,0.927015250544662
+146,ecoli,LogisticRegression,SMOTE2,geometric mean score,0.8542217245240762
+147,ecoli,LogisticRegression,SMOTE2,precision score,0.6834371809613213
+148,ecoli,LogisticRegression,SMOTE2,recall score,0.7673410749560302
+149,ecoli,LogisticRegression,SMOTE2,specificity score,0.8892958301520947
+150,ecoli,RandomForestClassifier,KMeansSMOTE,average precision score,0.8841084006292984
+151,ecoli,RandomForestClassifier,KMeansSMOTE,f1 score,0.7559912854030502
+152,ecoli,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9806420306084359
+153,ecoli,RandomForestClassifier,KMeansSMOTE,precision score,0.8098043956378381
+154,ecoli,RandomForestClassifier,KMeansSMOTE,recall score,0.858775398825062
+155,ecoli,RandomForestClassifier,KMeansSMOTE,specificity score,0.8589948082498807
+156,ecoli,RandomForestClassifier,KMeansSMOTE2,average precision score,0.905851991146109
+157,ecoli,RandomForestClassifier,KMeansSMOTE2,f1 score,0.7364923747276689
+158,ecoli,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9848637551325122
+159,ecoli,RandomForestClassifier,KMeansSMOTE2,precision score,0.8053340836763867
+160,ecoli,RandomForestClassifier,KMeansSMOTE2,recall score,0.867569148532873
+161,ecoli,RandomForestClassifier,KMeansSMOTE2,specificity score,0.8486033946617868
+162,ecoli,RandomForestClassifier,RandomOverSampler,average precision score,0.8782430277554116
+163,ecoli,RandomForestClassifier,RandomOverSampler,f1 score,0.7824618736383442
+164,ecoli,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9792273236282194
+165,ecoli,RandomForestClassifier,RandomOverSampler,precision score,0.8235171275765142
+166,ecoli,RandomForestClassifier,RandomOverSampler,recall score,0.8664231033129036
+167,ecoli,RandomForestClassifier,RandomOverSampler,specificity score,0.8735104982708393
+168,ecoli,RandomForestClassifier,SMOTE,average precision score,0.8619194296129281
+169,ecoli,RandomForestClassifier,SMOTE,f1 score,0.8138344226579521
+170,ecoli,RandomForestClassifier,SMOTE,geometric mean score,0.9746547219111609
+171,ecoli,RandomForestClassifier,SMOTE,precision score,0.8322227715356949
+172,ecoli,RandomForestClassifier,SMOTE,recall score,0.8725841384298793
+173,ecoli,RandomForestClassifier,SMOTE,specificity score,0.8889203538300835
+174,ecoli,RandomForestClassifier,SMOTE2,average precision score,0.8788878030867195
+175,ecoli,RandomForestClassifier,SMOTE2,f1 score,0.7516339869281046
+176,ecoli,RandomForestClassifier,SMOTE2,geometric mean score,0.9795819335572974
+177,ecoli,RandomForestClassifier,SMOTE2,precision score,0.8037352314321005
+178,ecoli,RandomForestClassifier,SMOTE2,recall score,0.8556848486839412
+179,ecoli,RandomForestClassifier,SMOTE2,specificity score,0.8554338755804201
+180,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.6329774137072528
+181,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.5029040404040404
+182,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9448576285592859
+183,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,precision score,0.5546130179947957
+184,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,recall score,0.6294567030732855
+185,eucalyptus,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.6866713190506484
+186,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.6451227328761301
+187,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.5042929292929293
+188,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9468753162123328
+189,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.5587277155531252
+190,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.6270950374961444
+191,eucalyptus,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.6880929086992655
+192,eucalyptus,GradientBoostingClassifier,RandomOverSampler,average precision score,0.5112490530418061
+193,eucalyptus,GradientBoostingClassifier,RandomOverSampler,f1 score,0.6284406565656566
+194,eucalyptus,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8880699411086151
+195,eucalyptus,GradientBoostingClassifier,RandomOverSampler,precision score,0.5595254302551965
+196,eucalyptus,GradientBoostingClassifier,RandomOverSampler,recall score,0.6328333797976706
+197,eucalyptus,GradientBoostingClassifier,RandomOverSampler,specificity score,0.7452058154519026
+198,eucalyptus,GradientBoostingClassifier,SMOTE,average precision score,0.5389377707917443
+199,eucalyptus,GradientBoostingClassifier,SMOTE,f1 score,0.5848484848484847
+200,eucalyptus,GradientBoostingClassifier,SMOTE,geometric mean score,0.9073674943840689
+201,eucalyptus,GradientBoostingClassifier,SMOTE,precision score,0.5565217164233505
+202,eucalyptus,GradientBoostingClassifier,SMOTE,recall score,0.6296926966102419
+203,eucalyptus,GradientBoostingClassifier,SMOTE,specificity score,0.7261379037549415
+204,eucalyptus,GradientBoostingClassifier,SMOTE2,average precision score,0.5380737854197977
+205,eucalyptus,GradientBoostingClassifier,SMOTE2,f1 score,0.5796717171717172
+206,eucalyptus,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9071924392366381
+207,eucalyptus,GradientBoostingClassifier,SMOTE2,precision score,0.5539398747293451
+208,eucalyptus,GradientBoostingClassifier,SMOTE2,recall score,0.6378218855249403
+209,eucalyptus,GradientBoostingClassifier,SMOTE2,specificity score,0.7235452340920969
+210,eucalyptus,LogisticRegression,KMeansSMOTE,average precision score,0.481575176749985
+211,eucalyptus,LogisticRegression,KMeansSMOTE,f1 score,0.5511047979797981
+212,eucalyptus,LogisticRegression,KMeansSMOTE,geometric mean score,0.8836591585210369
+213,eucalyptus,LogisticRegression,KMeansSMOTE,precision score,0.4961228349000562
+214,eucalyptus,LogisticRegression,KMeansSMOTE,recall score,0.5538137834180905
+215,eucalyptus,LogisticRegression,KMeansSMOTE,specificity score,0.6895108254308682
+216,eucalyptus,LogisticRegression,KMeansSMOTE2,average precision score,0.4666096199397337
+217,eucalyptus,LogisticRegression,KMeansSMOTE2,f1 score,0.5378787878787878
+218,eucalyptus,LogisticRegression,KMeansSMOTE2,geometric mean score,0.8849381741646936
+219,eucalyptus,LogisticRegression,KMeansSMOTE2,precision score,0.48870801305898504
+220,eucalyptus,LogisticRegression,KMeansSMOTE2,recall score,0.521340167177517
+221,eucalyptus,LogisticRegression,KMeansSMOTE2,specificity score,0.6818894743514082
+222,eucalyptus,LogisticRegression,RandomOverSampler,average precision score,0.39262770041292494
+223,eucalyptus,LogisticRegression,RandomOverSampler,f1 score,0.8040719696969696
+224,eucalyptus,LogisticRegression,RandomOverSampler,geometric mean score,0.7724667597595775
+225,eucalyptus,LogisticRegression,RandomOverSampler,precision score,0.5256025181158813
+226,eucalyptus,LogisticRegression,RandomOverSampler,recall score,0.6564274675398575
+227,eucalyptus,LogisticRegression,RandomOverSampler,specificity score,0.7866998617455309
+228,eucalyptus,LogisticRegression,SMOTE,average precision score,0.38514382017604476
+229,eucalyptus,LogisticRegression,SMOTE,f1 score,0.790625
+230,eucalyptus,LogisticRegression,SMOTE,geometric mean score,0.7649353409021915
+231,eucalyptus,LogisticRegression,SMOTE,precision score,0.5150874692847628
+232,eucalyptus,LogisticRegression,SMOTE,recall score,0.6322323504739897
+233,eucalyptus,LogisticRegression,SMOTE,specificity score,0.7756328540529018
+234,eucalyptus,LogisticRegression,SMOTE2,average precision score,0.3992191324127085
+235,eucalyptus,LogisticRegression,SMOTE2,f1 score,0.7865845959595961
+236,eucalyptus,LogisticRegression,SMOTE2,geometric mean score,0.7838524274988363
+237,eucalyptus,LogisticRegression,SMOTE2,precision score,0.5274481178520916
+238,eucalyptus,LogisticRegression,SMOTE2,recall score,0.6456961604039464
+239,eucalyptus,LogisticRegression,SMOTE2,specificity score,0.7834899396459696
+240,eucalyptus,RandomForestClassifier,KMeansSMOTE,average precision score,0.6801842677496197
+241,eucalyptus,RandomForestClassifier,KMeansSMOTE,f1 score,0.36553030303030304
+242,eucalyptus,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9674660514439521
+243,eucalyptus,RandomForestClassifier,KMeansSMOTE,precision score,0.4680130014162935
+244,eucalyptus,RandomForestClassifier,KMeansSMOTE,recall score,0.5525071060249854
+245,eucalyptus,RandomForestClassifier,KMeansSMOTE,specificity score,0.5894375092647024
+246,eucalyptus,RandomForestClassifier,KMeansSMOTE2,average precision score,0.681962936409082
+247,eucalyptus,RandomForestClassifier,KMeansSMOTE2,f1 score,0.3849116161616161
+248,eucalyptus,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9663610790682613
+249,eucalyptus,RandomForestClassifier,KMeansSMOTE2,precision score,0.48731656843736915
+250,eucalyptus,RandomForestClassifier,KMeansSMOTE2,recall score,0.5555768962925425
+251,eucalyptus,RandomForestClassifier,KMeansSMOTE2,specificity score,0.6067019988614154
+252,eucalyptus,RandomForestClassifier,RandomOverSampler,average precision score,0.5831390492719277
+253,eucalyptus,RandomForestClassifier,RandomOverSampler,f1 score,0.4920138888888889
+254,eucalyptus,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9351233481067736
+255,eucalyptus,RandomForestClassifier,RandomOverSampler,precision score,0.5304819660728319
+256,eucalyptus,RandomForestClassifier,RandomOverSampler,recall score,0.5504772000162148
+257,eucalyptus,RandomForestClassifier,RandomOverSampler,specificity score,0.6760013393676776
+258,eucalyptus,RandomForestClassifier,SMOTE,average precision score,0.5698311403748844
+259,eucalyptus,RandomForestClassifier,SMOTE,f1 score,0.522695707070707
+260,eucalyptus,RandomForestClassifier,SMOTE,geometric mean score,0.9261044664359581
+261,eucalyptus,RandomForestClassifier,SMOTE,precision score,0.5407670012952233
+262,eucalyptus,RandomForestClassifier,SMOTE,recall score,0.5581907910911528
+263,eucalyptus,RandomForestClassifier,SMOTE,specificity score,0.6938282935072216
+264,eucalyptus,RandomForestClassifier,SMOTE2,average precision score,0.5513868148340613
+265,eucalyptus,RandomForestClassifier,SMOTE2,f1 score,0.48961489898989907
+266,eucalyptus,RandomForestClassifier,SMOTE2,geometric mean score,0.9257462611053772
+267,eucalyptus,RandomForestClassifier,SMOTE2,precision score,0.514172402937283
+268,eucalyptus,RandomForestClassifier,SMOTE2,recall score,0.542444639933706
+269,eucalyptus,RandomForestClassifier,SMOTE2,specificity score,0.671041061163396
+270,glass,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.788713360422131
+271,glass,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7930555555555555
+272,glass,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8902777777777777
+273,glass,GradientBoostingClassifier,KMeansSMOTE,precision score,0.7868736895491564
+274,glass,GradientBoostingClassifier,KMeansSMOTE,recall score,0.8603317506451962
+275,glass,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.8389360755530172
+276,glass,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.7638215186319164
+277,glass,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.8013888888888889
+278,glass,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.8715277777777779
+279,glass,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.7764767737544386
+280,glass,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.8413044271888082
+281,glass,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.8334895237085609
+282,glass,GradientBoostingClassifier,RandomOverSampler,average precision score,0.7700734449371186
+283,glass,GradientBoostingClassifier,RandomOverSampler,f1 score,0.8213768115942027
+284,glass,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8729166666666666
+285,glass,GradientBoostingClassifier,RandomOverSampler,precision score,0.7902942999383248
+286,glass,GradientBoostingClassifier,RandomOverSampler,recall score,0.8519404666347784
+287,glass,GradientBoostingClassifier,RandomOverSampler,specificity score,0.845207168877476
+288,glass,GradientBoostingClassifier,SMOTE,average precision score,0.7588895136537144
+289,glass,GradientBoostingClassifier,SMOTE,f1 score,0.8340579710144927
+290,glass,GradientBoostingClassifier,SMOTE,geometric mean score,0.8652777777777778
+291,glass,GradientBoostingClassifier,SMOTE,precision score,0.7913246458620234
+292,glass,GradientBoostingClassifier,SMOTE,recall score,0.8492907453375549
+293,glass,GradientBoostingClassifier,SMOTE,specificity score,0.8482258334767696
+294,glass,GradientBoostingClassifier,SMOTE2,average precision score,0.7579070384864363
+295,glass,GradientBoostingClassifier,SMOTE2,f1 score,0.8328502415458937
+296,glass,GradientBoostingClassifier,SMOTE2,geometric mean score,0.8659722222222221
+297,glass,GradientBoostingClassifier,SMOTE2,precision score,0.7902169310682564
+298,glass,GradientBoostingClassifier,SMOTE2,recall score,0.8507686613125568
+299,glass,GradientBoostingClassifier,SMOTE2,specificity score,0.8478870309518716
+300,glass,LogisticRegression,KMeansSMOTE,average precision score,0.5691029602961781
+301,glass,LogisticRegression,KMeansSMOTE,f1 score,0.7296497584541063
+302,glass,LogisticRegression,KMeansSMOTE,geometric mean score,0.7166666666666667
+303,glass,LogisticRegression,KMeansSMOTE,precision score,0.6300337458124728
+304,glass,LogisticRegression,KMeansSMOTE,recall score,0.6338682070632321
+305,glass,LogisticRegression,KMeansSMOTE,specificity score,0.7151984022213907
+306,glass,LogisticRegression,KMeansSMOTE2,average precision score,0.5601345693556781
+307,glass,LogisticRegression,KMeansSMOTE2,f1 score,0.7413647342995169
+308,glass,LogisticRegression,KMeansSMOTE2,geometric mean score,0.70625
+309,glass,LogisticRegression,KMeansSMOTE2,precision score,0.628684280302241
+310,glass,LogisticRegression,KMeansSMOTE2,recall score,0.6290560902532887
+311,glass,LogisticRegression,KMeansSMOTE2,specificity score,0.7140529600480908
+312,glass,LogisticRegression,RandomOverSampler,average precision score,0.5333504973493628
+313,glass,LogisticRegression,RandomOverSampler,f1 score,0.8342391304347825
+314,glass,LogisticRegression,RandomOverSampler,geometric mean score,0.6402777777777778
+315,glass,LogisticRegression,RandomOverSampler,precision score,0.6475211990681721
+316,glass,LogisticRegression,RandomOverSampler,recall score,0.6454369065170475
+317,glass,LogisticRegression,RandomOverSampler,specificity score,0.7271027138327386
+318,glass,LogisticRegression,SMOTE,average precision score,0.5454185157421042
+319,glass,LogisticRegression,SMOTE,f1 score,0.8286231884057971
+320,glass,LogisticRegression,SMOTE,geometric mean score,0.6604166666666668
+321,glass,LogisticRegression,SMOTE,precision score,0.6552943198216151
+322,glass,LogisticRegression,SMOTE,recall score,0.6503387243805917
+323,glass,LogisticRegression,SMOTE,specificity score,0.7369380830562019
+324,glass,LogisticRegression,SMOTE2,average precision score,0.5112873910166429
+325,glass,LogisticRegression,SMOTE2,f1 score,0.8815821256038647
+326,glass,LogisticRegression,SMOTE2,geometric mean score,0.5854166666666667
+327,glass,LogisticRegression,SMOTE2,precision score,0.645181197637299
+328,glass,LogisticRegression,SMOTE2,recall score,0.6405459348505587
+329,glass,LogisticRegression,SMOTE2,specificity score,0.7155167606160067
+330,glass,RandomForestClassifier,KMeansSMOTE,average precision score,0.7945641079567247
+331,glass,RandomForestClassifier,KMeansSMOTE,f1 score,0.7045289855072463
+332,glass,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9097222222222221
+333,glass,RandomForestClassifier,KMeansSMOTE,precision score,0.7422751619662271
+334,glass,RandomForestClassifier,KMeansSMOTE,recall score,0.8170858662952594
+335,glass,RandomForestClassifier,KMeansSMOTE,specificity score,0.7979075041975057
+336,glass,RandomForestClassifier,KMeansSMOTE2,average precision score,0.7813427410654719
+337,glass,RandomForestClassifier,KMeansSMOTE2,f1 score,0.7227657004830916
+338,glass,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.8958333333333334
+339,glass,RandomForestClassifier,KMeansSMOTE2,precision score,0.7462526221767015
+340,glass,RandomForestClassifier,KMeansSMOTE2,recall score,0.8065757501657993
+341,glass,RandomForestClassifier,KMeansSMOTE2,specificity score,0.8027480184112438
+342,glass,RandomForestClassifier,RandomOverSampler,average precision score,0.7754628011156589
+343,glass,RandomForestClassifier,RandomOverSampler,f1 score,0.758876811594203
+344,glass,RandomForestClassifier,RandomOverSampler,geometric mean score,0.8875
+345,glass,RandomForestClassifier,RandomOverSampler,precision score,0.7625799952060823
+346,glass,RandomForestClassifier,RandomOverSampler,recall score,0.8210671138254293
+347,glass,RandomForestClassifier,RandomOverSampler,specificity score,0.8186799249926887
+348,glass,RandomForestClassifier,SMOTE,average precision score,0.7801636027668142
+349,glass,RandomForestClassifier,SMOTE,f1 score,0.7586352657004831
+350,glass,RandomForestClassifier,SMOTE,geometric mean score,0.8909722222222222
+351,glass,RandomForestClassifier,SMOTE,precision score,0.7651031031630715
+352,glass,RandomForestClassifier,SMOTE,recall score,0.8163336221539852
+353,glass,RandomForestClassifier,SMOTE,specificity score,0.8203239265192881
+354,glass,RandomForestClassifier,SMOTE2,average precision score,0.7430171756009898
+355,glass,RandomForestClassifier,SMOTE2,f1 score,0.7732487922705316
+356,glass,RandomForestClassifier,SMOTE2,geometric mean score,0.8625
+357,glass,RandomForestClassifier,SMOTE2,precision score,0.7530053954815313
+358,glass,RandomForestClassifier,SMOTE2,recall score,0.8112557926786244
+359,glass,RandomForestClassifier,SMOTE2,specificity score,0.8149333508155803
+360,haberman,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.3880310554114171
+361,haberman,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.28765432098765437
+362,haberman,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8306666666666667
+363,haberman,GradientBoostingClassifier,KMeansSMOTE,precision score,0.3249650863916764
+364,haberman,GradientBoostingClassifier,KMeansSMOTE,recall score,0.3848655580069221
+365,haberman,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.4835324093973742
+366,haberman,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.39213156408808586
+367,haberman,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.3049382716049383
+368,haberman,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.8262222222222222
+369,haberman,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.33842167837171944
+370,haberman,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.37936613695381005
+371,haberman,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.49619590049391216
+372,haberman,GradientBoostingClassifier,RandomOverSampler,average precision score,0.35599139977883065
+373,haberman,GradientBoostingClassifier,RandomOverSampler,f1 score,0.3888888888888889
+374,haberman,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.7426666666666667
+375,haberman,GradientBoostingClassifier,RandomOverSampler,precision score,0.3691736185014698
+376,haberman,GradientBoostingClassifier,RandomOverSampler,recall score,0.3792419464879393
+377,haberman,GradientBoostingClassifier,RandomOverSampler,specificity score,0.5339682329230444
+378,haberman,GradientBoostingClassifier,SMOTE,average precision score,0.3832577002679801
+379,haberman,GradientBoostingClassifier,SMOTE,f1 score,0.3753086419753086
+380,haberman,GradientBoostingClassifier,SMOTE,geometric mean score,0.7764444444444445
+381,haberman,GradientBoostingClassifier,SMOTE,precision score,0.37491505434349176
+382,haberman,GradientBoostingClassifier,SMOTE,recall score,0.39681131723353336
+383,haberman,GradientBoostingClassifier,SMOTE,specificity score,0.5354870049372014
+384,haberman,GradientBoostingClassifier,SMOTE2,average precision score,0.36532616531532613
+385,haberman,GradientBoostingClassifier,SMOTE2,f1 score,0.3740740740740741
+386,haberman,GradientBoostingClassifier,SMOTE2,geometric mean score,0.7604444444444445
+387,haberman,GradientBoostingClassifier,SMOTE2,precision score,0.3655215971151421
+388,haberman,GradientBoostingClassifier,SMOTE2,recall score,0.3927461307227305
+389,haberman,GradientBoostingClassifier,SMOTE2,specificity score,0.5287075894461994
+390,haberman,LogisticRegression,KMeansSMOTE,average precision score,0.48835138914004894
+391,haberman,LogisticRegression,KMeansSMOTE,f1 score,0.4271604938271604
+392,haberman,LogisticRegression,KMeansSMOTE,geometric mean score,0.7875555555555556
+393,haberman,LogisticRegression,KMeansSMOTE,precision score,0.4058885242180626
+394,haberman,LogisticRegression,KMeansSMOTE,recall score,0.4562366822111527
+395,haberman,LogisticRegression,KMeansSMOTE,specificity score,0.5522717940311284
+396,haberman,LogisticRegression,KMeansSMOTE2,average precision score,0.47904537517393253
+397,haberman,LogisticRegression,KMeansSMOTE2,f1 score,0.45555555555555555
+398,haberman,LogisticRegression,KMeansSMOTE2,geometric mean score,0.8164444444444445
+399,haberman,LogisticRegression,KMeansSMOTE2,precision score,0.463172546740308
+400,haberman,LogisticRegression,KMeansSMOTE2,recall score,0.4766712310016641
+401,haberman,LogisticRegression,KMeansSMOTE2,specificity score,0.6064127007179537
+402,haberman,LogisticRegression,RandomOverSampler,average precision score,0.48160614678570657
+403,haberman,LogisticRegression,RandomOverSampler,f1 score,0.49753086419753084
+404,haberman,LogisticRegression,RandomOverSampler,geometric mean score,0.8039999999999999
+405,haberman,LogisticRegression,RandomOverSampler,precision score,0.4862483087619511
+406,haberman,LogisticRegression,RandomOverSampler,recall score,0.48211553255904105
+407,haberman,LogisticRegression,RandomOverSampler,specificity score,0.6292473000056642
+408,haberman,LogisticRegression,SMOTE,average precision score,0.4649760624409282
+409,haberman,LogisticRegression,SMOTE,f1 score,0.5012345679012347
+410,haberman,LogisticRegression,SMOTE,geometric mean score,0.7893333333333333
+411,haberman,LogisticRegression,SMOTE,precision score,0.4778605736741194
+412,haberman,LogisticRegression,SMOTE,recall score,0.48660118351474757
+413,haberman,LogisticRegression,SMOTE,specificity score,0.6241109142201375
+414,haberman,LogisticRegression,SMOTE2,average precision score,0.4345850999064694
+415,haberman,LogisticRegression,SMOTE2,f1 score,0.5543209876543209
+416,haberman,LogisticRegression,SMOTE2,geometric mean score,0.731111111111111
+417,haberman,LogisticRegression,SMOTE2,precision score,0.4806067649931423
+418,haberman,LogisticRegression,SMOTE2,recall score,0.48257563112346835
+419,haberman,LogisticRegression,SMOTE2,specificity score,0.6301314662562723
+420,haberman,RandomForestClassifier,KMeansSMOTE,average precision score,0.3758651317461049
+421,haberman,RandomForestClassifier,KMeansSMOTE,f1 score,0.23703703703703702
+422,haberman,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.8564444444444446
+423,haberman,RandomForestClassifier,KMeansSMOTE,precision score,0.287036583334508
+424,haberman,RandomForestClassifier,KMeansSMOTE,recall score,0.3669462707353754
+425,haberman,RandomForestClassifier,KMeansSMOTE,specificity score,0.444562096487516
+426,haberman,RandomForestClassifier,KMeansSMOTE2,average precision score,0.37820131791892236
+427,haberman,RandomForestClassifier,KMeansSMOTE2,f1 score,0.2580246913580247
+428,haberman,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.8453333333333333
+429,haberman,RandomForestClassifier,KMeansSMOTE2,precision score,0.3013882415976058
+430,haberman,RandomForestClassifier,KMeansSMOTE2,recall score,0.3721069712063106
+431,haberman,RandomForestClassifier,KMeansSMOTE2,specificity score,0.458730490533927
+432,haberman,RandomForestClassifier,RandomOverSampler,average precision score,0.3716678321225168
+433,haberman,RandomForestClassifier,RandomOverSampler,f1 score,0.34320987654320984
+434,haberman,RandomForestClassifier,RandomOverSampler,geometric mean score,0.792
+435,haberman,RandomForestClassifier,RandomOverSampler,precision score,0.354171883210904
+436,haberman,RandomForestClassifier,RandomOverSampler,recall score,0.3637250382649124
+437,haberman,RandomForestClassifier,RandomOverSampler,specificity score,0.5159584127939095
+438,haberman,RandomForestClassifier,SMOTE,average precision score,0.36683008798167854
+439,haberman,RandomForestClassifier,SMOTE,f1 score,0.3407407407407407
+440,haberman,RandomForestClassifier,SMOTE,geometric mean score,0.788888888888889
+441,haberman,RandomForestClassifier,SMOTE,precision score,0.35108835861411414
+442,haberman,RandomForestClassifier,SMOTE,recall score,0.3631418022001313
+443,haberman,RandomForestClassifier,SMOTE,specificity score,0.5140264292203461
+444,haberman,RandomForestClassifier,SMOTE2,average precision score,0.37700518231571084
+445,haberman,RandomForestClassifier,SMOTE2,f1 score,0.34197530864197534
+446,haberman,RandomForestClassifier,SMOTE2,geometric mean score,0.8
+447,haberman,RandomForestClassifier,SMOTE2,precision score,0.35471335283758143
+448,haberman,RandomForestClassifier,SMOTE2,recall score,0.3673405438080297
+449,haberman,RandomForestClassifier,SMOTE2,specificity score,0.5141774606504771
+450,heart,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.7825954141446114
+451,heart,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7624999999999998
+452,heart,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8266666666666665
+453,heart,GradientBoostingClassifier,KMeansSMOTE,precision score,0.7695977736074722
+454,heart,GradientBoostingClassifier,KMeansSMOTE,recall score,0.856925970609059
+455,heart,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.7920865049056287
+456,heart,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.7819537374204184
+457,heart,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.7558333333333332
+458,heart,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.8266666666666665
+459,heart,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.7655600637224323
+460,heart,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.8568558672611648
+461,heart,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.7884264354295046
+462,heart,GradientBoostingClassifier,RandomOverSampler,average precision score,0.776450589359635
+463,heart,GradientBoostingClassifier,RandomOverSampler,f1 score,0.7591666666666667
+464,heart,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.8206666666666667
+465,heart,GradientBoostingClassifier,RandomOverSampler,precision score,0.7646589039157282
+466,heart,GradientBoostingClassifier,RandomOverSampler,recall score,0.8535553778488778
+467,heart,GradientBoostingClassifier,RandomOverSampler,specificity score,0.7872879040270317
+468,heart,GradientBoostingClassifier,SMOTE,average precision score,0.7778504420345927
+469,heart,GradientBoostingClassifier,SMOTE,f1 score,0.7608333333333335
+470,heart,GradientBoostingClassifier,SMOTE,geometric mean score,0.8219999999999998
+471,heart,GradientBoostingClassifier,SMOTE,precision score,0.7667367244413186
+472,heart,GradientBoostingClassifier,SMOTE,recall score,0.8552090313958793
+473,heart,GradientBoostingClassifier,SMOTE,specificity score,0.7891711962896102
+474,heart,GradientBoostingClassifier,SMOTE2,average precision score,0.7799595986183382
+475,heart,GradientBoostingClassifier,SMOTE2,f1 score,0.7675
+476,heart,GradientBoostingClassifier,SMOTE2,geometric mean score,0.8226666666666667
+477,heart,GradientBoostingClassifier,SMOTE2,precision score,0.7708799323483814
+478,heart,GradientBoostingClassifier,SMOTE2,recall score,0.8573866113336781
+479,heart,GradientBoostingClassifier,SMOTE2,specificity score,0.7926998821207542
+480,heart,LogisticRegression,KMeansSMOTE,average precision score,0.8275706600512649
+481,heart,LogisticRegression,KMeansSMOTE,f1 score,0.8099999999999999
+482,heart,LogisticRegression,KMeansSMOTE,geometric mean score,0.86
+483,heart,LogisticRegression,KMeansSMOTE,precision score,0.8162605072820645
+484,heart,LogisticRegression,KMeansSMOTE,recall score,0.8926633783970376
+485,heart,LogisticRegression,KMeansSMOTE,specificity score,0.8332355023445099
+486,heart,LogisticRegression,KMeansSMOTE2,average precision score,0.8272019213849147
+487,heart,LogisticRegression,KMeansSMOTE2,f1 score,0.8008333333333335
+488,heart,LogisticRegression,KMeansSMOTE2,geometric mean score,0.8606666666666667
+489,heart,LogisticRegression,KMeansSMOTE2,precision score,0.8110172397845176
+490,heart,LogisticRegression,KMeansSMOTE2,recall score,0.8844825382941561
+491,heart,LogisticRegression,KMeansSMOTE2,specificity score,0.8286105197835132
+492,heart,LogisticRegression,RandomOverSampler,average precision score,0.8236415894444793
+493,heart,LogisticRegression,RandomOverSampler,f1 score,0.8108333333333334
+494,heart,LogisticRegression,RandomOverSampler,geometric mean score,0.8586666666666666
+495,heart,LogisticRegression,RandomOverSampler,precision score,0.8153413952138571
+496,heart,LogisticRegression,RandomOverSampler,recall score,0.8929274193545609
+497,heart,LogisticRegression,RandomOverSampler,specificity score,0.8333032166526275
+498,heart,LogisticRegression,SMOTE,average precision score,0.8214244424877967
+499,heart,LogisticRegression,SMOTE,f1 score,0.8116666666666668
+500,heart,LogisticRegression,SMOTE,geometric mean score,0.8553333333333333
+501,heart,LogisticRegression,SMOTE,precision score,0.8144869772119355
+502,heart,LogisticRegression,SMOTE,recall score,0.8934408414006318
+503,heart,LogisticRegression,SMOTE,specificity score,0.8320022254899617
+504,heart,LogisticRegression,SMOTE2,average precision score,0.821088910246963
+505,heart,LogisticRegression,SMOTE2,f1 score,0.8141666666666667
+506,heart,LogisticRegression,SMOTE2,geometric mean score,0.8546666666666667
+507,heart,LogisticRegression,SMOTE2,precision score,0.8156679734310324
+508,heart,LogisticRegression,SMOTE2,recall score,0.8918368092787624
+509,heart,LogisticRegression,SMOTE2,specificity score,0.8329971270943706
+510,heart,RandomForestClassifier,KMeansSMOTE,average precision score,0.8155944942741676
+511,heart,RandomForestClassifier,KMeansSMOTE,f1 score,0.7058333333333334
+512,heart,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.8673333333333332
+513,heart,RandomForestClassifier,KMeansSMOTE,precision score,0.7527516382063201
+514,heart,RandomForestClassifier,KMeansSMOTE,recall score,0.8384079032874323
+515,heart,RandomForestClassifier,KMeansSMOTE,specificity score,0.7802153643218895
+516,heart,RandomForestClassifier,KMeansSMOTE2,average precision score,0.8150086970214258
+517,heart,RandomForestClassifier,KMeansSMOTE2,f1 score,0.7033333333333334
+518,heart,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.8686666666666666
+519,heart,RandomForestClassifier,KMeansSMOTE2,precision score,0.7523958815112655
+520,heart,RandomForestClassifier,KMeansSMOTE2,recall score,0.8347932498821539
+521,heart,RandomForestClassifier,KMeansSMOTE2,specificity score,0.7801234534108878
+522,heart,RandomForestClassifier,RandomOverSampler,average precision score,0.7934409641650275
+523,heart,RandomForestClassifier,RandomOverSampler,f1 score,0.7125000000000001
+524,heart,RandomForestClassifier,RandomOverSampler,geometric mean score,0.8473333333333335
+525,heart,RandomForestClassifier,RandomOverSampler,precision score,0.7471979836711949
+526,heart,RandomForestClassifier,RandomOverSampler,recall score,0.8347098354559004
+527,heart,RandomForestClassifier,RandomOverSampler,specificity score,0.774855440808496
+528,heart,RandomForestClassifier,SMOTE,average precision score,0.8104210910024167
+529,heart,RandomForestClassifier,SMOTE,f1 score,0.7275
+530,heart,RandomForestClassifier,SMOTE,geometric mean score,0.8573333333333334
+531,heart,RandomForestClassifier,SMOTE,precision score,0.7625970017222995
+532,heart,RandomForestClassifier,SMOTE,recall score,0.8339268469747756
+533,heart,RandomForestClassifier,SMOTE,specificity score,0.7873840988379017
+534,heart,RandomForestClassifier,SMOTE2,average precision score,0.8158526937411251
+535,heart,RandomForestClassifier,SMOTE2,f1 score,0.7108333333333333
+536,heart,RandomForestClassifier,SMOTE2,geometric mean score,0.866
+537,heart,RandomForestClassifier,SMOTE2,precision score,0.7556324102058519
+538,heart,RandomForestClassifier,SMOTE2,recall score,0.8334556495160481
+539,heart,RandomForestClassifier,SMOTE2,specificity score,0.7822324822470574
+540,iris,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.9267764591216603
+541,iris,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.939828431372549
+542,iris,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9599821746880572
+543,iris,GradientBoostingClassifier,KMeansSMOTE,precision score,0.9298753032371267
+544,iris,GradientBoostingClassifier,KMeansSMOTE,recall score,0.9503158234152208
+545,iris,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.9486485006964841
+546,iris,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.9250944559110194
+547,iris,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.9338235294117648
+548,iris,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.958972073677956
+549,iris,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.9258134663811722
+550,iris,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.9522328870279002
+551,iris,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.9450370309239855
+552,iris,GradientBoostingClassifier,RandomOverSampler,average precision score,0.9266638782041259
+553,iris,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9378676470588235
+554,iris,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.958972073677956
+555,iris,GradientBoostingClassifier,RandomOverSampler,precision score,0.9282287738119596
+556,iris,GradientBoostingClassifier,RandomOverSampler,recall score,0.9462519806006545
+557,iris,GradientBoostingClassifier,RandomOverSampler,specificity score,0.9469628106114654
+558,iris,GradientBoostingClassifier,SMOTE,average precision score,0.9282676871918356
+559,iris,GradientBoostingClassifier,SMOTE,f1 score,0.9377450980392158
+560,iris,GradientBoostingClassifier,SMOTE,geometric mean score,0.960992275698158
+561,iris,GradientBoostingClassifier,SMOTE,precision score,0.929640295502119
+562,iris,GradientBoostingClassifier,SMOTE,recall score,0.950110038254444
+563,iris,GradientBoostingClassifier,SMOTE,specificity score,0.9480941900596658
+564,iris,GradientBoostingClassifier,SMOTE2,average precision score,0.9188056780394241
+565,iris,GradientBoostingClassifier,SMOTE2,f1 score,0.9261029411764706
+566,iris,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9560011883541295
+567,iris,GradientBoostingClassifier,SMOTE2,precision score,0.9188350938359117
+568,iris,GradientBoostingClassifier,SMOTE2,recall score,0.9425855464825912
+569,iris,GradientBoostingClassifier,SMOTE2,specificity score,0.9396009019563886
+570,iris,LogisticRegression,KMeansSMOTE,average precision score,0.5975488328041065
+571,iris,LogisticRegression,KMeansSMOTE,f1 score,0.7556372549019608
+572,iris,LogisticRegression,KMeansSMOTE,geometric mean score,0.735086155674391
+573,iris,LogisticRegression,KMeansSMOTE,precision score,0.6625931255267604
+574,iris,LogisticRegression,KMeansSMOTE,recall score,0.5721555302833756
+575,iris,LogisticRegression,KMeansSMOTE,specificity score,0.7419634803073496
+576,iris,LogisticRegression,KMeansSMOTE2,average precision score,0.5761296949479136
+577,iris,LogisticRegression,KMeansSMOTE2,f1 score,0.7594362745098039
+578,iris,LogisticRegression,KMeansSMOTE2,geometric mean score,0.7128342245989305
+579,iris,LogisticRegression,KMeansSMOTE2,precision score,0.6505995620794129
+580,iris,LogisticRegression,KMeansSMOTE2,recall score,0.561205769899836
+581,iris,LogisticRegression,KMeansSMOTE2,specificity score,0.7316472416093076
+582,iris,LogisticRegression,RandomOverSampler,average precision score,0.5678254380617671
+583,iris,LogisticRegression,RandomOverSampler,f1 score,0.781985294117647
+584,iris,LogisticRegression,RandomOverSampler,geometric mean score,0.6959298871063576
+585,iris,LogisticRegression,RandomOverSampler,precision score,0.6549781524595519
+586,iris,LogisticRegression,RandomOverSampler,recall score,0.5617871551133023
+587,iris,LogisticRegression,RandomOverSampler,specificity score,0.7350584795093418
+588,iris,LogisticRegression,SMOTE,average precision score,0.5771614433198444
+589,iris,LogisticRegression,SMOTE,f1 score,0.7715686274509804
+590,iris,LogisticRegression,SMOTE,geometric mean score,0.7098930481283422
+591,iris,LogisticRegression,SMOTE,precision score,0.6566513077765828
+592,iris,LogisticRegression,SMOTE,recall score,0.5679535659707289
+593,iris,LogisticRegression,SMOTE,specificity score,0.7370468867068845
+594,iris,LogisticRegression,SMOTE2,average precision score,0.5428659128191716
+595,iris,LogisticRegression,SMOTE2,f1 score,0.7879901960784316
+596,iris,LogisticRegression,SMOTE2,geometric mean score,0.6585561497326203
+597,iris,LogisticRegression,SMOTE2,precision score,0.6377054779851347
+598,iris,LogisticRegression,SMOTE2,recall score,0.5051791478443424
+599,iris,LogisticRegression,SMOTE2,specificity score,0.7152514911947604
+600,iris,RandomForestClassifier,KMeansSMOTE,average precision score,0.9278622823398367
+601,iris,RandomForestClassifier,KMeansSMOTE,f1 score,0.9316176470588236
+602,iris,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9609328579916815
+603,iris,RandomForestClassifier,KMeansSMOTE,precision score,0.9266972254936823
+604,iris,RandomForestClassifier,KMeansSMOTE,recall score,0.9741245173602305
+605,iris,RandomForestClassifier,KMeansSMOTE,specificity score,0.9451068836928009
+606,iris,RandomForestClassifier,KMeansSMOTE2,average precision score,0.9319717594640196
+607,iris,RandomForestClassifier,KMeansSMOTE2,f1 score,0.9275735294117646
+608,iris,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9640225787284612
+609,iris,RandomForestClassifier,KMeansSMOTE2,precision score,0.9265147443191403
+610,iris,RandomForestClassifier,KMeansSMOTE2,recall score,0.9735985787549939
+611,iris,RandomForestClassifier,KMeansSMOTE2,specificity score,0.9442789212634229
+612,iris,RandomForestClassifier,RandomOverSampler,average precision score,0.9271851810899797
+613,iris,RandomForestClassifier,RandomOverSampler,f1 score,0.933578431372549
+614,iris,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9598039215686276
+615,iris,RandomForestClassifier,RandomOverSampler,precision score,0.9271028302470101
+616,iris,RandomForestClassifier,RandomOverSampler,recall score,0.959172581504091
+617,iris,RandomForestClassifier,RandomOverSampler,specificity score,0.945509821149399
+618,iris,RandomForestClassifier,SMOTE,average precision score,0.921883430037455
+619,iris,RandomForestClassifier,SMOTE,f1 score,0.933700980392157
+620,iris,RandomForestClassifier,SMOTE,geometric mean score,0.9569518716577541
+621,iris,RandomForestClassifier,SMOTE,precision score,0.9248134385797362
+622,iris,RandomForestClassifier,SMOTE,recall score,0.9686504638539896
+623,iris,RandomForestClassifier,SMOTE,specificity score,0.944220902660718
+624,iris,RandomForestClassifier,SMOTE2,average precision score,0.9280430856553148
+625,iris,RandomForestClassifier,SMOTE2,f1 score,0.939950980392157
+626,iris,RandomForestClassifier,SMOTE2,geometric mean score,0.9609031491384432
+627,iris,RandomForestClassifier,SMOTE2,precision score,0.9311900232953038
+628,iris,RandomForestClassifier,SMOTE2,recall score,0.9649270240032605
+629,iris,RandomForestClassifier,SMOTE2,specificity score,0.9494101848175618
+630,libra,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.9625357902331586
+631,libra,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.7194444444444443
+632,libra,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9927083333333334
+633,libra,GradientBoostingClassifier,KMeansSMOTE,precision score,0.8203752224407481
+634,libra,GradientBoostingClassifier,KMeansSMOTE,recall score,0.9289328697660958
+635,libra,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.8435222862113438
+636,libra,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.9637314878104352
+637,libra,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.7125
+638,libra,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9927083333333332
+639,libra,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.8151376967145965
+640,libra,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.9282850579071719
+641,libra,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.8390726594933697
+642,libra,GradientBoostingClassifier,RandomOverSampler,average precision score,0.9466428144924578
+643,libra,GradientBoostingClassifier,RandomOverSampler,f1 score,0.775
+644,libra,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9885416666666668
+645,libra,GradientBoostingClassifier,RandomOverSampler,precision score,0.8486559065867668
+646,libra,GradientBoostingClassifier,RandomOverSampler,recall score,0.9440793064059401
+647,libra,GradientBoostingClassifier,RandomOverSampler,specificity score,0.8735998867516981
+648,libra,GradientBoostingClassifier,SMOTE,average precision score,0.9437199293206158
+649,libra,GradientBoostingClassifier,SMOTE,f1 score,0.8166666666666668
+650,libra,GradientBoostingClassifier,SMOTE,geometric mean score,0.9871527777777779
+651,libra,GradientBoostingClassifier,SMOTE,precision score,0.8731558863913993
+652,libra,GradientBoostingClassifier,SMOTE,recall score,0.9431364616217415
+653,libra,GradientBoostingClassifier,SMOTE,specificity score,0.8968198699837104
+654,libra,GradientBoostingClassifier,SMOTE2,average precision score,0.9457611832611832
+655,libra,GradientBoostingClassifier,SMOTE2,f1 score,0.788888888888889
+656,libra,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9875
+657,libra,GradientBoostingClassifier,SMOTE2,precision score,0.855354452438284
+658,libra,GradientBoostingClassifier,SMOTE2,recall score,0.9413626840114631
+659,libra,GradientBoostingClassifier,SMOTE2,specificity score,0.8806706941500948
+660,libra,LogisticRegression,KMeansSMOTE,average precision score,0.7347952276130645
+661,libra,LogisticRegression,KMeansSMOTE,f1 score,0.3555555555555555
+662,libra,LogisticRegression,KMeansSMOTE,geometric mean score,0.9635416666666667
+663,libra,LogisticRegression,KMeansSMOTE,precision score,0.46630512534249613
+664,libra,LogisticRegression,KMeansSMOTE,recall score,0.5468858100938161
+665,libra,LogisticRegression,KMeansSMOTE,specificity score,0.5748692195785281
+666,libra,LogisticRegression,KMeansSMOTE2,average precision score,0.7377952227952228
+667,libra,LogisticRegression,KMeansSMOTE2,f1 score,0.34444444444444444
+668,libra,LogisticRegression,KMeansSMOTE2,geometric mean score,0.960763888888889
+669,libra,LogisticRegression,KMeansSMOTE2,precision score,0.45168940580250344
+670,libra,LogisticRegression,KMeansSMOTE2,recall score,0.5646713858875794
+671,libra,LogisticRegression,KMeansSMOTE2,specificity score,0.5648544815798108
+672,libra,LogisticRegression,RandomOverSampler,average precision score,0.5031691691590572
+673,libra,LogisticRegression,RandomOverSampler,f1 score,0.6666666666666667
+674,libra,LogisticRegression,RandomOverSampler,geometric mean score,0.8256944444444445
+675,libra,LogisticRegression,RandomOverSampler,precision score,0.56681726017563
+676,libra,LogisticRegression,RandomOverSampler,recall score,0.6269073799969933
+677,libra,LogisticRegression,RandomOverSampler,specificity score,0.7387363574300793
+678,libra,LogisticRegression,SMOTE,average precision score,0.5522853803938677
+679,libra,LogisticRegression,SMOTE,f1 score,0.6875000000000001
+680,libra,LogisticRegression,SMOTE,geometric mean score,0.8524305555555557
+681,libra,LogisticRegression,SMOTE,precision score,0.6055742991176158
+682,libra,LogisticRegression,SMOTE,recall score,0.659248455545368
+683,libra,LogisticRegression,SMOTE,specificity score,0.76256574590026
+684,libra,LogisticRegression,SMOTE2,average precision score,0.48906212178745384
+685,libra,LogisticRegression,SMOTE2,f1 score,0.6041666666666667
+686,libra,LogisticRegression,SMOTE2,geometric mean score,0.834375
+687,libra,LogisticRegression,SMOTE2,precision score,0.5339264936992416
+688,libra,LogisticRegression,SMOTE2,recall score,0.5813940865194513
+689,libra,LogisticRegression,SMOTE2,specificity score,0.7060230030675335
+690,libra,RandomForestClassifier,KMeansSMOTE,average precision score,0.9499716951148841
+691,libra,RandomForestClassifier,KMeansSMOTE,f1 score,0.6166666666666667
+692,libra,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9916666666666666
+693,libra,RandomForestClassifier,KMeansSMOTE,precision score,0.7445598121687025
+694,libra,RandomForestClassifier,KMeansSMOTE,recall score,0.890074954855271
+695,libra,RandomForestClassifier,KMeansSMOTE,specificity score,0.780182117005499
+696,libra,RandomForestClassifier,KMeansSMOTE2,average precision score,0.9701287942077416
+697,libra,RandomForestClassifier,KMeansSMOTE2,f1 score,0.6305555555555555
+698,libra,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9947916666666666
+699,libra,RandomForestClassifier,KMeansSMOTE2,precision score,0.7585419376540969
+700,libra,RandomForestClassifier,KMeansSMOTE2,recall score,0.9089802001619633
+701,libra,RandomForestClassifier,KMeansSMOTE2,specificity score,0.7889960874236195
+702,libra,RandomForestClassifier,RandomOverSampler,average precision score,0.9272000672672028
+703,libra,RandomForestClassifier,RandomOverSampler,f1 score,0.6958333333333334
+704,libra,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9864583333333334
+705,libra,RandomForestClassifier,RandomOverSampler,precision score,0.789591605133479
+706,libra,RandomForestClassifier,RandomOverSampler,recall score,0.8880180076539709
+707,libra,RandomForestClassifier,RandomOverSampler,specificity score,0.8247088023271527
+708,libra,RandomForestClassifier,SMOTE,average precision score,0.929960830197291
+709,libra,RandomForestClassifier,SMOTE,f1 score,0.7541666666666667
+710,libra,RandomForestClassifier,SMOTE,geometric mean score,0.9847222222222223
+711,libra,RandomForestClassifier,SMOTE,precision score,0.827906502078131
+712,libra,RandomForestClassifier,SMOTE,recall score,0.9110651891755921
+713,libra,RandomForestClassifier,SMOTE,specificity score,0.8595751325989948
+714,libra,RandomForestClassifier,SMOTE2,average precision score,0.9209304821251247
+715,libra,RandomForestClassifier,SMOTE2,f1 score,0.6958333333333333
+716,libra,RandomForestClassifier,SMOTE2,geometric mean score,0.9833333333333334
+717,libra,RandomForestClassifier,SMOTE2,precision score,0.784990467803923
+718,libra,RandomForestClassifier,SMOTE2,recall score,0.8834086202581142
+719,libra,RandomForestClassifier,SMOTE2,specificity score,0.8238972092629163
+720,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.6629237319509426
+721,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.6139597505668933
+722,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.7710915121362882
+723,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,precision score,0.6358209149344142
+724,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,recall score,0.7159290338115627
+725,liver_disorders,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.6867339329684479
+726,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.6565076831977867
+727,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.6236111111111111
+728,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.7596185737976783
+729,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.6375947716348598
+730,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.7102937166912641
+731,liver_disorders,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.6867423708091588
+732,liver_disorders,GradientBoostingClassifier,RandomOverSampler,average precision score,0.6489148179813004
+733,liver_disorders,GradientBoostingClassifier,RandomOverSampler,f1 score,0.6380385487528345
+734,liver_disorders,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.7481004070556311
+735,liver_disorders,GradientBoostingClassifier,RandomOverSampler,precision score,0.6421060039144599
+736,liver_disorders,GradientBoostingClassifier,RandomOverSampler,recall score,0.7161310406324458
+737,liver_disorders,GradientBoostingClassifier,RandomOverSampler,specificity score,0.6897650292265649
+738,liver_disorders,GradientBoostingClassifier,SMOTE,average precision score,0.644715755050439
+739,liver_disorders,GradientBoostingClassifier,SMOTE,f1 score,0.6415674603174603
+740,liver_disorders,GradientBoostingClassifier,SMOTE,geometric mean score,0.7410900045228404
+741,liver_disorders,GradientBoostingClassifier,SMOTE,precision score,0.6417262077825205
+742,liver_disorders,GradientBoostingClassifier,SMOTE,recall score,0.7167420225757282
+743,liver_disorders,GradientBoostingClassifier,SMOTE,specificity score,0.6883574137385543
+744,liver_disorders,GradientBoostingClassifier,SMOTE2,average precision score,0.6394564336190036
+745,liver_disorders,GradientBoostingClassifier,SMOTE2,f1 score,0.6518707482993197
+746,liver_disorders,GradientBoostingClassifier,SMOTE2,geometric mean score,0.7320443238353685
+747,liver_disorders,GradientBoostingClassifier,SMOTE2,precision score,0.6442297486214457
+748,liver_disorders,GradientBoostingClassifier,SMOTE2,recall score,0.715017502245263
+749,liver_disorders,GradientBoostingClassifier,SMOTE2,specificity score,0.6895831016653065
+750,liver_disorders,LogisticRegression,KMeansSMOTE,average precision score,0.6211145428455477
+751,liver_disorders,LogisticRegression,KMeansSMOTE,f1 score,0.5939909297052154
+752,liver_disorders,LogisticRegression,KMeansSMOTE,geometric mean score,0.7258781848334086
+753,liver_disorders,LogisticRegression,KMeansSMOTE,precision score,0.5988709900100391
+754,liver_disorders,LogisticRegression,KMeansSMOTE,recall score,0.6632452750030066
+755,liver_disorders,LogisticRegression,KMeansSMOTE,specificity score,0.6495960841053716
+756,liver_disorders,LogisticRegression,KMeansSMOTE2,average precision score,0.5961288915524519
+757,liver_disorders,LogisticRegression,KMeansSMOTE2,f1 score,0.659467120181406
+758,liver_disorders,LogisticRegression,KMeansSMOTE2,geometric mean score,0.6735639981908638
+759,liver_disorders,LogisticRegression,KMeansSMOTE2,precision score,0.6234328676692769
+760,liver_disorders,LogisticRegression,KMeansSMOTE2,recall score,0.6529800794241913
+761,liver_disorders,LogisticRegression,KMeansSMOTE2,specificity score,0.6636746666951331
+762,liver_disorders,LogisticRegression,RandomOverSampler,average precision score,0.5778894659651344
+763,liver_disorders,LogisticRegression,RandomOverSampler,f1 score,0.6772534013605443
+764,liver_disorders,LogisticRegression,RandomOverSampler,geometric mean score,0.6384139906527965
+765,liver_disorders,LogisticRegression,RandomOverSampler,precision score,0.6207582898489424
+766,liver_disorders,LogisticRegression,RandomOverSampler,recall score,0.6488702238803861
+767,liver_disorders,LogisticRegression,RandomOverSampler,specificity score,0.6540308703885402
+768,liver_disorders,LogisticRegression,SMOTE,average precision score,0.5907610111097218
+769,liver_disorders,LogisticRegression,SMOTE,f1 score,0.6813775510204082
+770,liver_disorders,LogisticRegression,SMOTE,geometric mean score,0.6554952510176391
+771,liver_disorders,LogisticRegression,SMOTE,precision score,0.630105083782932
+772,liver_disorders,LogisticRegression,SMOTE,recall score,0.6599846129156611
+773,liver_disorders,LogisticRegression,SMOTE,specificity score,0.6651118515162915
+774,liver_disorders,LogisticRegression,SMOTE2,average precision score,0.5738979927072736
+775,liver_disorders,LogisticRegression,SMOTE2,f1 score,0.6655470521541951
+776,liver_disorders,LogisticRegression,SMOTE2,geometric mean score,0.640532187547113
+777,liver_disorders,LogisticRegression,SMOTE2,precision score,0.6142296268824625
+778,liver_disorders,LogisticRegression,SMOTE2,recall score,0.6574754291718599
+779,liver_disorders,LogisticRegression,SMOTE2,specificity score,0.650251068246019
+780,liver_disorders,RandomForestClassifier,KMeansSMOTE,average precision score,0.6707615703446341
+781,liver_disorders,RandomForestClassifier,KMeansSMOTE,f1 score,0.5028486394557824
+782,liver_disorders,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.8199984923865522
+783,liver_disorders,RandomForestClassifier,KMeansSMOTE,precision score,0.5721072749455246
+784,liver_disorders,RandomForestClassifier,KMeansSMOTE,recall score,0.6463168687221988
+785,liver_disorders,RandomForestClassifier,KMeansSMOTE,specificity score,0.639869139183858
+786,liver_disorders,RandomForestClassifier,KMeansSMOTE2,average precision score,0.6539824827184956
+787,liver_disorders,RandomForestClassifier,KMeansSMOTE2,f1 score,0.5090561224489796
+788,liver_disorders,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.8036031961405096
+789,liver_disorders,RandomForestClassifier,KMeansSMOTE2,precision score,0.5701028018613951
+790,liver_disorders,RandomForestClassifier,KMeansSMOTE2,recall score,0.6414501089620344
+791,liver_disorders,RandomForestClassifier,KMeansSMOTE2,specificity score,0.6375025560937914
+792,liver_disorders,RandomForestClassifier,RandomOverSampler,average precision score,0.6645110192978942
+793,liver_disorders,RandomForestClassifier,RandomOverSampler,f1 score,0.5512613378684807
+794,liver_disorders,RandomForestClassifier,RandomOverSampler,geometric mean score,0.7940147746117896
+795,liver_disorders,RandomForestClassifier,RandomOverSampler,precision score,0.5997313689746007
+796,liver_disorders,RandomForestClassifier,RandomOverSampler,recall score,0.6445650508418809
+797,liver_disorders,RandomForestClassifier,RandomOverSampler,specificity score,0.6595615477127642
+798,liver_disorders,RandomForestClassifier,SMOTE,average precision score,0.6547318474082375
+799,liver_disorders,RandomForestClassifier,SMOTE,f1 score,0.5601048752834468
+800,liver_disorders,RandomForestClassifier,SMOTE,geometric mean score,0.782587064676617
+801,liver_disorders,RandomForestClassifier,SMOTE,precision score,0.6013237982986466
+802,liver_disorders,RandomForestClassifier,SMOTE,recall score,0.6414076208003558
+803,liver_disorders,RandomForestClassifier,SMOTE,specificity score,0.6600802611900611
+804,liver_disorders,RandomForestClassifier,SMOTE2,average precision score,0.6343909761953891
+805,liver_disorders,RandomForestClassifier,SMOTE2,f1 score,0.5338860544217686
+806,liver_disorders,RandomForestClassifier,SMOTE2,geometric mean score,0.7750640735715363
+807,liver_disorders,RandomForestClassifier,SMOTE2,precision score,0.5767845827736419
+808,liver_disorders,RandomForestClassifier,SMOTE2,recall score,0.647412878491423
+809,liver_disorders,RandomForestClassifier,SMOTE2,specificity score,0.6405933859654731
+810,pima,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.6565542351927954
+811,pima,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.6174365376612567
+812,pima,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.8256210470625016
+813,pima,GradientBoostingClassifier,KMeansSMOTE,precision score,0.6346487102540154
+814,pima,GradientBoostingClassifier,KMeansSMOTE,recall score,0.700315177586242
+815,pima,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.7128158407288254
+816,pima,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.6533219112894969
+817,pima,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.6216229712858927
+818,pima,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.8224081956568791
+819,pima,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.6359737185535941
+820,pima,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.6996881173822636
+821,pima,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.714217776373167
+822,pima,GradientBoostingClassifier,RandomOverSampler,average precision score,0.6313760235566382
+823,pima,GradientBoostingClassifier,RandomOverSampler,f1 score,0.6861339991677069
+824,pima,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.7850119039030373
+825,pima,GradientBoostingClassifier,RandomOverSampler,precision score,0.6570105198467804
+826,pima,GradientBoostingClassifier,RandomOverSampler,recall score,0.7066495216953965
+827,pima,GradientBoostingClassifier,RandomOverSampler,specificity score,0.7333622530823315
+828,pima,GradientBoostingClassifier,SMOTE,average precision score,0.6326147217637087
+829,pima,GradientBoostingClassifier,SMOTE,f1 score,0.6988389513108615
+830,pima,GradientBoostingClassifier,SMOTE,geometric mean score,0.782015487098093
+831,pima,GradientBoostingClassifier,SMOTE,precision score,0.6632946004075817
+832,pima,GradientBoostingClassifier,SMOTE,recall score,0.7000700077429511
+833,pima,GradientBoostingClassifier,SMOTE,specificity score,0.738607146914716
+834,pima,GradientBoostingClassifier,SMOTE2,average precision score,0.6175323445128524
+835,pima,GradientBoostingClassifier,SMOTE2,f1 score,0.7133791094465252
+836,pima,GradientBoostingClassifier,SMOTE2,geometric mean score,0.7628153331890435
+837,pima,GradientBoostingClassifier,SMOTE2,precision score,0.661455995982033
+838,pima,GradientBoostingClassifier,SMOTE2,recall score,0.696001010421902
+839,pima,GradientBoostingClassifier,SMOTE2,specificity score,0.7371884349879014
+840,pima,LogisticRegression,KMeansSMOTE,average precision score,0.6434881333708009
+841,pima,LogisticRegression,KMeansSMOTE,f1 score,0.6599833541406576
+842,pima,LogisticRegression,KMeansSMOTE,geometric mean score,0.7998376740494914
+843,pima,LogisticRegression,KMeansSMOTE,precision score,0.6484118097912449
+844,pima,LogisticRegression,KMeansSMOTE,recall score,0.7024865024748118
+845,pima,LogisticRegression,KMeansSMOTE,specificity score,0.7245990515299492
+846,pima,LogisticRegression,KMeansSMOTE2,average precision score,0.6430299798051714
+847,pima,LogisticRegression,KMeansSMOTE2,f1 score,0.6294465251768623
+848,pima,LogisticRegression,KMeansSMOTE2,geometric mean score,0.807804872183344
+849,pima,LogisticRegression,KMeansSMOTE2,precision score,0.6330258179412273
+850,pima,LogisticRegression,KMeansSMOTE2,recall score,0.684333020996246
+851,pima,LogisticRegression,KMeansSMOTE2,specificity score,0.71140136473668
+852,pima,LogisticRegression,RandomOverSampler,average precision score,0.6267717323395037
+853,pima,LogisticRegression,RandomOverSampler,f1 score,0.7350686641697878
+854,pima,LogisticRegression,RandomOverSampler,geometric mean score,0.7634093259264604
+855,pima,LogisticRegression,RandomOverSampler,precision score,0.6754598825554627
+856,pima,LogisticRegression,RandomOverSampler,recall score,0.7157075331246013
+857,pima,LogisticRegression,RandomOverSampler,specificity score,0.7483241258381953
+858,pima,LogisticRegression,SMOTE,average precision score,0.6258118958263912
+859,pima,LogisticRegression,SMOTE,f1 score,0.7313483146067414
+860,pima,LogisticRegression,SMOTE,geometric mean score,0.764014140393911
+861,pima,LogisticRegression,SMOTE,precision score,0.6733584383802445
+862,pima,LogisticRegression,SMOTE,recall score,0.7166364447179975
+863,pima,LogisticRegression,SMOTE,specificity score,0.7467203735268676
+864,pima,LogisticRegression,SMOTE2,average precision score,0.6070733516721198
+865,pima,LogisticRegression,SMOTE2,f1 score,0.7705326674989597
+866,pima,LogisticRegression,SMOTE2,geometric mean score,0.7308130726498809
+867,pima,LogisticRegression,SMOTE2,precision score,0.6780785896675235
+868,pima,LogisticRegression,SMOTE2,recall score,0.7161980553631011
+869,pima,LogisticRegression,SMOTE2,specificity score,0.7496663690565968
+870,pima,RandomForestClassifier,KMeansSMOTE,average precision score,0.664500018775082
+871,pima,RandomForestClassifier,KMeansSMOTE,f1 score,0.5103703703703703
+872,pima,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.8616213356419691
+873,pima,RandomForestClassifier,KMeansSMOTE,precision score,0.576069784871324
+874,pima,RandomForestClassifier,KMeansSMOTE,recall score,0.6346556469334178
+875,pima,RandomForestClassifier,KMeansSMOTE,specificity score,0.662119761457697
+876,pima,RandomForestClassifier,KMeansSMOTE2,average precision score,0.6510820295647621
+877,pima,RandomForestClassifier,KMeansSMOTE2,f1 score,0.5387890137328339
+878,pima,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.8439987494889738
+879,pima,RandomForestClassifier,KMeansSMOTE2,precision score,0.5879063516069982
+880,pima,RandomForestClassifier,KMeansSMOTE2,recall score,0.6303321280651034
+881,pima,RandomForestClassifier,KMeansSMOTE2,specificity score,0.6732262838643062
+882,pima,RandomForestClassifier,RandomOverSampler,average precision score,0.6398441557494625
+883,pima,RandomForestClassifier,RandomOverSampler,f1 score,0.5636870578443613
+884,pima,RandomForestClassifier,RandomOverSampler,geometric mean score,0.8290118558064593
+885,pima,RandomForestClassifier,RandomOverSampler,precision score,0.597877696791902
+886,pima,RandomForestClassifier,RandomOverSampler,recall score,0.6247767760885687
+887,pima,RandomForestClassifier,RandomOverSampler,specificity score,0.6824880536115302
+888,pima,RandomForestClassifier,SMOTE,average precision score,0.6249655353940239
+889,pima,RandomForestClassifier,SMOTE,f1 score,0.5801664585934249
+890,pima,RandomForestClassifier,SMOTE,geometric mean score,0.813010124329654
+891,pima,RandomForestClassifier,SMOTE,precision score,0.6004951180133934
+892,pima,RandomForestClassifier,SMOTE,recall score,0.6217727502901178
+893,pima,RandomForestClassifier,SMOTE,specificity score,0.6857759459553254
+894,pima,RandomForestClassifier,SMOTE2,average precision score,0.6154664832021091
+895,pima,RandomForestClassifier,SMOTE2,f1 score,0.6058801498127341
+896,pima,RandomForestClassifier,SMOTE2,geometric mean score,0.79641560252988
+897,pima,RandomForestClassifier,SMOTE2,precision score,0.6093095390691323
+898,pima,RandomForestClassifier,SMOTE2,recall score,0.6067228655535427
+899,pima,RandomForestClassifier,SMOTE2,specificity score,0.6935452073240301
+900,segment,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.945393798380034
+901,segment,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.8766666666666667
+902,segment,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.9915151515151515
+903,segment,GradientBoostingClassifier,KMeansSMOTE,precision score,0.9092705075343936
+904,segment,GradientBoostingClassifier,KMeansSMOTE,recall score,0.9749262280764617
+905,segment,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.9320843232936283
+906,segment,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.9332529705693267
+907,segment,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.8854545454545454
+908,segment,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9893434343434343
+909,segment,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.9080791897942164
+910,segment,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.9715523708753141
+911,segment,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.9357067729920441
+912,segment,GradientBoostingClassifier,RandomOverSampler,average precision score,0.8497968014555173
+913,segment,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9457575757575759
+914,segment,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.971919191919192
+915,segment,GradientBoostingClassifier,RandomOverSampler,precision score,0.8947523113436746
+916,segment,GradientBoostingClassifier,RandomOverSampler,recall score,0.9718088515269068
+917,segment,GradientBoostingClassifier,RandomOverSampler,specificity score,0.9586396446876314
+918,segment,GradientBoostingClassifier,SMOTE,average precision score,0.8530748377225079
+919,segment,GradientBoostingClassifier,SMOTE,f1 score,0.9542424242424243
+920,segment,GradientBoostingClassifier,SMOTE,geometric mean score,0.9723737373737376
+921,segment,GradientBoostingClassifier,SMOTE,precision score,0.900403306939188
+922,segment,GradientBoostingClassifier,SMOTE,recall score,0.9732198496800223
+923,segment,GradientBoostingClassifier,SMOTE,specificity score,0.963184849469202
+924,segment,GradientBoostingClassifier,SMOTE2,average precision score,0.8459094828458109
+925,segment,GradientBoostingClassifier,SMOTE2,f1 score,0.9512121212121212
+926,segment,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9709595959595958
+927,segment,GradientBoostingClassifier,SMOTE2,precision score,0.895123476265953
+928,segment,GradientBoostingClassifier,SMOTE2,recall score,0.9674020097503041
+929,segment,GradientBoostingClassifier,SMOTE2,specificity score,0.9609434315457109
+930,segment,LogisticRegression,KMeansSMOTE,average precision score,0.7250289474418072
+931,segment,LogisticRegression,KMeansSMOTE,f1 score,0.5963636363636364
+932,segment,LogisticRegression,KMeansSMOTE,geometric mean score,0.960959595959596
+933,segment,LogisticRegression,KMeansSMOTE,precision score,0.6509340622971924
+934,segment,LogisticRegression,KMeansSMOTE,recall score,0.7585231190161765
+935,segment,LogisticRegression,KMeansSMOTE,specificity score,0.7559329760557816
+936,segment,LogisticRegression,KMeansSMOTE2,average precision score,0.6090017386428522
+937,segment,LogisticRegression,KMeansSMOTE2,f1 score,0.6957575757575757
+938,segment,LogisticRegression,KMeansSMOTE2,geometric mean score,0.9243939393939394
+939,segment,LogisticRegression,KMeansSMOTE2,precision score,0.6475369399972731
+940,segment,LogisticRegression,KMeansSMOTE2,recall score,0.7414857208260986
+941,segment,LogisticRegression,KMeansSMOTE2,specificity score,0.8012099372554797
+942,segment,LogisticRegression,RandomOverSampler,average precision score,0.4875339925671457
+943,segment,LogisticRegression,RandomOverSampler,f1 score,0.9251515151515151
+944,segment,LogisticRegression,RandomOverSampler,geometric mean score,0.8373232323232322
+945,segment,LogisticRegression,RandomOverSampler,precision score,0.6380992163510921
+946,segment,LogisticRegression,RandomOverSampler,recall score,0.7110185023462797
+947,segment,LogisticRegression,RandomOverSampler,specificity score,0.8799036567620458
+948,segment,LogisticRegression,SMOTE,average precision score,0.497006305684629
+949,segment,LogisticRegression,SMOTE,f1 score,0.9212121212121211
+950,segment,LogisticRegression,SMOTE,geometric mean score,0.8439898989898991
+951,segment,LogisticRegression,SMOTE,precision score,0.6452002078723317
+952,segment,LogisticRegression,SMOTE,recall score,0.7165151433546978
+953,segment,LogisticRegression,SMOTE,specificity score,0.8815368117541282
+954,segment,LogisticRegression,SMOTE2,average precision score,0.48124707488556584
+955,segment,LogisticRegression,SMOTE2,f1 score,0.941818181818182
+956,segment,LogisticRegression,SMOTE2,geometric mean score,0.8303030303030303
+957,segment,LogisticRegression,SMOTE2,precision score,0.6366704238532398
+958,segment,LogisticRegression,SMOTE2,recall score,0.6197315965041862
+959,segment,LogisticRegression,SMOTE2,specificity score,0.8841305503501402
+960,segment,RandomForestClassifier,KMeansSMOTE,average precision score,0.9552237571236827
+961,segment,RandomForestClassifier,KMeansSMOTE,f1 score,0.8418181818181818
+962,segment,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9933333333333334
+963,segment,RandomForestClassifier,KMeansSMOTE,precision score,0.8941513152632898
+964,segment,RandomForestClassifier,KMeansSMOTE,recall score,0.9600735085400522
+965,segment,RandomForestClassifier,KMeansSMOTE,specificity score,0.9141031757098897
+966,segment,RandomForestClassifier,KMeansSMOTE2,average precision score,0.9512715385859533
+967,segment,RandomForestClassifier,KMeansSMOTE2,f1 score,0.8642424242424243
+968,segment,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9925757575757576
+969,segment,RandomForestClassifier,KMeansSMOTE2,precision score,0.9051062628672447
+970,segment,RandomForestClassifier,KMeansSMOTE2,recall score,0.9632720609638674
+971,segment,RandomForestClassifier,KMeansSMOTE2,specificity score,0.9259251948189082
+972,segment,RandomForestClassifier,RandomOverSampler,average precision score,0.9300860897270677
+973,segment,RandomForestClassifier,RandomOverSampler,f1 score,0.9006060606060606
+974,segment,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9885353535353534
+975,segment,RandomForestClassifier,RandomOverSampler,precision score,0.9145050296506891
+976,segment,RandomForestClassifier,RandomOverSampler,recall score,0.9655605605962524
+977,segment,RandomForestClassifier,RandomOverSampler,specificity score,0.9433925965337885
+978,segment,RandomForestClassifier,SMOTE,average precision score,0.9069569238357225
+979,segment,RandomForestClassifier,SMOTE,f1 score,0.9236363636363636
+980,segment,RandomForestClassifier,SMOTE,geometric mean score,0.984040404040404
+981,segment,RandomForestClassifier,SMOTE,precision score,0.9147404180182701
+982,segment,RandomForestClassifier,SMOTE,recall score,0.9653220940518885
+983,segment,RandomForestClassifier,SMOTE,specificity score,0.9532270230726703
+984,segment,RandomForestClassifier,SMOTE2,average precision score,0.8971421431415602
+985,segment,RandomForestClassifier,SMOTE2,f1 score,0.9166666666666666
+986,segment,RandomForestClassifier,SMOTE2,geometric mean score,0.9823232323232322
+987,segment,RandomForestClassifier,SMOTE2,precision score,0.9063460279473619
+988,segment,RandomForestClassifier,SMOTE2,recall score,0.9543243676483499
+989,segment,RandomForestClassifier,SMOTE2,specificity score,0.9488118010658464
+990,vehicle,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.9087987613710024
+991,vehicle,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.9201115633951454
+992,vehicle,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.971100344530577
+993,vehicle,GradientBoostingClassifier,KMeansSMOTE,precision score,0.913770513849147
+994,vehicle,GradientBoostingClassifier,KMeansSMOTE,recall score,0.9720690702215737
+995,vehicle,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.9450933654077989
+996,vehicle,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.9063785319038258
+997,vehicle,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.9231494044926881
+998,vehicle,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9703258685041632
+999,vehicle,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.9141163671870756
+1000,vehicle,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.9700526816081532
+1001,vehicle,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.9462515426071809
+1002,vehicle,GradientBoostingClassifier,RandomOverSampler,average precision score,0.8866935520649998
+1003,vehicle,GradientBoostingClassifier,RandomOverSampler,f1 score,0.9513116236996833
+1004,vehicle,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9621289118575941
+1005,vehicle,GradientBoostingClassifier,RandomOverSampler,precision score,0.9173714248426593
+1006,vehicle,GradientBoostingClassifier,RandomOverSampler,recall score,0.9711135386012746
+1007,vehicle,GradientBoostingClassifier,RandomOverSampler,specificity score,0.9565762858399163
+1008,vehicle,GradientBoostingClassifier,SMOTE,average precision score,0.8889429989751884
+1009,vehicle,GradientBoostingClassifier,SMOTE,f1 score,0.9457862204130862
+1010,vehicle,GradientBoostingClassifier,SMOTE,geometric mean score,0.963217054263566
+1011,vehicle,GradientBoostingClassifier,SMOTE,precision score,0.9159923283586051
+1012,vehicle,GradientBoostingClassifier,SMOTE,recall score,0.9733544435767996
+1013,vehicle,GradientBoostingClassifier,SMOTE,specificity score,0.9543382620544545
+1014,vehicle,GradientBoostingClassifier,SMOTE2,average precision score,0.896458416287041
+1015,vehicle,GradientBoostingClassifier,SMOTE2,f1 score,0.9467887833559475
+1016,vehicle,GradientBoostingClassifier,SMOTE2,geometric mean score,0.9659969853574506
+1017,vehicle,GradientBoostingClassifier,SMOTE2,precision score,0.9204923483022783
+1018,vehicle,GradientBoostingClassifier,SMOTE2,recall score,0.9761437049002775
+1019,vehicle,GradientBoostingClassifier,SMOTE2,specificity score,0.9562042886763097
+1020,vehicle,LogisticRegression,KMeansSMOTE,average precision score,0.9292184060664465
+1021,vehicle,LogisticRegression,KMeansSMOTE,f1 score,0.9392281019146692
+1022,vehicle,LogisticRegression,KMeansSMOTE,geometric mean score,0.9775911570485214
+1023,vehicle,LogisticRegression,KMeansSMOTE,precision score,0.9335443721393097
+1024,vehicle,LogisticRegression,KMeansSMOTE,recall score,0.9742843940718322
+1025,vehicle,LogisticRegression,KMeansSMOTE,specificity score,0.9580253609214745
+1026,vehicle,LogisticRegression,KMeansSMOTE2,average precision score,0.9258091896374566
+1027,vehicle,LogisticRegression,KMeansSMOTE2,f1 score,0.9387230514096186
+1028,vehicle,LogisticRegression,KMeansSMOTE2,geometric mean score,0.9763522825150732
+1029,vehicle,LogisticRegression,KMeansSMOTE2,precision score,0.9315079636643755
+1030,vehicle,LogisticRegression,KMeansSMOTE2,recall score,0.9740967632820748
+1031,vehicle,LogisticRegression,KMeansSMOTE2,specificity score,0.9571576767222517
+1032,vehicle,LogisticRegression,RandomOverSampler,average precision score,0.9015446540631531
+1033,vehicle,LogisticRegression,RandomOverSampler,f1 score,0.956301824212272
+1034,vehicle,LogisticRegression,RandomOverSampler,geometric mean score,0.9673858742463395
+1035,vehicle,LogisticRegression,RandomOverSampler,precision score,0.9275019592047652
+1036,vehicle,LogisticRegression,RandomOverSampler,recall score,0.9734433292461059
+1037,vehicle,LogisticRegression,RandomOverSampler,specificity score,0.9616787653556109
+1038,vehicle,LogisticRegression,SMOTE,average precision score,0.9127476970729959
+1039,vehicle,LogisticRegression,SMOTE,f1 score,0.9512965475652043
+1040,vehicle,LogisticRegression,SMOTE,geometric mean score,0.9715604364053977
+1041,vehicle,LogisticRegression,SMOTE,precision score,0.9309687208816468
+1042,vehicle,LogisticRegression,SMOTE,recall score,0.9736735862222377
+1043,vehicle,LogisticRegression,SMOTE,specificity score,0.9612037632029022
+1044,vehicle,LogisticRegression,SMOTE2,average precision score,0.9122171847247478
+1045,vehicle,LogisticRegression,SMOTE2,f1 score,0.9537614955525404
+1046,vehicle,LogisticRegression,SMOTE2,geometric mean score,0.9712503588860179
+1047,vehicle,LogisticRegression,SMOTE2,precision score,0.9318014554052118
+1048,vehicle,LogisticRegression,SMOTE2,recall score,0.9737851192362706
+1049,vehicle,LogisticRegression,SMOTE2,specificity score,0.9622752516961078
+1050,vehicle,RandomForestClassifier,KMeansSMOTE,average precision score,0.918587182397987
+1051,vehicle,RandomForestClassifier,KMeansSMOTE,f1 score,0.8839288406452587
+1052,vehicle,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9754313809933965
+1053,vehicle,RandomForestClassifier,KMeansSMOTE,precision score,0.9002850486357922
+1054,vehicle,RandomForestClassifier,KMeansSMOTE,recall score,0.9518412284508309
+1055,vehicle,RandomForestClassifier,KMeansSMOTE,specificity score,0.9283788584223936
+1056,vehicle,RandomForestClassifier,KMeansSMOTE2,average precision score,0.9025871870850122
+1057,vehicle,RandomForestClassifier,KMeansSMOTE2,f1 score,0.8733077039047188
+1058,vehicle,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9701794430089006
+1059,vehicle,RandomForestClassifier,KMeansSMOTE2,precision score,0.8863496661604712
+1060,vehicle,RandomForestClassifier,KMeansSMOTE2,recall score,0.9419546370348415
+1061,vehicle,RandomForestClassifier,KMeansSMOTE2,specificity score,0.9200392194734569
+1062,vehicle,RandomForestClassifier,RandomOverSampler,average precision score,0.8987543286116237
+1063,vehicle,RandomForestClassifier,RandomOverSampler,f1 score,0.9227423488617518
+1064,vehicle,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9673923341946598
+1065,vehicle,RandomForestClassifier,RandomOverSampler,precision score,0.9097011034923487
+1066,vehicle,RandomForestClassifier,RandomOverSampler,recall score,0.949673434016036
+1067,vehicle,RandomForestClassifier,RandomOverSampler,specificity score,0.9445448884357575
+1068,vehicle,RandomForestClassifier,SMOTE,average precision score,0.891860468572799
+1069,vehicle,RandomForestClassifier,SMOTE,f1 score,0.9171038745665612
+1070,vehicle,RandomForestClassifier,SMOTE,geometric mean score,0.9653789836347976
+1071,vehicle,RandomForestClassifier,SMOTE,precision score,0.9035614244208233
+1072,vehicle,RandomForestClassifier,SMOTE,recall score,0.9466645716259052
+1073,vehicle,RandomForestClassifier,SMOTE,specificity score,0.9406782563498707
+1074,vehicle,RandomForestClassifier,SMOTE2,average precision score,0.9069832176849509
+1075,vehicle,RandomForestClassifier,SMOTE2,f1 score,0.9101085481682498
+1076,vehicle,RandomForestClassifier,SMOTE2,geometric mean score,0.9709417169107091
+1077,vehicle,RandomForestClassifier,SMOTE2,precision score,0.9079580077934951
+1078,vehicle,RandomForestClassifier,SMOTE2,recall score,0.958600287928124
+1079,vehicle,RandomForestClassifier,SMOTE2,specificity score,0.939834318382362
+1080,wine,GradientBoostingClassifier,KMeansSMOTE,average precision score,0.9310388135891567
+1081,wine,GradientBoostingClassifier,KMeansSMOTE,f1 score,0.8944444444444446
+1082,wine,GradientBoostingClassifier,KMeansSMOTE,geometric mean score,0.954021164021164
+1083,wine,GradientBoostingClassifier,KMeansSMOTE,precision score,0.9105003801794392
+1084,wine,GradientBoostingClassifier,KMeansSMOTE,recall score,0.9724550712295482
+1085,wine,GradientBoostingClassifier,KMeansSMOTE,specificity score,0.9229088888770786
+1086,wine,GradientBoostingClassifier,KMeansSMOTE2,average precision score,0.9307100976792315
+1087,wine,GradientBoostingClassifier,KMeansSMOTE2,f1 score,0.9014492753623189
+1088,wine,GradientBoostingClassifier,KMeansSMOTE2,geometric mean score,0.9520634920634921
+1089,wine,GradientBoostingClassifier,KMeansSMOTE2,precision score,0.9134583732179445
+1090,wine,GradientBoostingClassifier,KMeansSMOTE2,recall score,0.9711789293077594
+1091,wine,GradientBoostingClassifier,KMeansSMOTE2,specificity score,0.9253826715265149
+1092,wine,GradientBoostingClassifier,RandomOverSampler,average precision score,0.9169262406943567
+1093,wine,GradientBoostingClassifier,RandomOverSampler,f1 score,0.90018115942029
+1094,wine,GradientBoostingClassifier,RandomOverSampler,geometric mean score,0.9437037037037037
+1095,wine,GradientBoostingClassifier,RandomOverSampler,precision score,0.9062048814259958
+1096,wine,GradientBoostingClassifier,RandomOverSampler,recall score,0.9727528130257461
+1097,wine,GradientBoostingClassifier,RandomOverSampler,specificity score,0.9206944530145655
+1098,wine,GradientBoostingClassifier,SMOTE,average precision score,0.9182594212014502
+1099,wine,GradientBoostingClassifier,SMOTE,f1 score,0.9016304347826087
+1100,wine,GradientBoostingClassifier,SMOTE,geometric mean score,0.9438359788359788
+1101,wine,GradientBoostingClassifier,SMOTE,precision score,0.9076215453804126
+1102,wine,GradientBoostingClassifier,SMOTE,recall score,0.9727270340738066
+1103,wine,GradientBoostingClassifier,SMOTE,specificity score,0.9215272425868115
+1104,wine,GradientBoostingClassifier,SMOTE2,average precision score,0.9142330377620231
+1105,wine,GradientBoostingClassifier,SMOTE2,f1 score,0.8986714975845411
+1106,wine,GradientBoostingClassifier,SMOTE2,geometric mean score,0.940952380952381
+1107,wine,GradientBoostingClassifier,SMOTE2,precision score,0.9039851308655955
+1108,wine,GradientBoostingClassifier,SMOTE2,recall score,0.9728391595305694
+1109,wine,GradientBoostingClassifier,SMOTE2,specificity score,0.9185796068772459
+1110,wine,LogisticRegression,KMeansSMOTE,average precision score,0.9245915606132998
+1111,wine,LogisticRegression,KMeansSMOTE,f1 score,0.9268115942028985
+1112,wine,LogisticRegression,KMeansSMOTE,geometric mean score,0.9485978835978836
+1113,wine,LogisticRegression,KMeansSMOTE,precision score,0.9246344408739677
+1114,wine,LogisticRegression,KMeansSMOTE,recall score,0.9841990905792812
+1115,wine,LogisticRegression,KMeansSMOTE,specificity score,0.9371897775797438
+1116,wine,LogisticRegression,KMeansSMOTE2,average precision score,0.9229014680971204
+1117,wine,LogisticRegression,KMeansSMOTE2,f1 score,0.9255434782608696
+1118,wine,LogisticRegression,KMeansSMOTE2,geometric mean score,0.9476719576719577
+1119,wine,LogisticRegression,KMeansSMOTE2,precision score,0.9231620392221027
+1120,wine,LogisticRegression,KMeansSMOTE2,recall score,0.984057023778729
+1121,wine,LogisticRegression,KMeansSMOTE2,specificity score,0.9360598943131286
+1122,wine,LogisticRegression,RandomOverSampler,average precision score,0.9196587998689448
+1123,wine,LogisticRegression,RandomOverSampler,f1 score,0.9326086956521739
+1124,wine,LogisticRegression,RandomOverSampler,geometric mean score,0.9448412698412698
+1125,wine,LogisticRegression,RandomOverSampler,precision score,0.9250478141919733
+1126,wine,LogisticRegression,RandomOverSampler,recall score,0.9850444014275768
+1127,wine,LogisticRegression,RandomOverSampler,specificity score,0.9382373288728696
+1128,wine,LogisticRegression,SMOTE,average precision score,0.9179018209380528
+1129,wine,LogisticRegression,SMOTE,f1 score,0.9297101449275363
+1130,wine,LogisticRegression,SMOTE,geometric mean score,0.9438888888888888
+1131,wine,LogisticRegression,SMOTE,precision score,0.9226713311082475
+1132,wine,LogisticRegression,SMOTE,recall score,0.9841923871451088
+1133,wine,LogisticRegression,SMOTE,specificity score,0.9362464798588596
+1134,wine,LogisticRegression,SMOTE2,average precision score,0.9164413345645229
+1135,wine,LogisticRegression,SMOTE2,f1 score,0.9409420289855074
+1136,wine,LogisticRegression,SMOTE2,geometric mean score,0.9420370370370371
+1137,wine,LogisticRegression,SMOTE2,precision score,0.9277160875451014
+1138,wine,LogisticRegression,SMOTE2,recall score,0.9846124810799882
+1139,wine,LogisticRegression,SMOTE2,specificity score,0.9411335949388209
+1140,wine,RandomForestClassifier,KMeansSMOTE,average precision score,0.987309188396145
+1141,wine,RandomForestClassifier,KMeansSMOTE,f1 score,0.9198671497584542
+1142,wine,RandomForestClassifier,KMeansSMOTE,geometric mean score,0.9915343915343915
+1143,wine,RandomForestClassifier,KMeansSMOTE,precision score,0.9512986024394957
+1144,wine,RandomForestClassifier,KMeansSMOTE,recall score,0.9900708938020427
+1145,wine,RandomForestClassifier,KMeansSMOTE,specificity score,0.9545321181450763
+1146,wine,RandomForestClassifier,KMeansSMOTE2,average precision score,0.9784917280786847
+1147,wine,RandomForestClassifier,KMeansSMOTE2,f1 score,0.9071256038647342
+1148,wine,RandomForestClassifier,KMeansSMOTE2,geometric mean score,0.9859523809523811
+1149,wine,RandomForestClassifier,KMeansSMOTE2,precision score,0.9399583291721922
+1150,wine,RandomForestClassifier,KMeansSMOTE2,recall score,0.9900709019014773
+1151,wine,RandomForestClassifier,KMeansSMOTE2,specificity score,0.9450407706101169
+1152,wine,RandomForestClassifier,RandomOverSampler,average precision score,0.9873975468975468
+1153,wine,RandomForestClassifier,RandomOverSampler,f1 score,0.9141304347826088
+1154,wine,RandomForestClassifier,RandomOverSampler,geometric mean score,0.9915343915343915
+1155,wine,RandomForestClassifier,RandomOverSampler,precision score,0.9480214884220113
+1156,wine,RandomForestClassifier,RandomOverSampler,recall score,0.9881559566324724
+1157,wine,RandomForestClassifier,RandomOverSampler,specificity score,0.9514461502306577
+1158,wine,RandomForestClassifier,SMOTE,average precision score,0.9810766986636551
+1159,wine,RandomForestClassifier,SMOTE,f1 score,0.920048309178744
+1160,wine,RandomForestClassifier,SMOTE,geometric mean score,0.9877513227513226
+1161,wine,RandomForestClassifier,SMOTE,precision score,0.9484104992037461
+1162,wine,RandomForestClassifier,SMOTE,recall score,0.9890985204388955
+1163,wine,RandomForestClassifier,SMOTE,specificity score,0.9527496827836792
+1164,wine,RandomForestClassifier,SMOTE2,average precision score,0.9761860844469542
+1165,wine,RandomForestClassifier,SMOTE2,f1 score,0.9240338164251207
+1166,wine,RandomForestClassifier,SMOTE2,geometric mean score,0.984074074074074
+1167,wine,RandomForestClassifier,SMOTE2,precision score,0.9480315068767299
+1168,wine,RandomForestClassifier,SMOTE2,recall score,0.9887700892002217
+1169,wine,RandomForestClassifier,SMOTE2,specificity score,0.9529848151601892
