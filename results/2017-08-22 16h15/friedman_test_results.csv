@@ -1,0 +1,19 @@
+Classifier,Metric,p-value
+GradientBoostingClassifier,f1 score,0.0014605691796772534
+GradientBoostingClassifier,geometric mean score,0.0029286667390854143
+GradientBoostingClassifier,precision score,5.12949416692464e-06
+GradientBoostingClassifier,recall score,0.6662214935292586
+GradientBoostingClassifier,roc auc score,3.6402547751471365e-05
+GradientBoostingClassifier,specificity score,0.4026797811309104
+LogisticRegression,f1 score,0.0036579529915157422
+LogisticRegression,geometric mean score,1.273094228875294e-06
+LogisticRegression,precision score,8.598735205512646e-10
+LogisticRegression,recall score,0.001537860184003714
+LogisticRegression,roc auc score,2.7065208610780698e-05
+LogisticRegression,specificity score,2.3717375502359116e-05
+RandomForestClassifier,f1 score,0.00028715727680291063
+RandomForestClassifier,geometric mean score,0.003924952564981476
+RandomForestClassifier,precision score,2.4477779640257365e-06
+RandomForestClassifier,recall score,0.024883130277864016
+RandomForestClassifier,roc auc score,1.577681442107946e-06
+RandomForestClassifier,specificity score,0.3799735269942847
