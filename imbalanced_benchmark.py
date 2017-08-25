@@ -16,18 +16,20 @@ with open("config.yml", 'r') as ymlfile:
 def main():
     experiment_config = {
         'comment': 'Run for mnist_imb',
-        'experiment_repetitions': 100,
+        'experiment_repetitions': 10,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
     classifiers = [LogisticRegression(), GradientBoostingClassifier(), RandomForestClassifier()]
     oversampling_methods = [
+        None,
         RandomOverSampler(),
         SMOTE(),
         SMOTE(kind='borderline1'),
-        KMeansSMOTE(),
-        KMeansSMOTE(kmeans_args={'n_clusters':50}),
+        KMeansSMOTE(use_minibatch_kmeans=False),
+        KMeansSMOTE(use_minibatch_kmeans=False, minority_weight=1),
+        KMeansSMOTE(use_minibatch_kmeans=False, minority_weight=0.5)
     ]
 
     experiment = BinaryExperiment(
