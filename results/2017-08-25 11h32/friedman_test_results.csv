@@ -1,0 +1,19 @@
+Classifier,Metric,p-value
+GradientBoostingClassifier,average precision score,0.054226336930155085
+GradientBoostingClassifier,f1 score,0.051181353413065414
+GradientBoostingClassifier,geometric mean score,0.051181353413065414
+GradientBoostingClassifier,precision score,0.22960164919379455
+GradientBoostingClassifier,recall score,0.051181353413065414
+GradientBoostingClassifier,specificity score,0.051181353413065414
+LogisticRegression,average precision score,0.1619644930794282
+LogisticRegression,f1 score,0.1619644930794282
+LogisticRegression,geometric mean score,0.1619644930794282
+LogisticRegression,precision score,0.051181353413065414
+LogisticRegression,recall score,0.22960164919379455
+LogisticRegression,specificity score,0.22960164919379455
+RandomForestClassifier,average precision score,0.054226336930155085
+RandomForestClassifier,f1 score,0.054226336930155085
+RandomForestClassifier,geometric mean score,0.054226336930155085
+RandomForestClassifier,precision score,0.054226336930155085
+RandomForestClassifier,recall score,0.539749350395557
+RandomForestClassifier,specificity score,0.1619644930794282
