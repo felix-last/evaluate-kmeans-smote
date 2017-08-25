@@ -1,0 +1,19 @@
+Classifier,Metric,KMeansSMOTE,KMeansSMOTE2,RandomOverSampler,SMOTE,SMOTE2
+GradientBoostingClassifier,average precision score,1.46,1.85,3.77,3.54,4.38
+GradientBoostingClassifier,f1 score,4.38,4.0,2.46,1.77,2.38
+GradientBoostingClassifier,geometric mean score,1.31,2.0,3.69,3.69,4.31
+GradientBoostingClassifier,precision score,3.62,3.31,2.92,2.31,2.85
+GradientBoostingClassifier,recall score,2.85,4.15,2.77,2.31,2.92
+GradientBoostingClassifier,specificity score,4.08,3.85,2.62,1.85,2.62
+LogisticRegression,average precision score,1.31,2.31,3.62,3.23,4.54
+LogisticRegression,f1 score,4.54,4.38,2.0,2.54,1.54
+LogisticRegression,geometric mean score,1.54,1.92,3.85,3.15,4.54
+LogisticRegression,precision score,3.23,3.92,2.54,2.62,2.69
+LogisticRegression,recall score,2.92,4.08,2.69,2.08,3.23
+LogisticRegression,specificity score,3.92,4.38,2.0,2.38,2.31
+RandomForestClassifier,average precision score,1.77,2.0,3.46,3.92,3.85
+RandomForestClassifier,f1 score,4.31,4.46,2.38,1.69,2.15
+RandomForestClassifier,geometric mean score,1.46,1.85,3.38,4.15,4.15
+RandomForestClassifier,precision score,3.92,4.23,2.62,1.77,2.46
+RandomForestClassifier,recall score,2.46,2.77,3.15,3.0,3.62
+RandomForestClassifier,specificity score,3.92,4.31,2.62,1.77,2.38

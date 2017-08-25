@@ -1,0 +1,19 @@
+Classifier,Metric,KMeansSMOTE,KMeansSMOTE2,KMeansSMOTE3,KMeansSMOTE4,KMeansSMOTE5,RandomOverSampler,SMOTE,SMOTE2
+GradientBoostingClassifier,average precision score,6.0,5.0,4.0,3.0,2.0,7.5,1.0,7.5
+GradientBoostingClassifier,f1 score,7.0,6.0,5.0,4.0,3.0,1.0,2.0,8.0
+GradientBoostingClassifier,geometric mean score,7.0,6.0,5.0,4.0,3.0,1.0,2.0,8.0
+GradientBoostingClassifier,precision score,6.5,5.5,4.5,3.5,2.5,4.5,1.5,7.5
+GradientBoostingClassifier,recall score,7.0,6.0,5.0,4.0,3.0,8.0,2.0,1.0
+GradientBoostingClassifier,specificity score,7.0,6.0,5.0,4.0,3.0,8.0,2.0,1.0
+LogisticRegression,average precision score,6.5,5.5,4.5,3.5,2.5,4.0,1.5,8.0
+LogisticRegression,f1 score,6.5,5.5,4.5,3.5,2.5,4.0,1.5,8.0
+LogisticRegression,geometric mean score,6.5,5.5,4.5,3.5,2.5,4.0,1.5,8.0
+LogisticRegression,precision score,6.0,5.0,4.0,3.0,2.0,7.0,1.0,8.0
+LogisticRegression,recall score,6.5,5.5,4.5,3.5,2.5,7.5,1.5,4.5
+LogisticRegression,specificity score,6.5,5.5,4.5,3.5,2.5,7.5,1.5,4.5
+RandomForestClassifier,average precision score,6.0,5.0,4.0,3.0,2.0,7.5,1.0,7.5
+RandomForestClassifier,f1 score,6.0,5.0,4.0,3.0,2.0,7.5,1.0,7.5
+RandomForestClassifier,geometric mean score,6.0,5.0,4.0,3.0,2.0,7.5,1.0,7.5
+RandomForestClassifier,precision score,6.0,5.0,4.0,3.0,2.0,7.5,1.0,7.5
+RandomForestClassifier,recall score,7.0,6.0,5.0,4.0,3.0,5.0,2.0,4.0
+RandomForestClassifier,specificity score,6.5,5.5,4.5,3.5,2.5,8.0,1.5,4.0

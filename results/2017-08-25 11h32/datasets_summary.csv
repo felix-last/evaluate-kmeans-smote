@@ -1,0 +1,3 @@
+,Dataset name,# of features,# of instances,# of minority instances,# of majority instances,Imbalance Ratio
+0,mnist-imb-7-8,785,7365,72,7293,101.29
+1,mnist-imb-1-7,785,7955,78,7877,100.99

@@ -1,0 +1,5 @@
+comment,Compare automatic cluster number to fixed 50 (previous best) with new PR metrics
+experiment_repetitions,10
+n_splits,3
+oversampling_methods,"[RandomOverSampler(random_state=2155905143, ratio='auto'), SMOTE(k=None, k_neighbors=5, kind='regular', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=2155905143, ratio='auto', svm_estimator=None), SMOTE(k=None, k_neighbors=5, kind='borderline1', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=2155905143, ratio='auto', svm_estimator=None), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=0.66, n_jobs=-1, random_state=2155905143, ratio='auto', smote_args={}, use_minibatch_kmeans=True), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={'n_clusters': 50}, minority_weight=0.66, n_jobs=-1, random_state=2155905143, ratio='auto', smote_args={}, use_minibatch_kmeans=True)]"
+random_seed,2155905152

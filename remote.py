@@ -119,8 +119,14 @@ def _run_experiment():
     finally:
         # when done, notify and shutdown instance (if running for at least 5 mins)
         instance_id = cfg['instance_id']
-        requests.post(cfg['notification_url'], data={'value1': instance_id, 'value2':status})
-        if( (time.time() - start_time) > 60 * 5 ):
+        runtime_in_minutes = round(((time.time() - start_time) / 60), 0)
+        its_time_to_shut_down = runtime_in_minutes > 5
+        requests.post(cfg['notification_url'], data={
+            'value1': instance_id,
+            'value2':status,
+            'value3': runtime_in_minutes
+        })
+        if( its_time_to_shut_down ):
             stop_instance(instance_id)
 
 
