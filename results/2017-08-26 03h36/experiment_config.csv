@@ -1,0 +1,5 @@
+comment,Run for mnist_imb
+experiment_repetitions,10
+n_splits,3
+oversampling_methods,"[None, RandomOverSampler(random_state=3974950115, ratio='auto'), SMOTE(k=None, k_neighbors=5, kind='regular', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=3974950115, ratio='auto', svm_estimator=None), SMOTE(k=None, k_neighbors=5, kind='borderline1', m=None, m_neighbors=10, n_jobs=-1, out_step=0.5, random_state=3974950115, ratio='auto', svm_estimator=None), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=0.66, n_jobs=-1, random_state=3974950115, ratio='auto', smote_args={}, use_minibatch_kmeans=False), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=1, n_jobs=-1, random_state=3974950115, ratio='auto', smote_args={}, use_minibatch_kmeans=False), KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=0.5, n_jobs=-1, random_state=3974950115, ratio='auto', smote_args={}, use_minibatch_kmeans=False)]"
+random_seed,3974950124
