@@ -15,7 +15,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Run for mnist_imb',
+        'comment': 'CC Grid Search to determine ideal number of clusters',
         'experiment_repetitions': 10,
         'n_splits':3,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -24,12 +24,14 @@ def main():
     classifiers = [LogisticRegression(), GradientBoostingClassifier(), RandomForestClassifier()]
     oversampling_methods = [
         None,
-        RandomOverSampler(),
         SMOTE(),
-        SMOTE(kind='borderline1'),
-        KMeansSMOTE(use_minibatch_kmeans=False),
-        KMeansSMOTE(use_minibatch_kmeans=False, minority_weight=1),
-        KMeansSMOTE(use_minibatch_kmeans=False, minority_weight=0.5)
+        KMeansSMOTE(kmeans_args={'n_clusters':2, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':50, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':100, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':200, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':750, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
+        KMeansSMOTE(kmeans_args={'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5})
     ]
 
     experiment = BinaryExperiment(
