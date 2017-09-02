@@ -6,8 +6,10 @@ import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.metrics import make_scorer, average_precision_score, f1_score, roc_auc_score
 from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
+from imblearn.metrics import geometric_mean_score
 from imbtools.evaluation import BinaryExperiment
 from imbtools.evaluation import read_csv_dir
 
@@ -56,7 +58,13 @@ def main():
         n_jobs=-1,
         experiment_repetitions=experiment_config['experiment_repetitions'],
         random_state=experiment_config['random_seed'],
-        n_splits=experiment_config['n_splits']
+        n_splits=experiment_config['n_splits'],
+        scoring={
+            'geometric_mean': make_scorer(geometric_mean_score),
+            'average_precision': make_scorer(average_precision_score),
+            'roc_auc': make_scorer(roc_auc_score),
+            'f1': make_scorer(f1_score)
+        }
     )
 
     with warnings.catch_warnings():
