@@ -5,34 +5,52 @@ import pandas as pd
 import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imbtools.evaluation import BinaryExperiment
+from imbtools.evaluation import read_csv_dir
 
 with open("config.yml", 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
 def main():
     experiment_config = {
-        'comment': 'creditcard_scaled with precision, recall and specificity',
-        'experiment_repetitions': 10,
-        'n_splits':3,
+        'comment': '...',
+        'experiment_repetitions': 1,
+        'n_splits':10,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
-    classifiers = [LogisticRegression(), GradientBoostingClassifier()]
+    classifiers = [
+        ('LR',LogisticRegression()),
+        ('GB',GradientBoostingClassifier()),
+        (
+            'RF',RandomForestClassifier(),
+            [{
+                'criterion':['gini','entropy'],
+                'n_estimators':[10,100]
+            }]
+        )
+    ]
     oversampling_methods = [
-        None,
-        RandomUnderSampler(),
-        RandomOverSampler(),
-        SMOTE(),
-        SMOTE(kind='borderline1'),
-        KMeansSMOTE()
+        ('None',None),
+        ('RandomOverSampler', RandomOverSampler()),
+        ('SMOTE', SMOTE()),
+        ('B1-SMOTE', SMOTE(kind='borderline1')),
+        ('B2-SMOTE', SMOTE(kind='borderline2')),
+        (
+            'KMeansSMOTE', KMeansSMOTE(),
+            [{
+                'minority_weight': [0.66, 1, 0.5],
+                'density_power': [None, 2]
+            }]
+        )
     ]
 
+    datasets = read_csv_dir(cfg['dataset_dir'])
     experiment = BinaryExperiment(
-        cfg['dataset_dir'],
+        datasets,
         classifiers,
         oversampling_methods,
         n_jobs=-1,
@@ -43,7 +61,7 @@ def main():
 
     with warnings.catch_warnings():
         warnings.filterwarnings(action='ignore', message='Adapting smote_args\.k_neighbors')
-        experiment.run(logging_results=False)
+        experiment.run()
 
     path = cfg['results_dir']
     if 'session_id' not in globals():
@@ -51,23 +69,12 @@ def main():
 
     os.makedirs('{}/{}'.format(path, session_id))
 
-    try:
-        experiment.datasets_summary_.to_csv('{}/{}/datasets_summary.csv'.format(path, session_id))
-        experiment.friedman_test_results_.to_csv('{}/{}/friedman_test_results.csv'.format(path, session_id))
-        experiment.mean_cv_results_.to_csv('{}/{}/mean_cv_results.csv'.format(path, session_id))
-        experiment.mean_ranking_results_.to_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id))
-        experiment.std_cv_results_.to_csv('{}/{}/std_cv_results.csv'.format(path, session_id))
-    except: pass
-    try:
-        experiment.roc_.to_csv('{}/{}/roc.csv'.format(path, session_id))
-    except: pass
+    experiment.save('{}/{}/experiment.p'.format(path, session_id))
 
     # stringify oversampling methods
     experiment_config['oversampling_methods'] = re.sub('\\n *',' ', str(oversampling_methods))
     # save experiment config
     pd.Series(experiment_config).to_csv('{}/{}/experiment_config.csv'.format(path, session_id))
-
-    remote.remote_experiment_finished.main(cfg)
 
 if __name__ == "__main__":
     main()
