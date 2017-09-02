@@ -18,8 +18,8 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': '...',
-        'experiment_repetitions': 1,
+        'comment': 'Creditcard grid search',
+        'experiment_repetitions': 5,
         'n_splits':10,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
@@ -31,7 +31,7 @@ def main():
             'RF',RandomForestClassifier(),
             [{
                 'criterion':['gini','entropy'],
-                'n_estimators':[10,100]
+                'n_estimators':[100]
             }]
         )
     ]
@@ -44,9 +44,13 @@ def main():
         (
             'KMeansSMOTE', KMeansSMOTE(),
             [{
-                'minority_weight': [0.66, 1, 0.5],
                 'density_power': [None, 2],
-                'smote_args': [{'k_neighbors': 5},{'k_neighbors': 100}]
+                'smote_args': [{'k_neighbors': 5},{'k_neighbors': 100}],
+                'kmeans_args': [
+                    {'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5},
+                    {'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5},
+                    {'n_clusters':1500, 'batch_size':1000, 'reassignment_ratio': 10**-5}
+                ]
             }]
         )
     ]
