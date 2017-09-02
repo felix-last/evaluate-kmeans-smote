@@ -9,33 +9,49 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imbtools.evaluation import BinaryExperiment
+from imbtools.evaluation import read_csv_dir
 
 with open("config.yml", 'r') as ymlfile:
         cfg = yaml.load(ymlfile)
 
 def main():
     experiment_config = {
-        'comment': 'CC Grid Search to determine ideal number of clusters',
-        'experiment_repetitions': 10,
-        'n_splits':3,
+        'comment': '...',
+        'experiment_repetitions': 1,
+        'n_splits':10,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
-    classifiers = [LogisticRegression(), GradientBoostingClassifier(), RandomForestClassifier()]
+    classifiers = [
+        ('LR',LogisticRegression()),
+        ('GB',GradientBoostingClassifier()),
+        (
+            'RF',RandomForestClassifier(),
+            [{
+                'criterion':['gini','entropy'],
+                'n_estimators':[10,100]
+            }]
+        )
+    ]
     oversampling_methods = [
-        None,
-        SMOTE(),
-        KMeansSMOTE(kmeans_args={'n_clusters':2, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':50, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':100, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':200, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':750, 'batch_size':1000, 'reassignment_ratio': 10**-5}),
-        KMeansSMOTE(kmeans_args={'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5})
+        ('None',None),
+        ('RandomOverSampler', RandomOverSampler()),
+        ('SMOTE', SMOTE()),
+        ('B1-SMOTE', SMOTE(kind='borderline1')),
+        ('B2-SMOTE', SMOTE(kind='borderline2')),
+        (
+            'KMeansSMOTE', KMeansSMOTE(),
+            [{
+                'minority_weight': [0.66, 1, 0.5],
+                'density_power': [None, 2],
+                'smote_args': [{'k_neighbors': 5},{'k_neighbors': 100}]
+            }]
+        )
     ]
 
+    datasets = read_csv_dir(cfg['dataset_dir'])
     experiment = BinaryExperiment(
-        cfg['dataset_dir'],
+        datasets,
         classifiers,
         oversampling_methods,
         n_jobs=-1,
@@ -54,16 +70,7 @@ def main():
 
     os.makedirs('{}/{}'.format(path, session_id))
 
-    try:
-        experiment.datasets_summary_.to_csv('{}/{}/datasets_summary.csv'.format(path, session_id))
-        experiment.friedman_test_results_.to_csv('{}/{}/friedman_test_results.csv'.format(path, session_id))
-        experiment.mean_cv_results_.to_csv('{}/{}/mean_cv_results.csv'.format(path, session_id))
-        experiment.mean_ranking_results_.to_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id))
-        experiment.std_cv_results_.to_csv('{}/{}/std_cv_results.csv'.format(path, session_id))
-    except: pass
-    try:
-        experiment.roc_.to_csv('{}/{}/roc.csv'.format(path, session_id))
-    except: pass
+    experiment.save('{}/{}/experiment.p'.format(path, session_id))
 
     # stringify oversampling methods
     experiment_config['oversampling_methods'] = re.sub('\\n *',' ', str(oversampling_methods))
