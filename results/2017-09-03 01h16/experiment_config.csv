@@ -1,0 +1,5 @@
+comment,Classic with grid search and optimal results
+experiment_repetitions,5
+n_splits,10
+oversampling_methods,"[('None', None), ('RandomOverSampler', RandomOverSampler(random_state=1451742910, ratio='auto')), ('SMOTE', SMOTE(k=None, k_neighbors=5, kind='regular', m=None, m_neighbors=10, n_jobs=1, out_step=0.5, random_state=1451742910, ratio='auto', svm_estimator=None)), ('B1-SMOTE', SMOTE(k=None, k_neighbors=5, kind='borderline1', m=None, m_neighbors=10, n_jobs=1, out_step=0.5, random_state=1451742910, ratio='auto', svm_estimator=None)), ('B2-SMOTE', SMOTE(k=None, k_neighbors=5, kind='borderline2', m=None, m_neighbors=10, n_jobs=1, out_step=0.5, random_state=1451742910, ratio='auto', svm_estimator=None)), ('KMeansSMOTE', KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, minority_weight=0.66, n_jobs=1, random_state=None, ratio='auto', smote_args={}, use_minibatch_kmeans=True), [{'smote_args': [{'k_neighbors': 5}, {'k_neighbors': 100}], 'density_power': [None, 2], 'minority_weight': [0.66, 1, 0.5]}])]"
+random_seed,3200171710
