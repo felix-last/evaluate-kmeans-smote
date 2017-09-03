@@ -1,0 +1,5 @@
+comment,...
+experiment_repetitions,1
+n_splits,10
+oversampling_methods,"[('None', None), ('RandomOverSampler', RandomOverSampler(random_state=723402180, ratio='auto')), ('SMOTE', SMOTE(k=None, k_neighbors=5, kind='regular', m=None, m_neighbors=10, n_jobs=1, out_step=0.5, random_state=723402180, ratio='auto', svm_estimator=None)), ('B1-SMOTE', SMOTE(k=None, k_neighbors=5, kind='borderline1', m=None, m_neighbors=10, n_jobs=1, out_step=0.5, random_state=723402180, ratio='auto', svm_estimator=None))]"
+random_seed,2004318071
