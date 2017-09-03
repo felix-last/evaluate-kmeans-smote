@@ -18,40 +18,81 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Creditcard grid search',
+        'comment': 'Elaborate grid search for classic datasets',
         'experiment_repetitions': 5,
-        'n_splits':10,
+        'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
     classifiers = [
-        ('LogisticRegression',LogisticRegression()),
-        ('GradientBoosting',GradientBoostingClassifier()),
+        (
+            'LogisticRegression', LogisticRegression(),
+            [{
+                'penalty': ['l1', 'l2']
+            }]
+        ),
+        (
+            'GradientBoosting',GradientBoostingClassifier(),
+            [{
+                'loss':['deviance', 'exponential'],
+                'learning_rate': [0.01, 0.1],
+                'n_estimators': [100, 500, 1000]
+            }]
+        ),
         (
             'RandomForest',RandomForestClassifier(),
             [{
                 'criterion':['gini','entropy'],
-                'n_estimators':[100]
+                'n_estimators':[10,100]
             }]
         )
     ]
     oversampling_methods = [
         ('None',None),
         ('RandomOverSampler', RandomOverSampler()),
-        ('SMOTE', SMOTE()),
-        ('B1-SMOTE', SMOTE(kind='borderline1')),
-        ('B2-SMOTE', SMOTE(kind='borderline2')),
+        (
+            'SMOTE', SMOTE(),
+            [{
+                'k_neighbors': [3,4,5,6,20]
+            }]
+        ),
+        (
+            'B1-SMOTE', SMOTE(kind='borderline1'),
+            [{
+                'k_neighbors': [3,4,5,6,20]
+            }]
+        ),
+        (
+            'B2-SMOTE', SMOTE(kind='borderline2'),
+            [{
+                'k_neighbors': [3,4,5,6,20]
+            }]
+        ),
         (
             'KMeansSMOTE', KMeansSMOTE(),
-            [{
-                'density_power': [None, 2],
-                'smote_args': [{'k_neighbors': 5},{'k_neighbors': 100}],
-                'kmeans_args': [
-                    {'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5},
-                    {'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5},
-                    {'n_clusters':1500, 'batch_size':1000, 'reassignment_ratio': 10**-5}
-                ]
-            }]
+            [
+                {
+                    'density_power': [None, 2, 3, 4], # None corresponds to n_features
+                    'smote_args': [
+                        {'k_neighbors': 3},{'k_neighbors': 4},{'k_neighbors': 5},
+                        {'k_neighbors': 6},{'k_neighbors': 20},{'k_neighbors': float('Inf')}
+                    ],
+                    'kmeans_args': [
+                        {'n_clusters':2}, {'n_clusters':10}, {'n_clusters':20},
+                        {'n_clusters':50}, {'n_clusters':100}, {'n_clusters':250},
+                        {'n_clusters':500}
+                    ]
+                },
+                # SMOTE Limit Case
+                {
+                    'imbalance_ratio_threshold': [float('Inf')],
+                    'kmeans_args': [{'n_clusters':1}],
+                    'smote_args': [
+                        {'k_neighbors': 3},{'k_neighbors': 4},{'k_neighbors': 5},
+                        {'k_neighbors': 6},{'k_neighbors': 20}
+                    ]
+                }
+            ]
         )
     ]
 
