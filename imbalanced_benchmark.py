@@ -25,10 +25,10 @@ def main():
     }
 
     classifiers = [
-        ('LR',LogisticRegression()),
-        ('GB',GradientBoostingClassifier()),
+        ('LogisticRegression',LogisticRegression()),
+        ('GradientBoosting',GradientBoostingClassifier()),
         (
-            'RF',RandomForestClassifier(),
+            'RandomForest',RandomForestClassifier(),
             [{
                 'criterion':['gini','entropy'],
                 'n_estimators':[100]
