@@ -59,12 +59,7 @@ def main():
         experiment_repetitions=experiment_config['experiment_repetitions'],
         random_state=experiment_config['random_seed'],
         n_splits=experiment_config['n_splits'],
-        scoring={
-            'geometric_mean': make_scorer(geometric_mean_score),
-            'average_precision': make_scorer(average_precision_score),
-            'roc_auc': make_scorer(roc_auc_score),
-            'f1': make_scorer(f1_score)
-        }
+        scoring=['geometric_mean_score', 'average_precision','roc_auc','f1', 'fp', 'fn', 'tp', 'tn']
     )
 
     with warnings.catch_warnings():
