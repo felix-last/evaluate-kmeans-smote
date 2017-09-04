@@ -18,7 +18,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Elaborate grid search for classic datasets',
+        'comment': 'Elaborate grid search for classic datasets; corrected kmeans-smote',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
