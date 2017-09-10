@@ -18,7 +18,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Quicker grid search for classic datasets; corrected kmeans-smote',
+        'comment': 'Small CC grid search with new fixes in kmeans smote and eval',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -27,24 +27,24 @@ def main():
     classifiers = [
         (
             'LogisticRegression', LogisticRegression(),
-            [{
-                'penalty': ['l1', 'l2']
-            }]
+            # [{
+            #     'penalty': ['l1', 'l2']
+            # }]
         ),
         (
             'GradientBoosting',GradientBoostingClassifier(),
-            [{
-                'loss':['deviance', 'exponential'],
-                'learning_rate': [0.01, 0.1],
-                'n_estimators': [100, 500, 1000]
-            }]
+            # [{
+            #     'loss':['deviance', 'exponential'],
+            #     'learning_rate': [0.01, 0.1],
+            #     'n_estimators': [100, 500, 1000]
+            # }]
         ),
         (
             'RandomForest',RandomForestClassifier(),
-            [{
-                'criterion':['gini','entropy'],
-                'n_estimators':[10,100]
-            }]
+            # [{
+            #     'criterion':['gini','entropy'],
+            #     'n_estimators':[10,100]
+            # }]
         )
     ]
     oversampling_methods = [
@@ -73,15 +73,15 @@ def main():
             [
                 {
                     'imbalance_ratio_threshold': [1,float('Inf')],
-                    'density_power': [None, 0, 2, 3, 4], # None corresponds to n_features
+                    'density_power': [None, 0, 2], # None corresponds to n_features
                     'smote_args': [
                         {'k_neighbors': 3},{'k_neighbors': 5},
                         {'k_neighbors': 20},{'k_neighbors': float('Inf')}
                     ],
                     'kmeans_args': [
-                        {'n_clusters':2}, {'n_clusters':20},
-                        {'n_clusters':50}, {'n_clusters':100}, {'n_clusters':250},
-                        {'n_clusters':500}
+                        {'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5},
+                        {'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5},
+                        {'n_clusters':1500, 'batch_size':1000, 'reassignment_ratio': 10**-5}
                     ]
                 },
                 # SMOTE Limit Case
