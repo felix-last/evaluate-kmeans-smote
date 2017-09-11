@@ -79,7 +79,6 @@ def main():
                         {'k_neighbors': 20},{'k_neighbors': float('Inf')}
                     ],
                     'kmeans_args': [
-                        {'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5},
                         {'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5},
                         {'n_clusters':1500, 'batch_size':1000, 'reassignment_ratio': 10**-5}
                     ]
