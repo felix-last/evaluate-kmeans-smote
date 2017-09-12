@@ -82,7 +82,7 @@ def main():
                         {'n_clusters':500, 'batch_size':1000, 'reassignment_ratio': 10**-5},
                         {'n_clusters':750, 'batch_size':1000, 'reassignment_ratio': 10**-5},
                         {'n_clusters':1000, 'batch_size':1000, 'reassignment_ratio': 10**-5},
-                        {'n_clusters':1250, 'batch_size':1000, 'reassignment_ratio': 10**-5}
+                        {'n_clusters':1250, 'batch_size':1000, 'reassignment_ratio': 10**-5},
                         {'n_clusters':1500, 'batch_size':1000, 'reassignment_ratio': 10**-5}
                     ]
                 },
