@@ -83,8 +83,8 @@ def main():
                         {'n_clusters':50}, {'n_clusters':100}, {'n_clusters':250},
                         {'n_clusters':500}
                     ],
-                    'use_minibatch_kmeans':False,
-                    'n_jobs':-1
+                    'use_minibatch_kmeans':[False],
+                    'n_jobs':[-1]
                 },
                 # SMOTE Limit Case
                 {
@@ -94,8 +94,8 @@ def main():
                         {'k_neighbors': 3},{'k_neighbors': 5},
                         {'k_neighbors': 20}
                     ],
-                    'use_minibatch_kmeans':False,
-                    'n_jobs':-1
+                    'use_minibatch_kmeans':[False],
+                    'n_jobs':[-1]
                 }
             ]
         )
