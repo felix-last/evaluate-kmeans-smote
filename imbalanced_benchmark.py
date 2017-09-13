@@ -20,7 +20,7 @@ def main():
     experiment_config = {
         'comment': 'Arxiv: classic datasets with full config and regular kmeans',
         'experiment_repetitions': 5,
-        'n_splits':10,
+        'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
