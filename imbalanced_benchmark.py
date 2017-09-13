@@ -18,7 +18,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Arxiv: classic datasets with full config and minibatch kmeans',
+        'comment': 'Arxiv: classic datasets with reduced config and minibatch kmeans',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -28,21 +28,21 @@ def main():
         (
             'LogisticRegression', LogisticRegression(),
             [{
-                'penalty': ['l1', 'l2']
+                # 'penalty': ['l1', 'l2']
             }]
         ),
         (
             'GradientBoosting',GradientBoostingClassifier(),
             [{
-                'loss':['deviance', 'exponential'],
-                'learning_rate': [0.01, 0.1],
+                # 'loss':['deviance', 'exponential'],
+                # 'learning_rate': [0.01, 0.1],
                 'n_estimators': [100, 500, 1000]
             }]
         ),
         (
             'RandomForest',RandomForestClassifier(),
             [{
-                'criterion':['gini','entropy'],
+                # 'criterion':['gini','entropy'],
                 'n_estimators':[10, 100, 500]
             }]
         )
