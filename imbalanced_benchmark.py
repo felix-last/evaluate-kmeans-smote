@@ -18,7 +18,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Arxiv: classic datasets with full config and regular kmeans',
+        'comment': 'Arxiv: classic datasets with full config and minibatch kmeans',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -83,7 +83,7 @@ def main():
                         {'n_clusters':50}, {'n_clusters':100}, {'n_clusters':250},
                         {'n_clusters':500}
                     ],
-                    'use_minibatch_kmeans':[False],
+                    'use_minibatch_kmeans':[True],
                     'n_jobs':[-1]
                 },
                 # SMOTE Limit Case
@@ -94,7 +94,7 @@ def main():
                         {'k_neighbors': 3},{'k_neighbors': 5},
                         {'k_neighbors': 20}
                     ],
-                    'use_minibatch_kmeans':[False],
+                    'use_minibatch_kmeans':[True],
                     'n_jobs':[-1]
                 }
             ]
