@@ -5,7 +5,8 @@ import pandas as pd
 import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import make_scorer, average_precision_score, f1_score, roc_auc_score
 from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
@@ -18,7 +19,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Arxiv: classic datasets with reduced config and minibatch kmeans',
+        'comment': 'Publication run 1',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -26,24 +27,16 @@ def main():
 
     classifiers = [
         (
-            'LogisticRegression', LogisticRegression(),
+            'LR', LogisticRegression()
+        ),(
+            'GBM',GradientBoostingClassifier(),
             [{
-                # 'penalty': ['l1', 'l2']
+                'n_estimators': [50, 100, 200]
             }]
-        ),
-        (
-            'GradientBoosting',GradientBoostingClassifier(),
+        ),(
+            'KNN',KNeighborsClassifier(),
             [{
-                # 'loss':['deviance', 'exponential'],
-                # 'learning_rate': [0.01, 0.1],
-                'n_estimators': [100, 500, 1000]
-            }]
-        ),
-        (
-            'RandomForest',RandomForestClassifier(),
-            [{
-                # 'criterion':['gini','entropy'],
-                'n_estimators':[10, 100, 500]
+                'n_neighbors': [3,5,8]
             }]
         )
     ]
