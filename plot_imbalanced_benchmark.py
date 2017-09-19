@@ -76,7 +76,7 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results):
     row_count = len(classifiers)
     col_count = len(metrics)
     fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        10, 5 * row_count), sharey='row')
+        3 * col_count, 5 * row_count), sharey='row')
     if row_count == 1:
         axes = [axes]
 
@@ -128,7 +128,7 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
     row_count = len(classifiers) * len(datasets)
     col_count = len(metrics)
     fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        10, 5 * row_count), sharey='row')
+        3 * col_count, 5 * row_count), sharey='row')
     if row_count == 1:
         axes = [axes]
     for j, metric in enumerate(metrics):
@@ -192,7 +192,7 @@ def plot_roc(experiment):
         col_count = 3
         row_count = math.ceil(df.shape[0] / col_count)
         fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-            5 * col_count, 5 * row_count), sharey='row', sharex='col')
+            3 * col_count, 5 * row_count), sharey='row', sharex='col')
         if row_count == 1:
             axes = [axes]
         for i, row in df.iterrows():
