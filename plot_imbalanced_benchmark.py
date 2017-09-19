@@ -18,17 +18,20 @@ from imbtools.evaluation import calculate_stats, calculate_optimal_stats, calcul
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
-def create_pdf(session_id, friedman_test=True, mean_cv=True, roc=True):
+def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True):
     path = cfg['results_dir']
 
     experiment = load_experiment(session_id)
 
     with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
-        if friedman_test and 'friedman_test_results' in experiment:
+        if ranking and 'friedman_test_results' in experiment:
             fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'])
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if mean_cv and 'mean_cv_results' in experiment:
             fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
+            pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
+        if comparison and 'mean_cv_results' in experiment:
+            fig, title = plot_comparison(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if roc and 'roc' in experiment:
             figs, titles = plot_roc(experiment)
@@ -76,7 +79,7 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results):
     row_count = len(classifiers)
     col_count = len(metrics)
     fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        10, 5 * row_count), sharey='row')
+        3 * col_count, 5 * row_count), sharey='row')
     if row_count == 1:
         axes = [axes]
 
@@ -128,7 +131,7 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
     row_count = len(classifiers) * len(datasets)
     col_count = len(metrics)
     fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        10, 5 * row_count), sharey='row')
+        3 * col_count, 5 * row_count), sharey='row')
     if row_count == 1:
         axes = [axes]
     for j, metric in enumerate(metrics):
@@ -171,7 +174,8 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
                     yerr=yerr,
                     ecolor='black'
                 )
-                ax.set_ylim((0, 1))
+                if(max(mean_filtered['Mean CV score']) <= 1):
+                    ax.set_ylim((0, 1))
 
                 ax.set_xticks(methods_encoded + 0.25)
                 ax.set_xticklabels(
@@ -185,6 +189,30 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
         'Mean Cross-Validation Result + Standard Deviation', fontsize=14,  y=1.02)
     return fig, title
 
+def plot_comparison(experiment):
+    mean_results = experiment['mean_cv_results']
+    mean_results_filtered = mean_results[mean_results['Oversampler'].isin(['SMOTE', 'KMeansSMOTE'])]
+    row_count = 1
+    col_count = len(mean_results['Classifier'].unique())
+    bar_count = len(mean_results['Dataset'].unique())
+    fig, axes = plt.subplots(
+        nrows=row_count, ncols=col_count,
+        figsize=(bar_count/2 * col_count, 5 * row_count),
+        sharey='row')
+    for i, classifier in enumerate(mean_results['Classifier'].unique()):
+        mean_results_by_classifier = mean_results_filtered[mean_results_filtered['Classifier'] == classifier]
+        mean_results_by_classifier = mean_results_by_classifier[mean_results_by_classifier['Metric'] == 'geometric_mean_score']
+        mean_results_by_classifier = mean_results_by_classifier.groupby(['Dataset','Oversampler','Metric']).mean()
+        mean_results_by_classifier = mean_results_by_classifier.unstack(level=1)
+        mean_results_by_classifier.columns = mean_results_by_classifier.columns.droplevel(level=0)
+        mean_results_by_classifier = mean_results_by_classifier.reset_index()
+        ax = axes[i]
+        mean_results_by_classifier.plot(kind='bar', ax=ax)
+        ax.set_xticklabels(mean_results_by_classifier['Dataset'])
+        ax.set_title(classifier)
+    title = plt.suptitle('Comparison with SMOTE', fontsize=14,  y=1.02)
+    return fig, title
+
 def plot_roc(experiment):
     figs, titles = [], []
     dataframes_per_dataset = [experiment['roc'][experiment['roc']['Dataset'] == dataset_name].reset_index(drop=True) for dataset_name in np.unique(experiment['roc']['Dataset']) ]
@@ -192,7 +220,7 @@ def plot_roc(experiment):
         col_count = 3
         row_count = math.ceil(df.shape[0] / col_count)
         fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-            5 * col_count, 5 * row_count), sharey='row', sharex='col')
+            3 * col_count, 5 * row_count), sharey='row', sharex='col')
         if row_count == 1:
             axes = [axes]
         for i, row in df.iterrows():
