@@ -18,17 +18,20 @@ from imbtools.evaluation import calculate_stats, calculate_optimal_stats, calcul
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
-def create_pdf(session_id, friedman_test=True, mean_cv=True, roc=True):
+def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True):
     path = cfg['results_dir']
 
     experiment = load_experiment(session_id)
 
     with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
-        if friedman_test and 'friedman_test_results' in experiment:
+        if ranking and 'friedman_test_results' in experiment:
             fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'])
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if mean_cv and 'mean_cv_results' in experiment:
             fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
+            pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
+        if comparison and 'mean_cv_results' in experiment:
+            fig, title = plot_comparison(experiment)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if roc and 'roc' in experiment:
             figs, titles = plot_roc(experiment)
@@ -171,7 +174,8 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
                     yerr=yerr,
                     ecolor='black'
                 )
-                ax.set_ylim((0, 1))
+                if(max(mean_filtered['Mean CV score']) <= 1):
+                    ax.set_ylim((0, 1))
 
                 ax.set_xticks(methods_encoded + 0.25)
                 ax.set_xticklabels(
@@ -183,10 +187,9 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
     fig.tight_layout()
     title = plt.suptitle(
         'Mean Cross-Validation Result + Standard Deviation', fontsize=14,  y=1.02)
-    return fig,
+    return fig, title
 
 def plot_comparison(experiment):
-    title = 'Comparison with SMOTE'
     mean_results = experiment['mean_cv_results']
     mean_results_filtered = mean_results[mean_results['Oversampler'].isin(['SMOTE', 'KMeansSMOTE'])]
     row_count = 1
@@ -207,6 +210,7 @@ def plot_comparison(experiment):
         mean_results_by_classifier.plot(kind='bar', ax=ax)
         ax.set_xticklabels(mean_results_by_classifier['Dataset'])
         ax.set_title(classifier)
+    title = plt.suptitle('Comparison with SMOTE', fontsize=14,  y=1.02)
     return fig, title
 
 def plot_roc(experiment):
