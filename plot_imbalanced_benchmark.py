@@ -183,6 +183,30 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
     fig.tight_layout()
     title = plt.suptitle(
         'Mean Cross-Validation Result + Standard Deviation', fontsize=14,  y=1.02)
+    return fig,
+
+def plot_comparison(experiment):
+    title = 'Comparison with SMOTE'
+    mean_results = experiment['mean_cv_results']
+    mean_results_filtered = mean_results[mean_results['Oversampler'].isin(['SMOTE', 'KMeansSMOTE'])]
+    row_count = 1
+    col_count = len(mean_results['Classifier'].unique())
+    bar_count = len(mean_results['Dataset'].unique())
+    fig, axes = plt.subplots(
+        nrows=row_count, ncols=col_count,
+        figsize=(bar_count/2 * col_count, 5 * row_count),
+        sharey='row')
+    for i, classifier in enumerate(mean_results['Classifier'].unique()):
+        mean_results_by_classifier = mean_results_filtered[mean_results_filtered['Classifier'] == classifier]
+        mean_results_by_classifier = mean_results_by_classifier[mean_results_by_classifier['Metric'] == 'geometric_mean_score']
+        mean_results_by_classifier = mean_results_by_classifier.groupby(['Dataset','Oversampler','Metric']).mean()
+        mean_results_by_classifier = mean_results_by_classifier.unstack(level=1)
+        mean_results_by_classifier.columns = mean_results_by_classifier.columns.droplevel(level=0)
+        mean_results_by_classifier = mean_results_by_classifier.reset_index()
+        ax = axes[i]
+        mean_results_by_classifier.plot(kind='bar', ax=ax)
+        ax.set_xticklabels(mean_results_by_classifier['Dataset'])
+        ax.set_title(classifier)
     return fig, title
 
 def plot_roc(experiment):
