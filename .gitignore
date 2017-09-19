@@ -8,3 +8,4 @@ dist/
 config.yml
 results/**/*.pdf
 results/**/*.png
+**/.DS_Store
