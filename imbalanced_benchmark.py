@@ -18,7 +18,7 @@ with open("config.yml", 'r') as ymlfile:
 
 def main():
     experiment_config = {
-        'comment': 'Publication run 1',
+        'comment': 'Publication run 1 reduced',
         'experiment_repetitions': 5,
         'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
@@ -30,7 +30,7 @@ def main():
         ),(
             'GBM',GradientBoostingClassifier(),
             [{
-                'n_estimators': [50, 100, 200]
+                'n_estimators': [50, 100]
             }]
         ),(
             'KNN',KNeighborsClassifier(),
@@ -65,15 +65,14 @@ def main():
             [
                 {
                     'imbalance_ratio_threshold': [1,float('Inf')],
-                    'density_power': [None, 0, 2], # None corresponds to n_features
+                    'density_power': [None], # None corresponds to n_features
                     'smote_args': [
                         {'k_neighbors': 3},{'k_neighbors': 5},
                         {'k_neighbors': 20},{'k_neighbors': float('Inf')}
                     ],
                     'kmeans_args': [
-                        {'n_clusters':2}, {'n_clusters':20},
-                        {'n_clusters':50}, {'n_clusters':100}, {'n_clusters':250},
-                        {'n_clusters':500}
+                        {'n_clusters':50}, {'n_clusters':100},
+                        {'n_clusters':250}, {'n_clusters':500}
                     ],
                     'use_minibatch_kmeans':[True],
                     'n_jobs':[-1]
@@ -83,8 +82,7 @@ def main():
                     'imbalance_ratio_threshold': [float('Inf')],
                     'kmeans_args': [{'n_clusters':1}],
                     'smote_args': [
-                        {'k_neighbors': 3},{'k_neighbors': 5},
-                        {'k_neighbors': 20}
+                        {'k_neighbors': 3},{'k_neighbors': 5}
                     ],
                     'use_minibatch_kmeans':[True],
                     'n_jobs':[-1]
