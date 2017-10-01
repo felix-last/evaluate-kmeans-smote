@@ -138,3 +138,54 @@ pd.DataFrame(binary_experiment.oversamplers_)
 #                               n_clusters = 50     n_clusters = 50
 #   Random Forest               IRT = 1             IRT = 2
 #                               n_clusters = 50     n_clusters = 50
+
+# %%
+# Sensititvity Analysis
+
+# parameters for the analysis
+classifier = 'LogisticRegression1'
+metric = 'geometric_mean_score'
+variable_param = 'k'
+fixed_params = {
+    'de': None,
+    'knn': 3,
+    'irt': 1
+}
+
+# find all kmeanssmote instances which correspond to the fixed params
+oversampler_names, oversamplers = zip(*binary_experiment.oversamplers_)
+oversamplers_dict = {}
+for i, o in enumerate(oversamplers):
+    try:
+        if o.kmeans_args:
+            oversamplers_dict[oversampler_names[i]] = {}
+            oversamplers_dict[oversampler_names[i]]['k'] = o.kmeans_args['n_clusters']
+            oversamplers_dict[oversampler_names[i]]['de'] = o.density_power
+            oversamplers_dict[oversampler_names[i]]['irt'] = o.imbalance_ratio_threshold
+            oversamplers_dict[oversampler_names[i]]['knn'] = o.smote_args['k_neighbors']
+    except: pass
+
+filtered_oversamplers = {}
+for name, params in oversamplers_dict.items():
+    retain = True
+    for param, value in fixed_params.items():
+        retain = retain & (params[param] == fixed_params[param])
+    if retain: filtered_oversamplers[name] = params
+relevant_oversampler_names = list(filtered_oversamplers.keys())
+relevant_oversampler_names
+
+# match them on the results to get the sensitivity analysis
+sensitivity = imbtools.evaluation.calculate_stats(binary_experiment)
+
+sensitivity = sensitivity[
+    (sensitivity['Oversampler'].isin(relevant_oversampler_names))
+    & (sensitivity['Metric'].eq(metric))
+    & (sensitivity['Classifier'].eq(classifier))
+]
+df_oversamplers = pd.DataFrame(filtered_oversamplers).transpose()
+sensitivity = sensitivity.join(df_oversamplers.loc[:,'k'], 'Oversampler')#.reset_index(drop=True)#.reindex(sensitivity.index)
+sensitivity[metric] = sensitivity['Mean CV score'].round(2).apply(str) + ' ±' + sensitivity['Std CV score'].round(2).apply(str)
+sensitivity = sensitivity.drop(['Metric','Classifier','Oversampler', 'Mean CV score', 'Std CV score'], axis=1)
+sensitivity = sensitivity.set_index(['Dataset','k'])
+sensitivity = sensitivity.sortlevel(0)
+print(sensitivity.to_latex().replace('±','$\pm$ '))
