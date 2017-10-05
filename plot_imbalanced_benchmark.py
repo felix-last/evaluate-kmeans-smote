@@ -11,6 +11,7 @@ from IPython.display import display
 import matplotlib.pyplot as plt
 from collections import Counter
 import seaborn as sns
+sns.set_style('white')
 from matplotlib.backends.backend_pdf import PdfPages
 import yaml
 import imbtools.evaluation
@@ -18,14 +19,16 @@ from imbtools.evaluation import calculate_stats, calculate_optimal_stats, calcul
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
-def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True):
+order = ['KMeansSMOTE','SMOTE','B1-SMOTE','B2-SMOTE','RandomOverSampler','None']
+
+def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all'):
     path = cfg['results_dir']
 
     experiment = load_experiment(session_id)
 
     with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
         if ranking and 'friedman_test_results' in experiment:
-            fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'])
+            fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'], metrics=metrics)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if mean_cv and 'mean_cv_results' in experiment:
             fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
@@ -73,13 +76,20 @@ def load_experiment(session_id):
         except: pass
     return experiment
 
-def plot_mean_ranking(mean_ranking_results, friedman_test_results):
-    metrics = np.unique(mean_ranking_results['Metric'])
+def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all', make_title=True):
+    if metrics is 'all':
+        metrics = np.unique(mean_ranking_results['Metric'])
     classifiers = np.unique(mean_ranking_results['Classifier'])
+
+    # change order
+    desired_order = ['Classifier','Metric'] + order
+    if len(mean_ranking_results.columns) == len(desired_order):
+        mean_ranking_results = mean_ranking_results.loc[:,desired_order]
+
     row_count = len(classifiers)
     col_count = len(metrics)
     fig, axes = plt.subplots(nrows=row_count, ncols=col_count, figsize=(
-        3 * col_count, 5 * row_count), sharey='row')
+        3 * col_count, 4 * row_count), sharey='row', sharex='col')
     if row_count == 1:
         axes = [axes]
 
@@ -95,10 +105,21 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results):
             ]
             ranking_filtered = ranking_filtered.drop(
                 ['Classifier', 'Metric'], axis=1)
+            # oversampling_method_column = 'Oversampling method' if 'Oversampling method' in ranking_filtered.columns else 'Oversampler'
+            # ranking_filtered[oversampling_method_column].replace({'None': 0,'RandomOverSampler':1,'SMOTE':2, 'B2-SMOTE':3, 'B2-SMOTE':4, 'KMeansSMOTE':100})
+            # ranking_filtered.sort_values(oversampling_method_column, axis=1)
             ax = axes[i][j]
             methods_encoded = np.asarray(
                 [i for i, _ in enumerate(ranking_filtered.columns)])
     #         method_colors = sns.husl_palette(n_colors=len(methods_encoded))
+
+            # invert the ranking so the highest bar is the best
+            worst_rank = math.ceil(ranking_filtered.max().max())
+            ranking_filtered = (ranking_filtered - worst_rank) * -1
+            ticks = list(range(1,worst_rank))
+            ax.set_yticks(ticks)
+            ax.set_yticklabels(reversed(ticks))
+            ax.set_ylim(0,worst_rank-1)
             ax.bar(
                 methods_encoded,
                 np.asarray(ranking_filtered).transpose(),
@@ -110,17 +131,23 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results):
             if j is 0:
                 ax.set_ylabel(classifier)
 
-            corresponding_friedman = round(np.asarray(friedman_test_results[
+            corresponding_friedman = np.asarray(friedman_test_results[
                 (friedman_test_results
                  ['Classifier'] == classifier)
                 & (friedman_test_results['Metric'] == metric)
-            ]['p-value'])[0], 2)
-            ax.text(.98, .98, 'p-value: {}'.format(corresponding_friedman),
-                    transform=ax.transAxes, horizontalalignment='right', verticalalignment='top')
+            ]['p-value'])[0]
+            significance = 'ns'
+            for pv,sym in [(0.05, '*'), (0.01, '**'), (0.001, '***'), (0.0001, '****')]:
+                if corresponding_friedman <= pv:
+                    significance = sym
+            ax.text(.98, .98, significance, transform=ax.transAxes, horizontalalignment='right', verticalalignment='top')
     fig.tight_layout()
     title = plt.suptitle(
         'Mean Ranking Results + Friedman Test', fontsize=14, y=1.02)
-    return fig, title
+    if make_title:
+        return fig, title
+    else:
+        return fig
 
 
 def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
@@ -244,7 +271,8 @@ def plot_roc(experiment):
 
 
 def main():
-    create_pdf(sys.argv[1])
+    metrics = sys.argv[2].split(',') if len(sys.argv) > 2 else 'all'
+    create_pdf(sys.argv[1], metrics=metrics)
 
 if __name__ == "__main__":
     main()
