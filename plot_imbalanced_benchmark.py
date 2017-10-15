@@ -11,7 +11,7 @@ from IPython.display import display
 import matplotlib.pyplot as plt
 from collections import Counter
 import seaborn as sns
-sns.set_style('white')
+sns.set_style('whitegrid')
 from matplotlib.backends.backend_pdf import PdfPages
 import yaml
 import imbtools.evaluation
@@ -21,38 +21,82 @@ with open("config.yml", 'r') as ymlfile:
 
 order = ['KMeansSMOTE','SMOTE','B1-SMOTE','B2-SMOTE','RandomOverSampler','None']
 
-def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all'):
+def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all', verbose=True):
     path = cfg['results_dir']
 
-    experiment = load_experiment(session_id)
+    experiment = load_experiment(session_id, ranking, mean_cv, comparison, roc, verbose)
 
     with PdfPages('{0}/{1}/{1}.pdf'.format(path, session_id)) as pdf:
         if ranking and 'friedman_test_results' in experiment:
+            if verbose: print('Plotting ranking ...')
             fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'], metrics=metrics)
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if mean_cv and 'mean_cv_results' in experiment:
+            if verbose: print('Plotting mean cv results ...')
             fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
             pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
         if comparison and 'mean_cv_results' in experiment:
-            fig, title = plot_comparison(experiment)
-            pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
+            if verbose: print('Plotting comparison ...')
+            fig = plot_comparison(experiment['mean_cv_results'], metrics)
+            pdf.savefig(fig)
         if roc and 'roc' in experiment:
+            if verbose: print('Plotting roc ...')
             figs, titles = plot_roc(experiment)
             for fig, title in zip(figs, titles):
                 pdf.savefig(fig, bbox_extra_artists=(title,), bbox_inches="tight")
 
-def load_experiment(session_id):
+def create_png(session_id, verbose=True, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all'):
     path = cfg['results_dir']
+
+    experiment = load_experiment(session_id, ranking=ranking, mean_cv=mean_cv, comparison=comparison, roc=roc)
+
+    if ranking and 'friedman_test_results' in experiment:
+        if verbose: print('Plotting ranking ...')
+        fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'], metrics=metrics)
+        fig.savefig('{0}/{1}/ranking.png'.format(path, session_id))
+    if mean_cv and 'mean_cv_results' in experiment:
+        if verbose: print('Plotting mean cv results ...')
+        fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
+        fig.savefig('{0}/{1}/mean.png'.format(path, session_id))
+    if comparison and 'mean_cv_results' in experiment:
+        if verbose: print('Plotting comparison ...')
+        fig = plot_comparison(experiment['mean_cv_results'], metrics)
+        fig.savefig('{0}/{1}/comparison.png'.format(path, session_id))
+    if roc and 'roc' in experiment:
+        if verbose: print('Plotting roc ...')
+        figs, titles = plot_roc(experiment)
+        for i, (fig, title) in enumerate(zip(figs, titles)):
+            fig.savefig('{0}/{1}/roc{2}.png'.format(path, session_id, i), bbox_extra_artists=(title,), bbox_inches="tight")
+
+def load_experiment(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, verbose=True):
+    path = cfg['results_dir']
+    if verbose: print('Loading experiment from disk ...')
     if 'experiment.p' in os.listdir( os.path.join(path, session_id) ):
         # new imbtools 1.0.0 format
         binary_experiment = imbtools.evaluation.load_experiment('{}/{}/experiment.p'.format(path, session_id))
-        optimal_stats = calculate_optimal_stats(binary_experiment)
-        experiment = {
-            'mean_ranking_results': calculate_mean_ranking(binary_experiment),
-            'friedman_test_results': calculate_friedman_test(binary_experiment),
-            'mean_cv_results': optimal_stats.drop('Std CV score', axis=1),
-            'std_cv_results': optimal_stats.drop('Mean CV score', axis=1),
-        }
+        if verbose: print('Computing stats ...')
+        experiment = {}
+        if ranking:
+            try:
+                mean_ranking_results = pd.read_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id), index_col=0)
+                friedman_test_results = pd.read_csv('{}/{}/friedman_test_results.csv'.format(path, session_id), index_col=0)
+                if verbose: print('Mean ranking loaded from csv, computations skipped')
+            except:
+                mean_ranking_results = calculate_mean_ranking(binary_experiment)
+                friedman_test_results = calculate_friedman_test(binary_experiment)
+                mean_ranking_results.to_csv('{}/{}/mean_ranking_results.csv'.format(path, session_id))
+                friedman_test_results.to_csv('{}/{}/friedman_test_results.csv'.format(path, session_id))
+            experiment['mean_ranking_results'] = mean_ranking_results
+            experiment['friedman_test_results'] = friedman_test_results
+        if (mean_cv | comparison):
+            try:
+                optimal_stats = pd.read_csv('{}/{}/optimal_stats.csv'.format(path, session_id), index_col=0)
+                if verbose: print('Optimal stats loaded from csv, computations skipped')
+            except:
+                optimal_stats = calculate_optimal_stats(binary_experiment)
+                optimal_stats.to_csv('{}/{}/optimal_stats.csv'.format(path, session_id))
+            experiment['mean_cv_results'] = optimal_stats.drop('Std CV score', axis=1)
+            experiment['std_cv_results'] = optimal_stats.drop('Mean CV score', axis=1)
     else:
         # old format
         experiment = {}
@@ -74,6 +118,7 @@ def load_experiment(session_id):
             experiment['roc'] = pd.read_csv(
                 '{}/{}/roc.csv'.format(path, session_id))
         except: pass
+    if verbose: print('Experiment loaded.')
     return experiment
 
 def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all', make_title=True):
@@ -271,8 +316,13 @@ def plot_roc(experiment):
 
 
 def main():
-    metrics = sys.argv[2].split(',') if len(sys.argv) > 2 else 'all'
-    create_pdf(sys.argv[1], metrics=metrics)
+    which_plot = sys.argv[2] if len(sys.argv) > 2 else None
+    plot = {}
+    if which_plot is not None:
+        plot = {key: False for key in ['mean_cv','ranking','roc','comparison']}
+        plot[which_plot] = True
+    metrics = sys.argv[3].split(',') if len(sys.argv) > 3 else 'all'
+    create_png(sys.argv[1], metrics=metrics, **plot)
 
 if __name__ == "__main__":
     main()
