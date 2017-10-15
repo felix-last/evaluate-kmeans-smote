@@ -9,6 +9,7 @@ import numpy as np
 import math
 from IPython.display import display
 import matplotlib.pyplot as plt
+from matplotlib import collections  as mc
 from collections import Counter
 import seaborn as sns
 sns.set_style('whitegrid')
@@ -272,29 +273,103 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
         'Mean Cross-Validation Result + Standard Deviation', fontsize=14,  y=1.02)
     return fig, title
 
-def plot_comparison(experiment):
-    mean_results = experiment['mean_cv_results']
-    mean_results_filtered = mean_results[mean_results['Oversampler'].isin(['SMOTE', 'KMeansSMOTE'])]
-    row_count = 1
-    col_count = len(mean_results['Classifier'].unique())
-    bar_count = len(mean_results['Dataset'].unique())
+def plot_comparison(mean_cv_results, metrics='all'):
+    df_optimal = mean_cv_results
+    oversamplers = ('SMOTE', 'KMeansSMOTE')
+    if metrics is 'all':
+        metrics = np.unique(df_optimal['Metric'])
+
+    # get metric + classifier combination with most average difference
+    df_optimal_filtered = df_optimal[(df_optimal['Oversampler'].isin(oversamplers)) & (df_optimal['Metric'].isin(metrics))]
+    base = df_optimal_filtered[df_optimal_filtered['Oversampler'] == oversamplers[0]]
+    successor = df_optimal_filtered[df_optimal_filtered['Oversampler'] == oversamplers[1]]
+    base = base.set_index(['Dataset','Classifier','Metric'])
+    successor = successor.set_index(['Dataset','Classifier','Metric'])
+    diff = (successor['Mean CV score'] - base['Mean CV score'])
+    classifier, metric = diff.groupby(level=['Classifier', 'Metric']).mean().sort_values(ascending=False).idxmax()
+
+    metrics = [metric]
+    classifiers = [classifier]
+
+    markers = ['|','|']
+
     fig, axes = plt.subplots(
-        nrows=row_count, ncols=col_count,
-        figsize=(bar_count/2 * col_count, 5 * row_count),
-        sharey='row')
-    for i, classifier in enumerate(mean_results['Classifier'].unique()):
-        mean_results_by_classifier = mean_results_filtered[mean_results_filtered['Classifier'] == classifier]
-        mean_results_by_classifier = mean_results_by_classifier[mean_results_by_classifier['Metric'] == 'geometric_mean_score']
-        mean_results_by_classifier = mean_results_by_classifier.groupby(['Dataset','Oversampler','Metric']).mean()
-        mean_results_by_classifier = mean_results_by_classifier.unstack(level=1)
-        mean_results_by_classifier.columns = mean_results_by_classifier.columns.droplevel(level=0)
-        mean_results_by_classifier = mean_results_by_classifier.reset_index()
-        ax = axes[i]
-        mean_results_by_classifier.plot(kind='bar', ax=ax)
-        ax.set_xticklabels(mean_results_by_classifier['Dataset'])
-        ax.set_title(classifier)
-    title = plt.suptitle('Comparison with SMOTE', fontsize=14,  y=1.02)
-    return fig, title
+        nrows=len(classifiers),
+        ncols=len(metrics),
+        sharex=True,
+        figsize=(12,round(0.2*len(df_optimal['Dataset'].unique()))),
+        sharey=True
+    )
+    if len(metrics) < 2:
+        axes = [axes]
+    if len(classifiers) < 2:
+        axes = [axes]
+    for i,classifier in enumerate(classifiers):
+        for j, metric in enumerate(metrics):
+            ax = axes[i][j]
+            df_optimal_filtered = df_optimal[
+                (df_optimal['Metric'] == metric) &
+                (df_optimal['Classifier'] == classifier) &
+                (df_optimal['Oversampler'].isin(oversamplers))
+            ]
+
+            dataset_order = df_optimal_filtered[df_optimal_filtered['Oversampler'] == oversamplers[1]].sort_values(by='Mean CV score', ascending=False)['Dataset']
+            df_optimal_filtered['Dataset'] = pd.Categorical(df_optimal_filtered['Dataset'], categories=dataset_order)
+            df_optimal_filtered = df_optimal_filtered.sort_values(by='Dataset')
+
+            for k, ovs in enumerate(df_optimal_filtered['Oversampler'].unique()):
+                sns.stripplot(
+                    x='Mean CV score',
+                    y='Dataset',
+                    hue='Oversampler',
+                    marker=markers[k],
+                    data=df_optimal_filtered[df_optimal_filtered['Oversampler'] == ovs],
+                    order=dataset_order,
+                    size=10,
+                    alpha=1,
+                    linewidth=0.5,
+                    color=(0,0,0),
+                    ax=ax
+                )
+            ax.set_ylabel('')
+            ax.set_xlabel('')
+
+            ax.set(xlim=(0,1))
+            ax.legend().remove()
+
+            # draw lines to left
+            colors = [(0.3,0.3,0.3),(0.7,0.7,0.7)]
+            lines = ([
+            [[0,x], [1,x]]
+                for x, (_, group)
+                in enumerate(df_optimal_filtered.groupby(['Dataset'])['Mean CV score'])
+            ])
+            lc = mc.LineCollection(lines, colors=colors, linewidths=0.8, linestyles='dotted')
+            ax.add_collection(lc)
+
+            # draw line between points
+            lines = ([[n,x] for n in group] for x, (_, group) in enumerate(df_optimal_filtered.groupby(['Dataset'])['Mean CV score']))
+            lc = mc.LineCollection(lines, colors='red', linewidths=0.8)
+            ax.add_collection(lc)
+
+    # create artists for legend
+    handles = [
+        plt.Line2D((0,1),(0,0), marker=markers[i], linestyle='', label=ovs, color='black', markeredgewidth='0.5')
+        for i,_ in enumerate(df_optimal_filtered['Oversampler'].unique())
+    ]
+    labels = list(df_optimal_filtered['Oversampler'].unique())
+
+    # ax.legend()
+    # handles, labels = ax.get_legend_handles_labels()
+    # axes[0][0].legend(handles=handles, labels=labels,loc='lower left', numpoints=1)
+
+    for hax, classifier in zip(axes, classifiers):
+        hax[0].set_ylabel(classifier)
+    for vax, metric in zip(axes[-1], metrics):
+        metric_name = metric_names[metric] if metric in metric_names else metric
+        vax.set_xlabel(metric_name)
+
+    return fig
 
 def plot_roc(experiment):
     figs, titles = [], []
