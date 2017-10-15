@@ -21,6 +21,13 @@ with open("config.yml", 'r') as ymlfile:
 
 order = ['KMeansSMOTE','SMOTE','B1-SMOTE','B2-SMOTE','RandomOverSampler','None']
 
+metric_names = {
+    'geometric_mean_score':'g-mean',
+    'average_precision':'AUPRC',
+    'f1':'F1',
+    'roc_auc_score': 'ROC AUC'
+}
+
 def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all', verbose=True):
     path = cfg['results_dir']
 
@@ -139,7 +146,8 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all'
         axes = [axes]
 
     for j, metric in enumerate(metrics):
-        axes[0][j].set_title(metric)
+        metric_name = metric_names[metric] if metric in metric_names else metric
+        axes[0][j].set_title(metric_name)
 
     for i, classifier in enumerate(classifiers):
         for j, metric in enumerate(metrics):
@@ -174,7 +182,9 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all'
             ax.set_xticks(methods_encoded + 0.25)
             ax.set_xticklabels(ranking_filtered.columns, rotation='vertical')
             if j is 0:
-                ax.set_ylabel(classifier)
+                ax.set_ylabel('{}\n\n{}'.format(classifier,'Mean Rank'))
+
+            ax.grid(axis='x', which='both', linewidth=0)
 
             corresponding_friedman = np.asarray(friedman_test_results[
                 (friedman_test_results
@@ -207,7 +217,8 @@ def plot_cross_validation_mean_results(mean_cv_results, std_cv_results=None):
     if row_count == 1:
         axes = [axes]
     for j, metric in enumerate(metrics):
-        axes[0][j].set_title(metric)
+        metric_name = metric_names[metric] if metric in metric_names else metric
+        axes[0][j].set_title(metric_name)
     for i, classifier in enumerate(classifiers):
         for j, metric in enumerate(metrics):
             for k, dataset in enumerate(datasets):
