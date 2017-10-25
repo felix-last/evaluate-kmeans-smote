@@ -363,8 +363,9 @@ def plot_comparison(mean_cv_results, metrics='all'):
     # handles, labels = ax.get_legend_handles_labels()
     # axes[0][0].legend(handles=handles, labels=labels,loc='lower left', numpoints=1)
 
-    for hax, classifier in zip(axes, classifiers):
-        hax[0].set_ylabel(classifier)
+    if len(classifiers) > 1:
+        for hax, classifier in zip(axes, classifiers):
+            hax[0].set_ylabel(classifier)
     for vax, metric in zip(axes[-1], metrics):
         metric_name = metric_names[metric] if metric in metric_names else metric
         vax.set_xlabel(metric_name)
