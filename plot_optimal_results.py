@@ -101,4 +101,196 @@ kmsmote = df_optimal_filtered[df_optimal_filtered['Oversampler'] == 'KMeansSMOTE
 smote = smote.set_index(['Dataset','Classifier','Metric'])
 kmsmote = kmsmote.set_index(['Dataset','Classifier','Metric'])
 diff = (kmsmote['Mean CV score'] - smote['Mean CV score'])
-diff.groupby(level=['Classifier', 'Metric']).mean().sort_values(ascending=False).plot.bar()
+classifier, metric = diff.groupby(level=['Classifier', 'Metric']).mean().sort_values(ascending=False).idxmax()
+
+
+#%%
+df_optimal_filtered[df_optimal_filtered['Oversampler'] == 'KMeansSMOTE'].sort_values(by='Mean CV score', ascending=False)
+
+# %%
+# dataset_order = df_optimal_filtered[df_optimal_filtered['Oversampler'] == 'KMeansSMOTE'].sort_values(by='Mean CV score', ascending=False)['Dataset']
+df_optimal_filtered['Dataset'] = pd.Categorical(df_optimal_filtered['Dataset'], categories=dataset_order)
+df_optimal_filtered.sort_values(by='Dataset')
+
+#%%
+dataset_order
+
+
+##################################################################
+# Determine correlation of dataset properties and gain
+##################################################################
+#%%
+df_optimal_gain = df_optimal_filtered.drop('Std CV score', axis=1)
+# df_optimal_gain = df_optimal_gain[
+#     (df_optimal_gain['Metric'] == metric)
+#     & (df_optimal_gain['Classifier'] == classifier)
+# ]
+df_optimal_gain = df_optimal_gain.set_index(['Dataset','Classifier','Oversampler','Metric'])
+df_optimal_gain = df_optimal_gain.unstack('Oversampler')
+df_optimal_gain.columns = df_optimal_gain.columns.droplevel(0)
+df_optimal_gain.columns.name = None
+df_optimal_gain['Gain'] = df_optimal_gain['KMeansSMOTE'] - df_optimal_gain['SMOTE']
+df_optimal_gain = df_optimal_gain.drop(['KMeansSMOTE', 'SMOTE'], axis=1)
+df_optimal_gain
+
+
+
+#%%
+datasets = imbtools.evaluation.read_csv_dir(cfg['dataset_dir'])
+datasets = imbtools.evaluation.summarize_datasets(datasets)
+datasets = datasets.set_index('Dataset name')
+datasets.describe()
+
+#%%
+df_optimal_gain = df_optimal_gain.reset_index()
+df_optimal_gain = pd.merge(
+    left=df_optimal_gain,
+    right=datasets,
+    how='left',
+    left_on='Dataset',
+    right_index=True
+)
+df_optimal_gain = df_optimal_gain.set_index(['Dataset','Classifier','Metric'])
+df_optimal_gain
+
+#%%
+fig, axes = plt.subplots(nrows=1,ncols=len(datasets.columns), figsize=(5*4,4), sharey=True)
+for i, col in enumerate(datasets.columns):
+    axes[i].set(ylim=(-0.01,df_optimal_gain['Gain'].max()+0.05))
+    if col == 'Imbalance Ratio':
+        axes[i].set(xlim=(0,datasets['Imbalance Ratio'].max()+5))
+    sns.regplot(x=col,y='Gain', data= df_optimal_gain, ax=axes[i])
+
+
+
+#%%
+fig.savefig('{}/{}/gains_by_dataset_properties.png'.format(path, session_id))
+
+
+##################################################################
+# Find out how large gains are on average and how many times they are zero
+##################################################################
+
+#%%
+
+#%%
+df_optimal_gain_knn = df_optimal_gain.sort_index().loc[(slice(None),'KNN',slice(None)),:]
+df_optimal_gain_knn.describe()
+
+#%%
+df_optimal_gain_knn[df_optimal_gain_knn['Gain'] == 0]
+
+#%%
+df_optimal_gain_knn[df_optimal_gain_knn['Gain'] > 0.1]
+
+
+#%%
+df_optimal_gain_knn.plot()
+
+
+######################################################################
+# Compare average gains between classifiers / metrics
+######################################################################
+#%%
+df_optimal_filtered = df_optimal[
+    (df_optimal['Metric'].isin(['average_precision','f1','geometric_mean_score']))
+].set_index(['Dataset','Classifier','Metric'])
+baseline = df_optimal_filtered[
+    df_optimal_filtered['Oversampler'] == 'SMOTE'
+].drop('Oversampler', axis=1)
+successor = df_optimal_filtered[
+    df_optimal_filtered['Oversampler'] == 'KMeansSMOTE'
+].drop('Oversampler', axis=1)
+df_gains = successor['Mean CV score'] - baseline['Mean CV score']
+# make sure we are *always* at least as good
+print((df_gains < 0).any())
+
+#%%
+# AVERAGE GAINS
+df_avg_gains = df_gains.reset_index().groupby(['Classifier','Metric']).mean()
+df_avg_gains = df_avg_gains.unstack()
+df_avg_gains.columns = df_avg_gains.columns.droplevel()
+sns.heatmap(
+    data=df_avg_gains,
+    annot=True,
+    cmap=sns.color_palette('Blues')
+)
+plt.gcf().savefig('{}/{}/gains_versus_smote_avg.png'.format(path, session_id))
+
+#%%
+# MAX GAINS
+df_max_gains = df_gains.reset_index().groupby(['Classifier', 'Metric']).max().drop('Dataset', axis=1)
+df_max_gains = df_max_gains.unstack()
+df_max_gains.columns = df_max_gains.columns.droplevel()
+df_max_gains
+sns.heatmap(
+    data=df_max_gains,
+    annot=True,
+    cmap=sns.color_palette('Blues')
+)
+plt.gcf().savefig('{}/{}/gains_versus_smote_max.png'.format(path, session_id))
+
+
+######################################################################
+# Study noise generation by means of False Positives
+######################################################################
+# %%
+df_optimal[
+    (df_optimal['Oversampler'] == 'None')
+    & (df_optimal['Metric'].isin(['tn','tp']))
+]
+# TP is constantly > TN, which doesnt make sense with no oversampling
+# inverse them: fn -> fp, tn -> tp, ...
+#%%
+fp = 'fn'
+fn = 'fp'
+tp = 'tn'
+tn = 'tp'
+
+#%%
+false_positives = df_optimal[
+    (df_optimal['Metric'] == fp)
+]
+# false_positives = false_positives.drop(['Std CV score'], axis=1)
+false_positives = false_positives.set_index(['Dataset', 'Classifier'])
+baseline = false_positives[
+    false_positives['Oversampler'] == 'SMOTE'
+].drop('Oversampler', axis=1)
+successor = false_positives[
+    false_positives['Oversampler'] == 'KMeansSMOTE'
+].drop('Oversampler', axis=1)
+false_positives_reduction = baseline['Mean CV score'] - successor['Mean CV score']
+relative_false_positives_reduction = (false_positives_reduction / baseline['Mean CV score']) * 100
+relative_false_positives_reduction
+fig, ax = plt.subplots(1,1,figsize=(20,2))
+sns.heatmap(
+    data=relative_false_positives_reduction.unstack(0),
+    cmap=sns.color_palette('Blues'),
+    ax=ax,
+    cbar_kws={'label': '% of False Positives Reduction'}
+)
+plt.gcf().savefig('{}/{}/false_positives_reduction_vs_smote.png'.format(path, session_id),bbox_inches='tight')
+
+#%%
+# AVERAGE ACROSS DATASETS
+avg_relative_false_positives_reduction = relative_false_positives_reduction.reset_index(
+).groupby('Classifier').mean()
+avg_relative_false_positives_reduction
+
+# %%
+# check that we are not just doing random oversampling to minimize FP
+baseline = false_positives[
+    false_positives['Oversampler'] == 'RandomOverSampler'
+].drop('Oversampler', axis=1)
+false_positives_reduction = baseline['Mean CV score'] - \
+    successor['Mean CV score']
+relative_false_positives_reduction = (
+    false_positives_reduction / baseline['Mean CV score']) * 100
+relative_false_positives_reduction
+fig, ax = plt.subplots(1, 1, figsize=(20, 2))
+sns.heatmap(
+    data=false_positives_reduction.unstack(0),
+    cmap=sns.color_palette('RdBu',10),
+    ax=ax,
+    cbar_kws={'label': 'Absolute False Positives Reduction'}
+)
