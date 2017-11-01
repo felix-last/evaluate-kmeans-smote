@@ -28,12 +28,13 @@ except:
 metrics = ['f1'] # 'geometric_mean_score','average_precision',
 classifiers = ['LogisticRegression'] #['KNN'] #,'GradientBoosting']
 oversamplers = ['SMOTE', 'KMeansSMOTE'] # 'None','RandomOverSampler',
-markers = ['|','|',(6,2,60), '.','|', '_',]
-
+markers = ['|', '|']
+datasets = df_optimal['Dataset'].unique()
+#%%
 fig, axes = plt.subplots(
     nrows=len(classifiers),
     ncols=len(metrics),
-    figsize=(12,12),
+    figsize=(12,round(0.2*len(datasets))),
     sharex=True,
     sharey=True
 )
@@ -51,6 +52,10 @@ for i,classifier in enumerate(classifiers):
             (df_optimal['Classifier'] == classifier) &
             (df_optimal['Oversampler'].isin(oversamplers))
         ]
+        dataset_order = df_optimal_filtered[df_optimal_filtered['Oversampler'] == 'KMeansSMOTE'].sort_values(by='Mean CV score', ascending=False)['Dataset']
+        df_optimal_filtered['Dataset'] = pd.Categorical(df_optimal_filtered['Dataset'], categories=dataset_order)
+        df_optimal_filtered = df_optimal_filtered.sort_values(by='Dataset')
+
         for k, ovs in enumerate(df_optimal_filtered['Oversampler'].unique()):
             sns.stripplot(
                 x='Mean CV score',
@@ -58,10 +63,10 @@ for i,classifier in enumerate(classifiers):
                 hue='Oversampler',
                 marker=markers[k],
                 data=df_optimal_filtered[df_optimal_filtered['Oversampler'] == ovs],
-                order=np.sort(df_optimal_filtered['Dataset'].unique()),
-                size=4,
-                linewidth=0.5,
-                color='black',
+                order=dataset_order,
+                size=6,
+                linewidth=0.6,
+                color=(0,0,0),
                 ax=ax
             )
         ax.set_ylabel('')
@@ -70,9 +75,19 @@ for i,classifier in enumerate(classifiers):
         ax.set(xlim=(0,1))
         ax.legend().remove()
 
+        # draw lines to left
+        lines = ([
+            [[0,x], [1,x]]
+            for x, (_, group)
+            in enumerate(df_optimal_filtered.groupby(['Dataset'])['Mean CV score'])
+        ])
+        colors = [(0.3,0.3,0.3),(0.7,0.7,0.7)]
+        lc = mc.LineCollection(lines, colors=colors, linewidths=0.6, linestyles='dotted')
+        ax.add_collection(lc)
+
         # draw line between points
         lines = ([[n,x] for n in group] for x, (_, group) in enumerate(df_optimal_filtered.groupby(['Dataset'])['Mean CV score']))
-        lc = mc.LineCollection(lines, colors='red', linewidths=0.8)
+        lc = mc.LineCollection(lines, colors='red', linewidths=0.6)
         ax.add_collection(lc)
 
         # ax.set_markerfacecolor('none')
