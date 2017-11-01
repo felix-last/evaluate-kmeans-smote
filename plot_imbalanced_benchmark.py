@@ -295,6 +295,7 @@ def plot_comparison(mean_cv_results, metrics='all'):
     successor = successor.set_index(['Dataset','Classifier','Metric'])
     diff = (successor['Mean CV score'] - base['Mean CV score'])
     classifier, metric = diff.groupby(level=['Classifier', 'Metric']).mean().sort_values(ascending=False).idxmax()
+    print('Plotting comparison for oversamplers',oversamplers,'and',(classifier,metric))
 
     metrics = [metric]
     classifiers = [classifier]
@@ -341,6 +342,7 @@ def plot_comparison(mean_cv_results, metrics='all'):
                 )
             ax.set_ylabel('')
             ax.set_xlabel('')
+            ax.set_xticks(np.arange(0, 1.1, 0.1))
 
             ax.set(xlim=(0,1))
             ax.legend().remove()
