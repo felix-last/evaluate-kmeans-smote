@@ -63,20 +63,21 @@ def create_png(session_id, verbose=True, ranking=True, mean_cv=True, comparison=
     if ranking and 'friedman_test_results' in experiment:
         if verbose: print('Plotting ranking ...')
         fig, title = plot_mean_ranking(experiment['mean_ranking_results'], experiment['friedman_test_results'], metrics=metrics)
-        fig.savefig('{0}/{1}/ranking.png'.format(path, session_id))
+        fig.savefig('{0}/{1}/ranking.png'.format(path, session_id), dpi=300)
     if mean_cv and 'mean_cv_results' in experiment:
         if verbose: print('Plotting mean cv results ...')
         fig, title = plot_cross_validation_mean_results(experiment['mean_cv_results'], experiment['std_cv_results'])
-        fig.savefig('{0}/{1}/mean.png'.format(path, session_id))
+        fig.savefig('{0}/{1}/mean.png'.format(path, session_id), dpi=300)
     if comparison and 'mean_cv_results' in experiment:
         if verbose: print('Plotting comparison ...')
         fig = plot_comparison(experiment['mean_cv_results'], metrics)
-        fig.savefig('{0}/{1}/comparison.png'.format(path, session_id))
+        fig.savefig('{0}/{1}/comparison.png'.format(path, session_id), dpi=300)
     if roc and 'roc' in experiment:
         if verbose: print('Plotting roc ...')
         figs, titles = plot_roc(experiment)
         for i, (fig, title) in enumerate(zip(figs, titles)):
-            fig.savefig('{0}/{1}/roc{2}.png'.format(path, session_id, i), bbox_extra_artists=(title,), bbox_inches="tight")
+            fig.savefig('{0}/{1}/roc{2}.png'.format(path, session_id, i),
+                        bbox_extra_artists=(title,), bbox_inches="tight", dpi=300)
 
 def load_experiment(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, verbose=True):
     path = cfg['results_dir']
