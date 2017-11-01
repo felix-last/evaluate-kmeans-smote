@@ -168,7 +168,9 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all'
             ax = axes[i][j]
             methods_encoded = np.asarray(
                 [i for i, _ in enumerate(ranking_filtered.columns)])
-    #         method_colors = sns.husl_palette(n_colors=len(methods_encoded))
+
+            method_colors = ['b' for m in methods_encoded]
+            method_colors[0] = 'r'
 
             # invert the ranking so the highest bar is the best
             worst_rank = math.ceil(ranking_filtered.max().max())
@@ -181,8 +183,11 @@ def plot_mean_ranking(mean_ranking_results, friedman_test_results, metrics='all'
                 methods_encoded,
                 np.asarray(ranking_filtered).transpose(),
                 0.5,
-                #             color=method_colors
+                color=method_colors,
+                # linewidth=0
+                edgecolor='white',
             )
+            ax.margins(0.05)
             ax.set_xticks(methods_encoded + 0.25)
             ax.set_xticklabels(ranking_filtered.columns, rotation='vertical')
             if j is 0:
