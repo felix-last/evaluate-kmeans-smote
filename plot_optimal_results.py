@@ -10,13 +10,19 @@ from IPython.display import display
 %matplotlib inline
 import seaborn as sns
 sns.set_style("whitegrid")
+sns.set_palette('muted')
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 
 path = cfg['results_dir']
-session_id = '2017-09-19 10h00'
-binary_experiment = imbtools.evaluation.load_experiment('{}/{}/experiment.p'.format(path, session_id))
-df_optimal = imbtools.evaluation.calculate_optimal_stats(binary_experiment)
+session_id = '2017-10-09 08h24' #'2017-09-19 10h00'
+try:
+    df_optimal = pd.read_csv('{}/{}/optimal_stats.csv'.format(path, session_id), index_col=0)
+    print('Experiment loaded from csv, computations skipped')
+except:
+    binary_experiment = imbtools.evaluation.load_experiment('{}/{}/experiment.p'.format(path, session_id))
+    df_optimal = imbtools.evaluation.calculate_optimal_stats(binary_experiment)
+    df_optimal.to_csv('{}/{}/optimal_stats.csv'.format(path, session_id))
 
 #%%
 metrics = ['f1'] # 'geometric_mean_score','average_precision',
