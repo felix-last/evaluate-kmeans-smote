@@ -13,6 +13,8 @@ from matplotlib import collections  as mc
 from collections import Counter
 import seaborn as sns
 sns.set_style('whitegrid')
+sns.set_palette('deep')
+sns.set_color_codes(palette="deep")
 from matplotlib.backends.backend_pdf import PdfPages
 import yaml
 import imbtools.evaluation
