@@ -6,6 +6,11 @@ imblearn
 imbtools
 dist/
 config.yml
+results/current
 results/**/*.pdf
 results/**/*.png
+results/**/optimal_stats.csv
+results/**/friedman_test_results.csv
+results/**/mean_ranking_results.csv
+results/**/optimal_stats.csv
 **/.DS_Store
