@@ -1,5 +1,5 @@
-# Evaluate KMeans-SMOTE
-This project is used to evaluate the performance of the oversampling method KMeans-SMOTE.
+# Evaluate K-Means SMOTE
+This project is used to evaluate the performance of the oversampling method [k-means SMOTE](https://github.com/felix-last/kmeans_smote).
 
 ## Dependencies
 
