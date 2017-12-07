@@ -1,4 +1,6 @@
 # <codecell>
+import os.path
+import yaml
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,10 +10,16 @@ sns.set_style('whitegrid')
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.over_sampling import SMOTE
 from kmeans_smote import KMeansSMOTE
-%matplotlib inline
+with open("config.yml", 'r') as ymlfile:
+    cfg = yaml.load(ymlfile)
+output_path = os.path.join(cfg['results_dir'], 'demo_2d')
+if not os.path.exists(output_path):
+    os.mkdir(output_path)
 
 # <codecell>
-def plot_before_after_oversampling(X, y, oversampler, colors=['black','red','lightgreen']):
+
+
+def plot_before_after_oversampling(X, y, oversampler, dataset_name='', additional_text_after_oversampling=None, colors=['black', 'red', 'lightgreen']):
     """
     Plot dataset, perform k-means SMOTE and plot again.
     """
@@ -28,7 +36,8 @@ def plot_before_after_oversampling(X, y, oversampler, colors=['black','red','lig
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_title('Before {}'.format(oversampler_name))
-    plt.show()
+    plt.savefig('{}/{}-{}-before.png'.format(output_path, dataset_name, oversampler_name))
+    plt.close()
 
     # oversample data
     X_ovs, y_ovs = oversampler.fit_sample(X, y)
@@ -45,7 +54,16 @@ def plot_before_after_oversampling(X, y, oversampler, colors=['black','red','lig
     ax.set_title('After {}'.format(oversampler_name))
     ax.set_xlabel('x')
     ax.set_ylabel('y')
-    plt.show()
+    if additional_text_after_oversampling is not None:
+        ax.text(
+            ax.get_xlim()[1] - (ax.get_xlim()[1] / 50),
+            ax.get_ylim()[1] - (ax.get_ylim()[1] / 50),
+            additional_text_after_oversampling,
+            horizontalalignment='right',
+            verticalalignment='top',
+        )
+    plt.savefig('{}/{}-{}-after.png'.format(output_path, dataset_name, oversampler_name))
+    plt.close()
 
 # <markdowncell>
 # # Dataset A
@@ -59,7 +77,8 @@ np.random.seed(1)
 plot_before_after_oversampling(
     dataset_a.iloc[:, 0:2],
     dataset_a.iloc[:, 2],
-    ('SMOTE', SMOTE())
+    ('SMOTE', SMOTE()),
+    'A'
 )
 
 # <markdowncell>
@@ -72,7 +91,9 @@ plot_before_after_oversampling(
     ('k-means SMOTE', KMeansSMOTE(
         kmeans_args = {'n_clusters': 6},
         use_minibatch_kmeans = False
-    ))
+    )),
+    'A',
+    additional_text_after_oversampling='k = 6'
 )
 
 
@@ -88,7 +109,8 @@ np.random.seed(1)
 plot_before_after_oversampling(
     dataset_b.iloc[:, 0:2],
     dataset_b.iloc[:, 2],
-    ('SMOTE', SMOTE())
+    ('SMOTE', SMOTE()),
+    'B'
 )
 
 # <markdowncell>
@@ -101,7 +123,9 @@ plot_before_after_oversampling(
     ('k-means SMOTE', KMeansSMOTE(
         kmeans_args={'n_clusters': 3},
         use_minibatch_kmeans=False
-    ))
+    )),
+    'B',
+    additional_text_after_oversampling='k = 3'
 )
 
 
@@ -117,7 +141,8 @@ np.random.seed(1)
 plot_before_after_oversampling(
     dataset_c.iloc[:, 0:2],
     dataset_c.iloc[:, 2],
-    ('SMOTE', SMOTE())
+    ('SMOTE', SMOTE()),
+    'C'
 )
 
 # <markdowncell>
@@ -130,7 +155,9 @@ plot_before_after_oversampling(
     ('k-means SMOTE', KMeansSMOTE(
         kmeans_args={'n_clusters': 3},
         use_minibatch_kmeans=False
-    ))
+    )),
+    'C',
+    additional_text_after_oversampling='k = 3'
 )
 
 
@@ -149,7 +176,8 @@ np.random.seed(1)
 plot_before_after_oversampling(
     moons_X,
     moons_y,
-    ('SMOTE', SMOTE())
+    ('SMOTE', SMOTE()),
+    'Moons'
 )
 
 # <markdowncell>
@@ -162,7 +190,9 @@ plot_before_after_oversampling(
     ('k-means SMOTE', KMeansSMOTE(
         kmeans_args={'n_clusters': 50},
         use_minibatch_kmeans=False
-    ))
+    )),
+    'Moons',
+    additional_text_after_oversampling='k = 5'
 )
 
 
@@ -183,7 +213,8 @@ np.random.seed(1)
 plot_before_after_oversampling(
     circles_X,
     circles_y,
-    ('SMOTE', SMOTE())
+    ('SMOTE', SMOTE()),
+    'Circles'
 )
 
 # <markdowncell>
@@ -196,5 +227,7 @@ plot_before_after_oversampling(
     ('k-means SMOTE', KMeansSMOTE(
         kmeans_args={'n_clusters': 50},
         use_minibatch_kmeans=False
-    ))
+    )),
+    'Circles',
+    additional_text_after_oversampling='k = 5'
 )
