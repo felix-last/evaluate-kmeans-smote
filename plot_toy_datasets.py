@@ -12,46 +12,65 @@ from imblearn.over_sampling import SMOTE
 from kmeans_smote import KMeansSMOTE
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
-output_path = os.path.join(cfg['results_dir'], 'demo_2d')
+output_path = os.path.join(cfg['results_dir'], 'toy_datasets')
 if not os.path.exists(output_path):
     os.mkdir(output_path)
 
 # <codecell>
-
-
-def plot_before_after_oversampling(X, y, oversampler, dataset_name='', additional_text_after_oversampling=None, colors=['black', 'red', 'lightgreen']):
+def plot_before_after_oversampling(
+    X, y, oversampler, dataset_name='',
+    additional_text_after_oversampling=None,
+    colors=['black', '#C1131D', '#527D37'],
+    markers=['o', 'x', '+'], markersize=[20,30,50]):
     """
-    Plot dataset, perform k-means SMOTE and plot again.
+    Plot dataset, perform oversampling and plot again.
     """
     oversampler_name, oversampler = oversampler
     X, y = np.asarray(X), np.asarray(y)
 
     # plot original data
-    plt.scatter(
-        x=X[:, 0],
-        y=X[:, 1],
-        c=np.asarray(colors)[y],
-        linewidths=0)
+    for label in np.unique(y):
+        plt.scatter(
+            x=X[(y == label), 0],
+            y=X[(y == label), 1],
+            c=colors[label],
+            marker=markers[label],
+            linewidths= 0 if markers[label] == 'o' else None,
+            s=markersize[label]
+        )
     ax = plt.gca()
     ax.set_xlabel('x')
     ax.set_ylabel('y')
-    ax.set_title('Before {}'.format(oversampler_name))
-    plt.savefig('{}/{}-{}-before.png'.format(output_path, dataset_name, oversampler_name))
-    plt.close()
-
+    # ax.set_title('Dataset {}'.format(dataset_name))
+    plt.savefig(
+        os.path.join(
+            output_path,
+            '{} before.png'.format(dataset_name).replace(' ', '_')
+        ),
+        bbox_inches="tight"
+    )
+    try:
+        __IPYTHON__
+        plt.show()
+    except:
+        plt.close()
     # oversample data
     X_ovs, y_ovs = oversampler.fit_sample(X, y)
 
     # plot oversampled data
     new_samples = np.where(np.isin(X_ovs, X, invert=True).all(axis=1))
     y_ovs[new_samples] = 2
-    plt.scatter(
-        x=X_ovs[:,0],
-        y=X_ovs[:,1],
-        c=np.asarray(colors)[y_ovs],
-        linewidths=0)
+    for label in np.unique(y_ovs):
+        plt.scatter(
+            x=X_ovs[(y_ovs == label), 0],
+            y=X_ovs[(y_ovs == label), 1],
+            c=colors[label],
+            marker=markers[label],
+            linewidths=0 if markers[label] == 'o' else None,
+            s=markersize[label]
+        )
     ax = plt.gca()
-    ax.set_title('After {}'.format(oversampler_name))
+    ax.set_title(oversampler_name)
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     if additional_text_after_oversampling is not None:
@@ -62,13 +81,24 @@ def plot_before_after_oversampling(X, y, oversampler, dataset_name='', additiona
             horizontalalignment='right',
             verticalalignment='top',
         )
-    plt.savefig('{}/{}-{}-after.png'.format(output_path, dataset_name, oversampler_name))
-    plt.close()
+    plt.savefig(
+        os.path.join(
+            output_path,
+            '{} {}.png'.format(dataset_name,oversampler_name).replace(' ', '_')
+        ),
+        bbox_inches="tight"
+    )
+    try:
+        __IPYTHON__
+        plt.show()
+    except:
+        plt.close()
+
 
 # <markdowncell>
 # # Dataset A
 # <codecell>
-dataset_a = pd.read_csv('~/datasets/2d/a.csv', header=None)
+dataset_a = pd.read_csv(os.path.join(cfg['dataset_dir'], 'a.csv'), header=None)
 
 # <markdowncell>
 # ## Oversampling with SMOTE
@@ -89,8 +119,8 @@ plot_before_after_oversampling(
     dataset_a.iloc[:, 0:2],
     dataset_a.iloc[:, 2],
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args = {'n_clusters': 6},
-        use_minibatch_kmeans = False
+        kmeans_args={'n_clusters': 6},
+        use_minibatch_kmeans=False
     )),
     'A',
     additional_text_after_oversampling='k = 6'
@@ -100,7 +130,7 @@ plot_before_after_oversampling(
 # <markdowncell>
 # # Dataset B
 # <codecell>
-dataset_b = pd.read_csv('~/datasets/2d/b.csv', header=None)
+dataset_b = pd.read_csv(os.path.join(cfg['dataset_dir'], 'b.csv'), header=None)
 
 # <markdowncell>
 # ## Oversampling with SMOTE
@@ -132,7 +162,7 @@ plot_before_after_oversampling(
 # <markdowncell>
 # # Dataset C
 # <codecell>
-dataset_c = pd.read_csv('~/datasets/2d/c.csv', header=None)
+dataset_c = pd.read_csv(os.path.join(cfg['dataset_dir'], 'c.csv'), header=None)
 
 # <markdowncell>
 # ## Oversampling with SMOTE
@@ -166,8 +196,8 @@ plot_before_after_oversampling(
 # <codecell>
 n_samples = 1500
 moons_dataset = datasets.make_moons(n_samples=n_samples, noise=.3)
-undersampler = RandomUnderSampler(ratio={0:200, 1:750})
-moons_X, moons_y =undersampler.fit_sample(moons_dataset[0], moons_dataset[1])
+undersampler = RandomUnderSampler(ratio={0: 200, 1: 750})
+moons_X, moons_y = undersampler.fit_sample(moons_dataset[0], moons_dataset[1])
 
 # <markdowncell>
 # ## Oversampling with SMOTE
