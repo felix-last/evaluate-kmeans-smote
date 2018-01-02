@@ -276,7 +276,12 @@ successor = false_positives[
 ].drop('Oversampler', axis=1)
 false_positives_reduction = baseline['Mean CV score'] - successor['Mean CV score']
 relative_false_positives_reduction = (false_positives_reduction / baseline['Mean CV score']) * 100
-relative_false_positives_reduction
+datasets_ordered_by_mean_fp_reduction = relative_false_positives_reduction.unstack().mean(axis=1).sort_values(ascending=False).index
+relative_false_positives_reduction = relative_false_positives_reduction.unstack()
+relative_false_positives_reduction = relative_false_positives_reduction.loc[
+    datasets_ordered_by_mean_fp_reduction, :].stack()
+
+#%%
 fig, ax = plt.subplots(1,1,figsize=(20,2))
 sns.heatmap(
     data=relative_false_positives_reduction.unstack(0),
