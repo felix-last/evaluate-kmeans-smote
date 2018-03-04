@@ -28,7 +28,7 @@ metric_names = {
     'geometric_mean_score':'g-mean',
     'average_precision':'AUPRC',
     'f1':'F1',
-    'roc_auc_score': 'ROC AUC'
+    'roc_auc': 'ROC AUC'
 }
 
 def create_pdf(session_id, ranking=True, mean_cv=True, comparison=True, roc=True, metrics='all', verbose=True):
