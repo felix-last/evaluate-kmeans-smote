@@ -4,6 +4,7 @@ import yaml
 import pandas as pd
 import re
 from datetime import datetime, timedelta
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
 from imblearn.over_sampling import RandomOverSampler, SMOTE
