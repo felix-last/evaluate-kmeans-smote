@@ -6,7 +6,8 @@ import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
-from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
+from imblearn.over_sampling import RandomOverSampler, SMOTE
+from kmeans_smote import KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.metrics import geometric_mean_score
 from imbtools.evaluation import BinaryExperiment
@@ -19,32 +20,32 @@ def main():
     experiment_config = {
         'comment': '...',
         'experiment_repetitions': 1,
-        'n_splits':10,
+        'n_splits':5,
         'random_seed': int(os.urandom(1)[0] / 255 * (2**32)),
     }
 
     classifiers = [
         ('LogisticRegression',LogisticRegression()),
-        ('GradientBoosting',GradientBoostingClassifier()),
-        (
-            'RandomForest',RandomForestClassifier(),
-            [{
-                'criterion':['gini','entropy'],
-                'n_estimators':[10,100]
-            }]
-        )
+        # ('GradientBoosting',GradientBoostingClassifier()),
+        # (
+        #     'RandomForest',RandomForestClassifier(),
+        #     [{
+        #         'criterion':['gini','entropy'],
+        #         'n_estimators':[10,100]
+        #     }]
+        # )
     ]
     oversampling_methods = [
         ('None',None),
-        ('RandomOverSampler', RandomOverSampler()),
-        ('SMOTE', SMOTE()),
-        ('B1-SMOTE', SMOTE(kind='borderline1')),
-        ('B2-SMOTE', SMOTE(kind='borderline2')),
+        # ('RandomOverSampler', RandomOverSampler()),
+        # ('SMOTE', SMOTE()),
+        # ('B1-SMOTE', SMOTE(kind='borderline1')),
+        # ('B2-SMOTE', SMOTE(kind='borderline2')),
         (
             'KMeansSMOTE', KMeansSMOTE(),
             [{
-                'minority_weight': [0.66, 1, 0.5],
-                'density_power': [None, 2]
+                # 'minority_weight': [0.66, 1, 0.5],
+                # 'density_power': [None, 2]
             }]
         )
     ]
