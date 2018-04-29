@@ -6,8 +6,8 @@ import re
 from datetime import datetime, timedelta
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from imblearn.over_sampling import RandomOverSampler, SMOTE, KMeansSMOTE
+from imblearn.over_sampling import RandomOverSampler, SMOTE
+from kmeans_smote import KMeansSMOTE
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.metrics import geometric_mean_score
 from imbtools.evaluation import BinaryExperiment

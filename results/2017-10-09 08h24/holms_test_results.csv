@@ -1,0 +1,10 @@
+,Classifier,Metric,Adjusted p,Significance,Significance Level
+0,GBM,average_precision,1.876602269773714e-26,True,****
+1,GBM,f1,8.426379248897747e-35,True,****
+4,GBM,geometric_mean_score,4.451600937590075e-44,True,****
+8,KNN,average_precision,3.3122934286472e-26,True,****
+9,KNN,f1,4.5573615474010004e-29,True,****
+12,KNN,geometric_mean_score,3.356871604812841e-47,True,****
+16,LR,average_precision,1.0262387250346363e-18,True,****
+17,LR,f1,8.31731116572581e-28,True,****
+20,LR,geometric_mean_score,1.3437096660356452e-35,True,****
