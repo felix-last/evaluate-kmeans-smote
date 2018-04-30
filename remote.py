@@ -127,7 +127,8 @@ def _run_experiment():
             'value3': runtime_in_minutes
         })
         if( its_time_to_shut_down ):
-            stop_instance(instance_id)
+            pass
+            # stop_instance(instance_id)
 
 
 def _load_dataset():
