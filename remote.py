@@ -68,7 +68,7 @@ def run_experiment(instance_id):
 
 
 def retrieve_results(instance_id):
-    host = instance_id + cfg['remote']['base_host']
+    host = instance_id + cfg['remote']['base_host'] if 'base_host' in cfg['remote'] else instance_id
     user = cfg['remote']['user']
     target = './results' # TODO: actually cfg['results_dir']
     command = 'scp -r {}@{}:results/* {}'.format(user, host, target)
@@ -76,7 +76,7 @@ def retrieve_results(instance_id):
 
 
 def _exec_shell_script_via_ssl(instance_id, script):
-    host = instance_id + cfg['remote']['base_host']
+    host = instance_id + cfg['remote']['base_host'] if 'base_host' in cfg['remote'] else instance_id
     user = cfg['remote']['user']
     command = 'cat {0} | ssh -t {1}@{2}'
     command = command.format(script, user, host)
@@ -84,7 +84,7 @@ def _exec_shell_script_via_ssl(instance_id, script):
 
 
 def _configure(instance_id, dataset=None):
-    host = instance_id + cfg['remote']['base_host']
+    host = instance_id + cfg['remote']['base_host'] if 'base_host' in cfg['remote'] else instance_id
     user = cfg['remote']['user']
     remote_config = cfg.copy()
     remote_config['dataset_dir'] = '/home/{}/datasets'.format(
