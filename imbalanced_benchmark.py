@@ -73,7 +73,7 @@ def main():
                     ],
                     'kmeans_args': [
                         {'n_clusters': 2}, {'n_clusters': 20}, {'n_clusters': 50},
-                        {'n_clusters': 100}, #{'n_clusters':250}, {'n_clusters':500}
+                        {'n_clusters': 100}, {'n_clusters':250}, #{'n_clusters':500}
                     ],
                     'use_minibatch_kmeans':[True],
                     'n_jobs':[-1]
