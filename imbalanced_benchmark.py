@@ -46,19 +46,19 @@ def main():
         (
             'SMOTE', SMOTE(),
             [{
-                'k_neighbors': [3,5,20]
+                'k_neighbors': [3,5]
             }]
         ),
         (
             'B1-SMOTE', SMOTE(kind='borderline1'),
             [{
-                'k_neighbors': [3,5,20]
+                'k_neighbors': [3,5]
             }]
         ),
         (
             'B2-SMOTE', SMOTE(kind='borderline2'),
             [{
-                'k_neighbors': [3,5,20]
+                'k_neighbors': [3,5]
             }]
         ),
         (
