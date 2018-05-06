@@ -1,0 +1,5 @@
+comment,...
+experiment_repetitions,1
+n_splits,5
+oversampling_methods,"[('None', None), ('KMeansSMOTE', KMeansSMOTE(density_power=None, imbalance_ratio_threshold=1.0, kmeans_args={}, n_jobs=1, random_state=None, ratio='auto', smote_args={}, use_minibatch_kmeans=True), [{}])]"
+random_seed,3284386755
