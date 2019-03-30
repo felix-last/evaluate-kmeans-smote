@@ -9,7 +9,8 @@ from sklearn import datasets
 sns.set_style('whitegrid')
 from imblearn.under_sampling import RandomUnderSampler
 from imblearn.over_sampling import SMOTE
-from kmeans_smote import KMeansSMOTE
+from imblearn.over_sampling import KMeansSMOTE
+from sklearn.cluster import KMeans
 with open("config.yml", 'r') as ymlfile:
     cfg = yaml.load(ymlfile)
 output_path = os.path.join(cfg['results_dir'], 'toy_datasets')
@@ -119,8 +120,10 @@ plot_before_after_oversampling(
     dataset_a.iloc[:, 0:2],
     dataset_a.iloc[:, 2],
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args={'n_clusters': 6},
-        use_minibatch_kmeans=False
+        kmeans_estimator=KMeans(n_clusters=6),
+        cluster_balance_threshold=1.0,
+        density_exponent=circles_X.shape[1],
+        k_neighbors=5
     )),
     'A',
     additional_text_after_oversampling='k = 6'
@@ -151,8 +154,10 @@ plot_before_after_oversampling(
     dataset_b.iloc[:, 0:2],
     dataset_b.iloc[:, 2],
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args={'n_clusters': 3},
-        use_minibatch_kmeans=False
+        kmeans_estimator=KMeans(n_clusters=3),
+        cluster_balance_threshold=1.0,
+        density_exponent=circles_X.shape[1],
+        k_neighbors=5
     )),
     'B',
     additional_text_after_oversampling='k = 3'
@@ -183,8 +188,10 @@ plot_before_after_oversampling(
     dataset_c.iloc[:, 0:2],
     dataset_c.iloc[:, 2],
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args={'n_clusters': 3},
-        use_minibatch_kmeans=False
+        kmeans_estimator=KMeans(n_clusters=3),
+        cluster_balance_threshold=1.0,
+        density_exponent=circles_X.shape[1],
+        k_neighbors=5
     )),
     'C',
     additional_text_after_oversampling='k = 3'
@@ -218,8 +225,10 @@ plot_before_after_oversampling(
     moons_X,
     moons_y,
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args={'n_clusters': 50},
-        use_minibatch_kmeans=False
+        kmeans_estimator=KMeans(n_clusters=50),
+        cluster_balance_threshold=1.0,
+        density_exponent=circles_X.shape[1],
+        k_neighbors=5
     )),
     'Moons',
     additional_text_after_oversampling='k = 5'
@@ -250,14 +259,16 @@ plot_before_after_oversampling(
 # <markdowncell>
 # ## Oversampling with k-means SMOTE
 # <codecell>
-np.random.seed(1)
+np.random.seed(2)
 plot_before_after_oversampling(
     circles_X,
     circles_y,
     ('k-means SMOTE', KMeansSMOTE(
-        kmeans_args={'n_clusters': 50},
-        use_minibatch_kmeans=False
+        kmeans_estimator=KMeans(n_clusters=50),
+        cluster_balance_threshold=1.0,
+        density_exponent=circles_X.shape[1],
+        k_neighbors=5
     )),
     'Circles',
-    additional_text_after_oversampling='k = 5'
+    additional_text_after_oversampling='k = 50'
 )
